@@ -1,1 +1,39 @@
-<p>This is the vote view.</p>
+<h1>Äänestäminen</h1>
+
+<form novalidate ng-submit="vote.register()">
+  <label>
+    Numero
+    <input ng-model="vote.candidate.number">
+  </label>
+
+  <label>
+    Nimi
+    <input ng-model="vote.candidate.name">
+  </label>
+
+  <ul>
+    <li ng-repeat="c in vote.candidates | filter:vote.candidate">
+      <label>
+        <input
+          type="radio"
+          ng-model="vote.selected"
+          ng-value="c.number">
+
+        {{ c.name }}
+      </label>
+    </li>
+  </ul>
+
+  <span
+    ng-show="vote.selected"
+    ng-bind-template="Olet äänestämässä ehdokasta: {{ vote.selected }}">
+  </span>
+
+  <input
+    type="submit"
+    ng-show="vote.selected"
+    value="Äänestä">
+
+</form>
+
+<pre ng-bind="vote.candidates | filter:vote.candidate | json"></pre>

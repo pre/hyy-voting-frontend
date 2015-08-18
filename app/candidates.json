@@ -1,0 +1,14 @@
+[
+    {
+        "id": 2,
+        "name": "Pekka Vaara (Sepe Vaara)",
+        "number": 10,
+        "alliance": 1
+    },
+    {
+        "id": 3,
+        "name": "Julia Kaari (Sami Puuma)",
+        "number": 20,
+        "alliance": 2
+    }
+]

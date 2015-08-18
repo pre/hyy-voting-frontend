@@ -14,7 +14,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'restangular'
   ]
   .config ($routeProvider) ->
     $routeProvider
@@ -26,6 +27,9 @@ angular
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
         controllerAs: 'about'
+      .when '/vote',
+        templateUrl: 'views/vote.html'
+        controller: 'VoteCtrl'
+        controllerAs: 'vote'
       .otherwise
         redirectTo: '/'
-

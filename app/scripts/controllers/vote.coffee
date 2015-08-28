@@ -21,3 +21,8 @@ angular.module 'hyyVotingFrontendApp'
       console.log "You voted #{@selected}"
 
     return
+
+  .filter 'candidate', ->
+    (candidate, filter) ->
+      if candidate?.name == filter?.name && candidate?.number == filter?.number
+        return candidate

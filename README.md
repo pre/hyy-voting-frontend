@@ -1,7 +1,11 @@
 # hyy-voting-frontend
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+## Setup
+
+~~~
+npm install
+bower install
+~~~
 
 ## Build & development
 

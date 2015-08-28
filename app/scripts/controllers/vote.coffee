@@ -17,6 +17,9 @@ angular.module 'hyyVotingFrontendApp'
         @candidates = candidates
       )
 
+    @isProspectSelected = ->
+      @selected != undefined
+
     @register = ->
       console.log "You voted #{@selected}"
 
@@ -26,3 +29,14 @@ angular.module 'hyyVotingFrontendApp'
     (candidate, filter) ->
       if candidate?.name == filter?.name && candidate?.number == filter?.number
         return candidate
+
+  .directive 'voteProspect', ->
+    restrict: 'E'
+    template: 'Numero: {{ prospect.number }} <br> Nimi: {{ prospect.name }}'
+    scope:
+      selected: '='
+      all: '='
+
+    link: (scope, element, attrs) ->
+      scope.$watch 'selected', (newValue, oldValue) ->
+        scope.prospect = scope.all[newValue]

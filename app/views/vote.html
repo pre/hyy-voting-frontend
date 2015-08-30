@@ -1,6 +1,6 @@
 <h1>Hallintovaalit</h1>
 
-<form novalidate ng-submit="vote.register()">
+<form novalidate>
 
   <h2>Äänestä</h2>
 
@@ -17,10 +17,12 @@
 
   <br>
 
-  <input
-    type="submit"
-    ng-show="vote.isProspectSelected()"
-    value="Äänestä">
+  <button
+    vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
+    vote-confirm-action="vote.register()"
+    ng-show="vote.isProspectSelected()">
+      Äänestä
+    </button>
 
   <h2>Hae ehdokasta</h2>
   <label>

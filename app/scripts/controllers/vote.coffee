@@ -10,7 +10,13 @@
 angular.module 'hyyVotingFrontendApp'
   .controller 'VoteCtrl', (Restangular) ->
 
+    @alliances = []
     @candidates = []
+
+    Restangular.all('alliances.json').getList()
+      .then((alliances) =>
+        @alliances = alliances
+      )
 
     Restangular.all('candidates.json').getList()
       .then((candidates) =>
@@ -39,4 +45,4 @@ angular.module 'hyyVotingFrontendApp'
 
     link: (scope, element, attrs) ->
       scope.$watch 'selected', (newValue, oldValue) ->
-        scope.prospect = scope.all[newValue]
+        scope.prospect = _.find scope.all, 'id', newValue

@@ -33,20 +33,26 @@
     <input ng-model="vote.candidate.name">
   </label>
 
-  <ul>
-    <li ng-repeat="c in vote.candidates | filter:vote.candidate">
-      <label>
-        <input
-          type="radio"
-          ng-model="vote.selected"
-          ng-value="$index">
+  <div ng-repeat="a in vote.alliances">
+    <h1
+      ng-bind="a.name"
+      ng-show="filteredCandidates.length">
+    </h1>
 
-        {{ c.number }}
-        {{ c.name }}
-      </label>
-    </li>
-  </ul>
-
+    <ul>
+      <li ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)">
+        <label>
+          <input
+            type="radio"
+            ng-model="vote.selected"
+            ng-value="c.id">
+          {{ c.id }}
+          {{ c.number }}
+          {{ c.name }}
+        </label>
+      </li>
+    </ul>
+  </div>
 
 </form>
 

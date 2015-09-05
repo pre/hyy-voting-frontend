@@ -23,6 +23,10 @@ angular
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
+      .when '/sign-in',
+        templateUrl: 'views/session.html'
+        controller: 'SessionCtrl'
+        controllerAs: 'session'
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'

@@ -8,9 +8,16 @@
  # Service in the hyyVotingFrontendApp.
 ###
 angular.module 'hyyVotingFrontendApp'
-  .service 'SessionSrv', (Restangular) ->
+  .service 'SessionSrv', ($window, Restangular) ->
 
     @requestLink = ->
       Promise.resolve message: "lol"
+
+    @save = (data) ->
+      new Promise (resolve, reject) ->
+        $window.sessionStorage.setItem('goodToken', data.goodToken)
+        $window.sessionStorage.setItem('candidatesUrl', data.candidatesUrl)
+
+        resolve()
 
     return

@@ -2,13 +2,13 @@
 
 ###*
  # @ngdoc function
- # @name hyyVotingFrontendApp.controller:SessionCtrl
+ # @name hyyVotingFrontendApp.controller:SignUpCtrl
  # @description
- # # SessionCtrl
+ # # SignUpCtrl
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'SessionCtrl', (SessionSrv, $scope, $location) ->
+  .controller 'SignUpCtrl', (SessionSrv, $scope, $location) ->
     @loading = false
     @submitted = false
     @error = null

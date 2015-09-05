@@ -23,9 +23,13 @@ angular
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
+      .when '/sign-up',
+        templateUrl: 'views/sign-up.html'
+        controller: 'SignUpCtrl'
+        controllerAs: 'session'
       .when '/sign-in',
-        templateUrl: 'views/session.html'
-        controller: 'SessionCtrl'
+        templateUrl: 'views/sign-in.html'
+        controller: 'SignInCtrl'
         controllerAs: 'session'
       .when '/about',
         templateUrl: 'views/about.html'

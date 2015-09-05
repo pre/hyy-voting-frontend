@@ -1,0 +1,15 @@
+<div ng-if="session.loading">
+  Ladataan ..
+</div>
+
+<div ng-if="!session.loading">
+  <div ng-if="session.invalidToken">
+    <h1>Virheellinen sisäänkirjautumislinkki</h1>
+    Sisäänkirjautumislinkkisi on vanhentunut tai muutoin virheellinen.
+    Jos et ole vielä äänestänyt,
+    <a href="#/sign-up">pyydä uusi sisäänkirjautumislinkki</a>.
+  </div>
+
+  <!-- #TODO Remove me -->
+  <pre ng-bind="session.jsonRaw | json"></pre>
+</div>

@@ -8,20 +8,21 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', (Restangular) ->
+  .controller 'VoteCtrl', (Restangular, candidates, alliances) ->
 
     @alliances = []
-    @candidates = []
+    @candidates = [] # TODO Tämän vois poistaa ja hakea suoraan alliancesista
 
-    Restangular.all('alliances.json').getList()
-      .then((alliances) =>
-        @alliances = alliances
-      )
+    # todo report error to user if failed
+    alliances
+      .get()
+      .then (alliances) => @alliances = alliances
+      .catch (e) -> console.error "Wat alliances? ", e
 
-    Restangular.all('candidates.json').getList()
-      .then((candidates) =>
-        @candidates = candidates
-      )
+    candidates
+      .get()
+      .then (candidates) => @candidates = candidates
+      .catch (e) -> console.error "Wat candidates? ", e
 
     @isProspectSelected = ->
       @selected != undefined

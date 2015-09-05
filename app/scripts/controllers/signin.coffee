@@ -27,7 +27,8 @@ angular.module 'hyyVotingFrontendApp'
         $location.path('/vote')
 
       (error) =>
-        console.error "Wat", error
+        # TODO: Report this error to Rollbar
+        console.error "Sign in failed: #{error.message}", error
         @jsonRaw = error
         @invalidToken = true
     ).finally => @loading = false

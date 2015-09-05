@@ -1,24 +1,24 @@
 [
     {
-        "id": 2,
-        "name": "Pekka Vaara (Sepe Vaara)",
+        "id": 10,
+        "name": "Hum Vaara (Hum Vaara)",
         "number": 10,
-        "alliance_id": 30
+        "alliance_id": 100
     },
     {
-        "id": 3,
-        "name": "Julia Kaari (Sami Puuma)",
+        "id": 11,
+        "name": "Jum Kaari (Hum Puuma)",
         "number": 20,
-        "alliance_id": 40
+        "alliance_id": 100
     },
     {
-        "id": 4,
-        "name": "Sampe Tarvainen (Anne Ronkeli)",
-        "number": 100
+        "id": 12,
+        "name": "Sum Tarvainen (Hum Ronkeli)",
+        "number": 101
     },
     {
-        "id": 5,
-        "name": "Kalle Jullinen (Kello Peli)",
+        "id": 13,
+        "name": "Dum Jullinen (Hum Peli)",
         "number": 101
     }
 ]

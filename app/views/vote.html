@@ -1,14 +1,30 @@
-<h1>Hallintovaalit</h1>
+<div class="page-header">
+  <h1>Hallintovaalit</h1>
+</div>
 
-<div ng-if="vote.error">
-  <h1>Virhe ehdokastietojen lataamisessa</h1>
+<div
+  class="jumbotron alert alert-danger"
+  ng-if="vote.error">
 
-  <p>
-    Ehdokastietojen lataaminen epäonnistui.
-    <a href="#/sign-up">Pyydä uusi sisäänkirjautumislinkki</a>
-    ja yritä uudelleen. Jos ongelma toistuu, ota yhteys ylioppilaskuntaan
-    <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
-  </p>
+  <div class="container">
+    <h1>Kävi hassusti :/</h1>
+
+    <p>
+      Ehdokastietojen lataaminen epäonnistui.
+    </p>
+
+    <p>
+      Pyydä <a href="#/sign-up">uusi sisäänkirjautumislinkki</a>
+      ja yritä uudelleen. Jos ongelma toistuu, ota yhteys ylioppilaskunnan
+      vaalityöntekijään <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
+    </p>
+
+    <a
+      href="#/sign-up"
+      class="btn btn-primary">
+      Uusi sisäänkirjautumislinkki
+    </a>
+  </div>
 </div>
 
 <form

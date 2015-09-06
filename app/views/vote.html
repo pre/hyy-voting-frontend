@@ -52,6 +52,13 @@
 
     </button>
 
+  <div
+    class="alert alert-success"
+    role="alert"
+    ng-if="vote.submitted">
+    <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
+  </div>
+
   <div ng-if="vote.loading">
     <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
   </div>

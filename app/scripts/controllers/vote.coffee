@@ -16,7 +16,6 @@ angular.module 'hyyVotingFrontendApp'
     @alliances = []
     @candidates = [] # TODO Tämän vois poistaa ja hakea suoraan alliancesista
 
-    # todo report error to user if failed
     Promise.all [alliances.get(), candidates.get()]
       .then(
         (results) =>
@@ -26,8 +25,10 @@ angular.module 'hyyVotingFrontendApp'
         (failure) =>
           console.error "Fetching alliances/candidates failed:", failure
           @error = true
-
-      ).finally => @loading = false
+      )
+      .finally =>
+        @loading = false
+        $scope.$apply()
 
     @isProspectSelected = ->
       @selected != undefined

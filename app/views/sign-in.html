@@ -4,12 +4,30 @@
 
 <div ng-if="!session.loading">
   <div ng-if="session.invalidToken">
-    <h1>Virheellinen sisäänkirjautumislinkki</h1>
-    Sisäänkirjautumislinkkisi on vanhentunut tai muutoin virheellinen.
-    Jos et ole vielä äänestänyt,
-    <a href="#/sign-up">pyydä uusi sisäänkirjautumislinkki</a>.
-  </div>
+    <div
+      class="jumbotron alert alert-danger">
 
-  <!-- #TODO Remove me -->
-  <pre ng-bind="session.jsonRaw | json"></pre>
+      <div class="container">
+        <h1>Virheellinen sisäänkirjautumislinkki</h1>
+
+        <p>
+          Sisäänkirjautumislinkkisi on vanhentunut tai muutoin virheellinen.
+        </p>
+
+        <p>
+          Jos et ole vielä äänestänyt,
+          <a href="#/sign-up">pyydä uusi sisäänkirjautumislinkki</a>.
+          Jos ongelma toistuu, ota yhteys ylioppilaskunnan
+          vaalityöntekijään <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
+        </p>
+
+        <a
+          href="#/sign-up"
+          class="btn btn-primary">
+          Uusi sisäänkirjautumislinkki
+        </a>
+      </div>
+    </div>
+
+  </div>
 </div>

@@ -8,10 +8,11 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', (Restangular, candidates, alliances) ->
+  .controller 'VoteCtrl', ($scope, Restangular, candidates, alliances) ->
 
     @error = false
     @loading = true
+    @submitting = @submitted = false
     @alliances = []
     @candidates = [] # TODO Tämän vois poistaa ja hakea suoraan alliancesista
 
@@ -32,7 +33,15 @@ angular.module 'hyyVotingFrontendApp'
       @selected != undefined
 
     @register = ->
+      @submitting = true
       console.log "You voted #{@selected}"
+      Promise.delay(1000).then(
+        =>
+          @submitting = false
+          @submitted = true
+          console.log "Vote submitted!"
+          $scope.$apply()
+      )
 
     return
 

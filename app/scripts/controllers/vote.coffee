@@ -10,19 +10,23 @@
 angular.module 'hyyVotingFrontendApp'
   .controller 'VoteCtrl', (Restangular, candidates, alliances) ->
 
+    @error = false
+    @loading = true
     @alliances = []
     @candidates = [] # TODO Tämän vois poistaa ja hakea suoraan alliancesista
 
     # todo report error to user if failed
-    alliances
-      .get()
-      .then (alliances) => @alliances = alliances
-      .catch (e) -> console.error "Wat alliances? ", e
+    Promise.all [alliances.get(), candidates.get()]
+      .then(
+        (results) =>
+          @alliances = results[0]
+          @candidates = results[1]
 
-    candidates
-      .get()
-      .then (candidates) => @candidates = candidates
-      .catch (e) -> console.error "Wat candidates? ", e
+        (failure) =>
+          console.error "Fetching alliances/candidates failed:", failure
+          @error = true
+
+      ).finally => @loading = false
 
     @isProspectSelected = ->
       @selected != undefined

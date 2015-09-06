@@ -1,6 +1,17 @@
 <h1>Hallintovaalit</h1>
 
-<form novalidate>
+<div ng-if="vote.error">
+  <h1>Virhe ehdokastietojen lataamisessa</h1>
+
+  <p>
+    Ehdokastietojen lataaminen epäonnistui.
+    <a href="#/sign-up">Pyydä uusi sisäänkirjautumislinkki</a>
+    ja yritä uudelleen. Jos ongelma toistuu, ota yhteys ylioppilaskuntaan
+    <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
+  </p>
+</div>
+
+<form novalidate ng-hide="vote.error">
 
   <h2>Äänestä</h2>
 
@@ -24,38 +35,46 @@
       Äänestä
     </button>
 
-  <h2>Hae ehdokasta</h2>
-  <label>
-    Numero
-    <input ng-model="vote.candidate.number">
-  </label>
-
-  <label>
-    Nimi
-    <input ng-model="vote.candidate.name">
-  </label>
-
-  <div ng-repeat="a in vote.alliances">
-    <h1
-      ng-bind="a.name"
-      ng-show="filteredCandidates.length">
-    </h1>
-
-    <ul>
-      <li ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)">
-        <label>
-          <input
-            type="radio"
-            ng-model="vote.selected"
-            ng-value="c.id">
-          {{ c.id }}
-          {{ c.number }}
-          {{ c.name }}
-        </label>
-      </li>
-    </ul>
+  <div ng-if="vote.loading">
+    <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
   </div>
 
-</form>
+  <div ng-if="!vote.loading">
 
-<pre ng-bind="vote.alliances | candidate:vote.candidate | json"></pre>
+    <h2>Hae ehdokasta</h2>
+    <label>
+      Numero
+      <input ng-model="vote.candidate.number">
+    </label>
+
+    <label>
+      Nimi
+      <input ng-model="vote.candidate.name">
+    </label>
+
+    <div ng-repeat="a in vote.alliances">
+      <h1
+        ng-bind="a.name"
+        ng-show="filteredCandidates.length">
+      </h1>
+
+      <ul>
+        <li ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)">
+          <label>
+            <input
+              type="radio"
+              ng-model="vote.selected"
+              ng-value="c.id">
+            {{ c.id }}
+            {{ c.number }}
+            {{ c.name }}
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <pre ng-bind="vote.alliances | candidate:vote.candidate | json"></pre>
+
+  </div> <!-- /loading -->
+
+</form>

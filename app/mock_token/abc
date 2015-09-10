@@ -1,0 +1,12 @@
+{
+  "goodToken": "123",
+  "faculty": {
+    "name": "Humanistinen tiedekunta"
+  },
+  "candidates": {
+    "url": "http://localhost:9000/mock_api/hum_tdk-candidates.json"
+  },
+  "alliances": {
+    "url": "http://localhost:9000/mock_api/hum_tdk-alliances.json"
+  }
+}

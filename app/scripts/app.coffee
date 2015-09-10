@@ -14,7 +14,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'restangular'
   ]
   .config ($routeProvider) ->
     $routeProvider
@@ -22,10 +23,21 @@ angular
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
+      .when '/sign-up',
+        templateUrl: 'views/sign-up.html'
+        controller: 'SignUpCtrl'
+        controllerAs: 'session'
+      .when '/sign-in',
+        templateUrl: 'views/sign-in.html'
+        controller: 'SignInCtrl'
+        controllerAs: 'session'
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
         controllerAs: 'about'
+      .when '/vote',
+        templateUrl: 'views/vote.html'
+        controller: 'VoteCtrl'
+        controllerAs: 'vote'
       .otherwise
         redirectTo: '/'
-

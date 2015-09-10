@@ -1,0 +1,24 @@
+[
+    {
+        "id": 10,
+        "name": "Hum Vaara (Hum Vaara)",
+        "number": 10,
+        "alliance_id": 100
+    },
+    {
+        "id": 11,
+        "name": "Jum Kaari (Hum Puuma)",
+        "number": 20,
+        "alliance_id": 100
+    },
+    {
+        "id": 12,
+        "name": "Sum Tarvainen (Hum Ronkeli)",
+        "number": 101
+    },
+    {
+        "id": 13,
+        "name": "Dum Jullinen (Hum Peli)",
+        "number": 101
+    }
+]

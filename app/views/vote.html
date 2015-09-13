@@ -14,127 +14,129 @@
     </p>
 
     <p>
-      Pyydä <a href="#/sign-up">uusi sisäänkirjautumislinkki</a>
+      Pyydä <a ng-href="#/sign-up">uusi sisäänkirjautumislinkki</a>
       ja yritä uudelleen. Jos ongelma toistuu, ota yhteys ylioppilaskunnan
-      vaalityöntekijään <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
+      vaalityöntekijään <a ng-href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
     </p>
 
     <a
-      href="#/sign-up"
+      ng-href="#/sign-up"
       class="btn btn-primary">
       Uusi sisäänkirjautumislinkki
     </a>
   </div>
 </div>
 
-<form
-  novalidate
-  ng-hide="vote.error">
+<div class="row">
+  <div class="col-xs-12">
 
-  <div>
-    <div>
+    <form
+      novalidate
+      ng-hide="vote.error">
 
-      <div
-        class="panel panel-primary"
-        set-class-when-at-top="fix-to-top"
-        padding-when-at-top="50">
+      <div> <!-- required container for set-class-when-at-top -->
+        <div
+          class="panel panel-primary vote-ballot"
+          set-class-when-at-top="fix-to-top"
+          padding-when-at-top="10">
+          <!-- N.B. padding-when-at-top must match the fixed position px,
+               otherwise a jumpy side-effect will occurr -->
 
-        <div class="panel-heading">
-          <h3 class="panel-title">Äänestä</h3>
+          <div class="panel-heading">
+            <h3 class="panel-title">Äänestä</h3>
+          </div>
+
+          <div class="panel-body">
+            <span
+              ng-hide="vote.isProspectSelected()">
+              Valitse ehdokas listasta, sen jälkeen tähän ilmestyy äänestyslippu.
+            </span>
+
+            <vote-prospect
+              ng-show="vote.isProspectSelected()"
+              selected="vote.selected"
+              all="vote.candidates">
+            </vote-prospect>
+          </div>
+
+          <div class="panel-footer">
+            <button
+              class="btn btn-default"
+              vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
+              vote-confirm-action="vote.register()"
+              ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
+              >
+
+                <div ng-show="vote.submitting && !vote.submitted">
+                  <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                  Äänestetään ..
+                </div>
+
+                <div ng-hide="vote.submitting || vote.submitted">
+                  Äänestä
+                </div>
+
+                <div ng-show="vote.submitted">
+                  Äänestetty!
+                </div>
+            </button>
+          </div>
         </div>
-
-        <div class="panel-body">
-          <span
-            ng-hide="vote.isProspectSelected()">
-            Valitse ehdokas listasta, sen jälkeen tähän ilmestyy äänestyslippu.
-          </span>
-
-          <vote-prospect
-            ng-show="vote.isProspectSelected()"
-            selected="vote.selected"
-            all="vote.candidates">
-          </vote-prospect>
-
-        </div>
-
-
-        <div class="panel-footer">
-          <button
-            class="btn btn-default"
-            vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
-            vote-confirm-action="vote.register()"
-            ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
-            >
-
-              <div ng-show="vote.submitting && !vote.submitted">
-                <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-                Äänestetään ..
-              </div>
-
-              <div ng-hide="vote.submitting || vote.submitted">
-                Äänestä
-              </div>
-
-              <div ng-show="vote.submitted">
-                Äänestetty!
-              </div>
-          </button>
-
-        </div>
-
       </div>
 
-    </div>
-  </div>
+      <!-- #TODO This alert is not visible on scrolled state -->
+      <div
+        class="alert alert-success"
+        role="alert"
+        ng-if="vote.submitted">
+        <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
+      </div>
 
-  <div
-    class="alert alert-success"
-    role="alert"
-    ng-if="vote.submitted">
-    <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
-  </div>
+      <div ng-if="vote.loading">
+        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+      </div>
 
-  <div ng-if="vote.loading">
-    <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-  </div>
+      <div ng-if="!vote.loading">
 
-  <div ng-if="!vote.loading">
+        <h2>Hae ehdokasta</h2>
+        <label>
+          Numero
+          <input ng-model="vote.candidate.number">
+        </label>
 
-    <h2>Hae ehdokasta</h2>
-    <label>
-      Numero
-      <input ng-model="vote.candidate.number">
-    </label>
+        <label>
+          Nimi
+          <input ng-model="vote.candidate.name">
+        </label>
 
-    <label>
-      Nimi
-      <input ng-model="vote.candidate.name">
-    </label>
+        <div ng-repeat="a in vote.alliances">
+          <h1
+            ng-bind="a.name"
+            ng-show="filteredCandidates.length">
+          </h1>
 
-    <div ng-repeat="a in vote.alliances">
-      <h1
-        ng-bind="a.name"
-        ng-show="filteredCandidates.length">
-      </h1>
+          <ul>
+            <li ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)">
+              <label>
+                <input
+                  type="radio"
+                  ng-disabled="vote.submitting || vote.submitted"
+                  ng-model="vote.selected"
+                  ng-value="c.id">
+                {{ c.id }}
+                {{ c.number }}
+                {{ c.name }}
+              </label>
+            </li>
+          </ul>
+        </div>
 
-      <ul>
-        <li ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)">
-          <label>
-            <input
-              type="radio"
-              ng-disabled="vote.submitting || vote.submitted"
-              ng-model="vote.selected"
-              ng-value="c.id">
-            {{ c.id }}
-            {{ c.number }}
-            {{ c.name }}
-          </label>
-        </li>
-      </ul>
-    </div>
+        <!-- #TODO remove completely -->
+        <pre ng-if="vote.debug" ng-bind="vote.alliances | candidate:vote.candidate | json"></pre>
 
-    <pre ng-bind="vote.alliances | candidate:vote.candidate | json"></pre>
+      </div> <!-- /loading -->
 
-  </div> <!-- /loading -->
+    </form>
 
-</form>
+  </div> <!-- col -->
+</div> <!-- row -->

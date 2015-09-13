@@ -131,7 +131,8 @@
           </ul>
         </div>
 
-        <pre ng-bind="vote.alliances | candidate:vote.candidate | json"></pre>
+        <!-- #TODO remove completely -->
+        <pre ng-if="vote.debug" ng-bind="vote.alliances | candidate:vote.candidate | json"></pre>
 
       </div> <!-- /loading -->
 

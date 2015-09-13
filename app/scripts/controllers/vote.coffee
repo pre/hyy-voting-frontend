@@ -10,6 +10,8 @@
 angular.module 'hyyVotingFrontendApp'
   .controller 'VoteCtrl', ($scope, Restangular, candidates, alliances) ->
 
+    @debug = false
+
     @error = false
     @loading = true
     @submitting = @submitted = false

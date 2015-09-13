@@ -31,10 +31,10 @@ angular
         templateUrl: 'views/sign-in.html'
         controller: 'SignInCtrl'
         controllerAs: 'session'
-      .when '/about',
-        templateUrl: 'views/about.html'
-        controller: 'AboutCtrl'
-        controllerAs: 'about'
+      .when '/results',
+        templateUrl: 'views/results.html'
+        controller: 'ResultCtrl'
+        controllerAs: 'result'
       .when '/vote',
         templateUrl: 'views/vote.html'
         controller: 'VoteCtrl'

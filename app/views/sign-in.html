@@ -1,33 +1,34 @@
-<div ng-if="session.loading">
-  Ladataan ..
-</div>
+<!-- This page is only presented on an error. User is redirected on success. -->
 
-<div ng-if="!session.loading">
-  <div ng-if="session.invalidToken">
-    <div
-      class="jumbotron alert alert-danger">
+<div class="row">
+  <div class="col-xs-12">
+    <div ng-if="session.loading">
+      Ladataan ..
+    </div>
 
-      <div class="container">
-        <h1>Virheellinen sisäänkirjautumislinkki</h1>
+    <div ng-if="!session.loading">
+      <div ng-if="session.invalidToken">
+        <div class="jumbotron alert alert-danger">
 
-        <p>
-          Sisäänkirjautumislinkkisi on vanhentunut tai muutoin virheellinen.
-        </p>
+          <div class="container">
+            <h1>Avain ei kelpaa</h1>
 
-        <p>
-          Jos et ole vielä äänestänyt,
-          <a href="#/sign-up">pyydä uusi sisäänkirjautumislinkki</a>.
-          Jos ongelma toistuu, ota yhteys ylioppilaskunnan
-          vaalityöntekijään <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>.
-        </p>
+            <p class="lead">
+              Sisäänkirjautumislinkkisi on vanhentunut tai virheellinen.
+            </p>
 
-        <a
-          href="#/sign-up"
-          class="btn btn-primary">
-          Uusi sisäänkirjautumislinkki
-        </a>
+            <p>
+              <a
+                ng-href="#/sign-up"
+                class="btn btn-primary">
+                Pyydä uusi sisäänkirjautumislinkki
+              </a>
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 
-  </div>
-</div>
+  </div> <!-- col -->
+</div> <!-- row -->

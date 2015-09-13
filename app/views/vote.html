@@ -35,12 +35,14 @@
       ng-hide="vote.error">
 
       <div>
-        <div>
+        <div> <!-- required container for set-class-when-at-top -->
 
           <div
             class="panel panel-primary"
             set-class-when-at-top="fix-to-top"
-            padding-when-at-top="50">
+            padding-when-at-top="10">
+            <!-- N.B. padding-when-at-top must match the fixed position px,
+                 otherwise a jumpy side-effect will occurr -->
 
             <div class="panel-heading">
               <h3 class="panel-title">Äänestä</h3>

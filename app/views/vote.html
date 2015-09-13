@@ -34,63 +34,56 @@
       novalidate
       ng-hide="vote.error">
 
-      <div>
-        <div> <!-- required container for set-class-when-at-top -->
+      <div> <!-- required container for set-class-when-at-top -->
+        <div
+          class="panel panel-primary vote-ballot"
+          set-class-when-at-top="fix-to-top"
+          padding-when-at-top="10">
+          <!-- N.B. padding-when-at-top must match the fixed position px,
+               otherwise a jumpy side-effect will occurr -->
 
-          <div
-            class="panel panel-primary vote-ballot"
-            set-class-when-at-top="fix-to-top"
-            padding-when-at-top="10">
-            <!-- N.B. padding-when-at-top must match the fixed position px,
-                 otherwise a jumpy side-effect will occurr -->
-
-            <div class="panel-heading">
-              <h3 class="panel-title">Äänestä</h3>
-            </div>
-
-            <div class="panel-body">
-              <span
-                ng-hide="vote.isProspectSelected()">
-                Valitse ehdokas listasta, sen jälkeen tähän ilmestyy äänestyslippu.
-              </span>
-
-              <vote-prospect
-                ng-show="vote.isProspectSelected()"
-                selected="vote.selected"
-                all="vote.candidates">
-              </vote-prospect>
-
-            </div>
-
-
-            <div class="panel-footer">
-              <button
-                class="btn btn-default"
-                vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
-                vote-confirm-action="vote.register()"
-                ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
-                >
-
-                  <div ng-show="vote.submitting && !vote.submitted">
-                    <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-                    Äänestetään ..
-                  </div>
-
-                  <div ng-hide="vote.submitting || vote.submitted">
-                    Äänestä
-                  </div>
-
-                  <div ng-show="vote.submitted">
-                    Äänestetty!
-                  </div>
-              </button>
-
-            </div>
-
+          <div class="panel-heading">
+            <h3 class="panel-title">Äänestä</h3>
           </div>
 
+          <div class="panel-body">
+            <span
+              ng-hide="vote.isProspectSelected()">
+              Valitse ehdokas listasta, sen jälkeen tähän ilmestyy äänestyslippu.
+            </span>
+
+            <vote-prospect
+              ng-show="vote.isProspectSelected()"
+              selected="vote.selected"
+              all="vote.candidates">
+            </vote-prospect>
+          </div>
+
+          <div class="panel-footer">
+            <button
+              class="btn btn-default"
+              vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
+              vote-confirm-action="vote.register()"
+              ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
+              >
+
+                <div ng-show="vote.submitting && !vote.submitted">
+                  <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                  Äänestetään ..
+                </div>
+
+                <div ng-hide="vote.submitting || vote.submitted">
+                  Äänestä
+                </div>
+
+                <div ng-show="vote.submitted">
+                  Äänestetty!
+                </div>
+            </button>
+          </div>
         </div>
       </div>
+
 
       <div
         class="alert alert-success"

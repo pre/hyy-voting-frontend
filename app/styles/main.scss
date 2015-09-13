@@ -125,7 +125,14 @@ body {
   background-color: #f5f5f5;
 }
 
-/* Sticky header */
+.vote-ballot {
+  width: 450px;
+  /* #TODO: Set height so that  the unselected state
+            doesn't cause a jumpy side effect when
+            a candidate is selected in a scrolled state
+  */
+}
+
 .fix-to-top {
     position: fixed;
     top: 10px;

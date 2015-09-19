@@ -105,6 +105,7 @@
 
       <div ng-if="!vote.loading">
 
+        <!-- SEARCH -->
         <h2>Hae ehdokasta</h2>
         <label>
           Numero
@@ -116,26 +117,42 @@
           <input ng-model="vote.candidate.name">
         </label>
 
+        <!-- ALLIANCES -->
         <div ng-repeat="a in vote.alliances">
           <h1
             ng-bind="a.name"
             ng-show="filteredCandidates.length">
           </h1>
 
-          <ul>
-            <li ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)">
-              <label>
-                <input
-                  type="radio"
-                  ng-disabled="vote.submitting || vote.submitted"
-                  ng-model="vote.selected"
-                  ng-value="c.id">
-                {{ c.id }}
-                {{ c.number }}
-                {{ c.name }}
-              </label>
-            </li>
-          </ul>
+          <!-- CANDIDATES OF ALLIANCE -->
+          <table class="table table-striped table-hover">
+            <thead>
+              <th></th>
+              <th>Numero</th>
+              <th>Ehdokas (henkilökohtainen varajäsen)</th>
+            </thead>
+
+            <tbody>
+              <tr
+                ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)"
+                ng-class="{ 'info': vote.selected == c.id }"
+                >
+
+                <td>
+                <label>
+                  <input
+                    type="radio"
+                    ng-disabled="vote.submitting || vote.submitted"
+                    ng-model="vote.selected"
+                    ng-value="c.id">
+                  </td>
+                  <td ng-click="vote.select(c)">{{ c.number }}</td>
+                  <td ng-click="vote.select(c)">{{ c.name }}</td>
+                </label>
+              </tr>
+            </td>
+          </table>
+
         </div>
 
         <!-- #TODO remove completely -->

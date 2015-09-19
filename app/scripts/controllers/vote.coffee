@@ -36,6 +36,9 @@ angular.module 'hyyVotingFrontendApp'
     @isProspectSelected = ->
       @selected != null
 
+    @select = (candidate) ->
+      @selected = candidate.id
+
     @submit = (candidateId) ->
       @submitting = true
 

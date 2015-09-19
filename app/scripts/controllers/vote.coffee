@@ -8,12 +8,13 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', ($scope, Restangular, candidates, alliances) ->
+  .controller 'VoteCtrl', ($scope, Restangular, candidates, alliances, VoteSrv) ->
 
     @debug = false
 
-    @error = false
+    @loadError = false
     @loading = true
+    @selected = null
     @submitting = @submitted = false
     @alliances = []
     @candidates = [] # TODO Tämän vois poistaa ja hakea suoraan alliancesista
@@ -26,24 +27,30 @@ angular.module 'hyyVotingFrontendApp'
 
         (failure) =>
           console.error "Fetching alliances/candidates failed:", failure
-          @error = true
+          @loadError = true
       )
       .finally =>
         @loading = false
         $scope.$apply()
 
     @isProspectSelected = ->
-      @selected != undefined
+      @selected != null
 
-    @register = ->
+    @submit = (candidateId) ->
       @submitting = true
-      console.log "You voted #{@selected}"
-      Promise.delay(1000).then(
-        =>
-          @submitting = false
-          @submitted = true
-          console.log "Vote submitted!"
-          $scope.$apply()
+
+      VoteSrv.submit(candidateId).then(
+        (success) =>
+          console.log "Vote submitted for id", candidateId, success
+
+        (failure) =>
+          console.error "Vote failed for id", candidateId, failure
+          @submitError = true
+
+      ).finally( =>
+        @submitted = true
+        @submitting = false
+        $scope.$apply()
       )
 
     return

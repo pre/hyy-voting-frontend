@@ -4,7 +4,7 @@
 
 <div
   class="jumbotron alert alert-danger"
-  ng-if="vote.error">
+  ng-if="vote.loadError">
 
   <div class="container">
     <h1>Kävi hassusti :/</h1>
@@ -32,7 +32,7 @@
 
     <form
       novalidate
-      ng-hide="vote.error">
+      ng-hide="vote.loadError">
 
       <div> <!-- required container for set-class-when-at-top -->
         <div
@@ -63,7 +63,7 @@
             <button
               class="btn btn-primary"
               vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
-              vote-confirm-action="vote.register()"
+              vote-confirm-action="vote.submit(vote.selected)"
               ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
               ng-hide="vote.submitted"
               >
@@ -73,7 +73,7 @@
                   Äänestetään ..
                 </div>
 
-                <div ng-hide="vote.submitting || vote.submitted">
+                <div ng-hide="vote.submitting || vote.submitted || vote.submitError">
                   Äänestä
                 </div>
             </button>
@@ -81,9 +81,20 @@
             <div
               class="alert alert-success"
               role="alert"
-              ng-if="vote.submitted">
+              ng-if="vote.submitted && !vote.submitError">
               <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
             </div>
+
+            <div
+              class="alert alert-danger"
+              role="alert"
+              ng-if="vote.submitError">
+              <strong>Äänestäminen epäonnistui!</strong>
+              <br>
+              Lataa äänestyssivu uudelleen selaimen
+              refresh-toiminnolla ja yritä äänestää uudelleen.
+            </div>
+
           </div>
         </div>
       </div>

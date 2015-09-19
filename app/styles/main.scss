@@ -127,10 +127,25 @@ body {
 
 .vote-ballot {
   width: 450px;
-  /* #TODO: Set height so that  the unselected state
-            doesn't cause a jumpy side effect when
-            a candidate is selected in a scrolled state
-  */
+  z-index: 10;
+}
+
+.vote-ballot .panel-body {
+  height: 5.5em;
+}
+
+.vote-ballot .alert {
+  margin: 0;
+}
+
+.vote-ballot .panel-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.vote-ballot .btn {
+  padding: 15px;
+  width: 100%;
 }
 
 .fix-to-top {

@@ -61,10 +61,11 @@
 
           <div class="panel-footer">
             <button
-              class="btn btn-default"
+              class="btn btn-primary"
               vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Et voi muuttaa ääntäsi jälkikäteen."
               vote-confirm-action="vote.register()"
               ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
+              ng-hide="vote.submitted"
               >
 
                 <div ng-show="vote.submitting && !vote.submitted">
@@ -75,21 +76,16 @@
                 <div ng-hide="vote.submitting || vote.submitted">
                   Äänestä
                 </div>
-
-                <div ng-show="vote.submitted">
-                  Äänestetty!
-                </div>
             </button>
+
+            <div
+              class="alert alert-success"
+              role="alert"
+              ng-if="vote.submitted">
+              <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- #TODO This alert is not visible on scrolled state -->
-      <div
-        class="alert alert-success"
-        role="alert"
-        ng-if="vote.submitted">
-        <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
       </div>
 
       <div ng-if="vote.loading">

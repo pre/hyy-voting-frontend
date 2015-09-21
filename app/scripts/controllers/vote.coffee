@@ -67,8 +67,8 @@ angular.module 'hyyVotingFrontendApp'
     restrict: 'E'
     template: 'Numero: {{ prospect.number }} <br> Nimi: {{ prospect.name }}'
     scope:
-      selected: '='
-      all: '='
+      selected: '=vtSelected'
+      all: '=vtAll'
 
     link: (scope, element, attrs) ->
       scope.$watch 'selected', (newValue, oldValue) ->

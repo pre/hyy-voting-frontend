@@ -32,6 +32,7 @@
     "karma-coffee-preprocessor": "*",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
+    "s3-upload": "0.0.3",
     "time-grunt": "^1.0.0"
   },
   "engines": {

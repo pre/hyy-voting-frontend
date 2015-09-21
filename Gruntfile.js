@@ -410,6 +410,8 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            'mock_token/*',
+            'mock_api/*',
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',

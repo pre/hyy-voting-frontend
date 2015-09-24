@@ -11,13 +11,10 @@ angular.module 'hyyVotingFrontendApp'
   .controller 'SignInCtrl', ($location, $window, SessionSrv, Restangular) ->
     @loading = true
     @token = $location.search().token
-    @jsonRaw = "no data yet"
     @invalidToken = null
 
-    Restangular.one('mock_token', @token).get().then(
-      (data) =>
-        console.log "Set goodToken", data.goodToken
-        @jsonRaw = data
+    Restangular.all('sessions/create').post(token: @token).then(
+      (data) ->
         SessionSrv.save data
 
     ).then(
@@ -26,11 +23,11 @@ angular.module 'hyyVotingFrontendApp'
         $location.search('token', null)
         $location.path('/vote')
 
-      (error) =>
+      (failure) =>
         # TODO: Report this error to Rollbar
-        console.error "Sign in failed: #{error.message}", error
-        @jsonRaw = error
+        console.error "Sign in failed: #{failure.data.error.message}", failure
         @invalidToken = true
+
     ).finally => @loading = false
 
     return

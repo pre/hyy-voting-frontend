@@ -31,9 +31,10 @@ angular.module 'hyyVotingFrontendApp'
 
     @save = (data) ->
       new Promise (resolve, reject) ->
-        $window.sessionStorage.setItem 'goodToken', data.goodToken
-        $window.sessionStorage.setItem 'alliancesUrl', data.alliances.url
-        $window.sessionStorage.setItem 'candidatesUrl', data.candidates.url
+        $window.sessionStorage.setItem 'goodToken', data.details.goodToken
+        $window.sessionStorage.setItem 'alliancesUrl', data.details.alliances.url
+        $window.sessionStorage.setItem 'candidatesUrl', data.details.candidates.url
+        $window.sessionStorage.setItem 'jwt', data.jwt
 
         resolve()
 

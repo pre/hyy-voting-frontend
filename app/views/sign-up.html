@@ -47,7 +47,7 @@
             type="submit"
             class="btn btn-default btn-primary"
             ng-disabled="request.$invalid || session.loading"
-            ng-hide="session.submitted"
+            ng-hide="session.submitted || session.error"
             ng-click="session.requestLink()">
 
             <div ng-show="session.loading">
@@ -70,6 +70,40 @@
               Kirjaudu sisään noudattamalla sähköpostiosoiteeseesi
               lähetettyjä ohjeita.
             </p>
+          </div>
+
+          <div
+            class="alert alert-danger"
+            ng-show="session.error"
+            >
+
+            <p>
+              <strong>Jotain meni pieleen!</strong>
+              Linkkiä ei voitu lähettää.
+            </p>
+
+            <p>
+              Jos ongelma toistuu, ota yhteys HYYn vaalityöntekijään
+              HYYn vaalityöntekijään vaalit@hyy.fi
+              Etunimi Sukuniminen +358 44 123 4567.
+              <!-- #TODO Yhteystiedot -->
+            </p>
+
+            <hr>
+
+            <p>
+              Kerro vaalityöntekijälle virheen tekninen syy:
+              <br>
+              Status: <span ng-bind="session.error.status"></span>
+              <br>
+              Code: <span ng-bind="session.error.data"></span>
+
+              <div ng-if="session.error && !session.error.data">
+                <hr>
+                Raw: <pre><code><span ng-bind="session.error | json"</span></code></pre>
+              </div>
+            </p>
+
           </div>
 
         </div>

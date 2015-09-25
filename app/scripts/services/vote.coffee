@@ -8,15 +8,10 @@
  # Service in the hyyVotingFrontendApp.
 ###
 angular.module 'hyyVotingFrontendApp'
-  .service 'VoteSrv', ->
+  .service 'VoteSrv', (Restangular) ->
 
     @submit = (candidateId) ->
       console.log "You voted #{candidateId}"
-      Promise.delay(1000).then(
-        ->
-          new Promise (resolve, reject) ->
-            resolve("great success")
-
-      )
+      Restangular.all('votes').post(candidate: { id: candidateId } )
 
     return

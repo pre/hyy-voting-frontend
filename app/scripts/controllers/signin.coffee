@@ -8,24 +8,20 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'SignInCtrl', ($location, $window, SessionSrv, Restangular) ->
+  .controller 'SignInCtrl', ($location, $window, SessionSrv) ->
     @loading = true
     @token = $location.search().token
     @invalidToken = null
 
-    Restangular.all('sessions/create').post(token: @token).then(
-      (data) ->
-        SessionSrv.save data
-
-    ).then(
+    SessionSrv.signIn(@token).then(
       (success) ->
         console.log "Redirect to 'vote'"
         $location.search('token', null)
         $location.path('/vote')
 
       (failure) =>
-        # TODO: Report this error to Rollbar
-        console.error "Sign in failed: #{failure.data.error.message}", failure
+        # TODO: Report to Rollbar unless failure.status == 401 unauthorized
+        console.error "Sign in failed: ", failure
         @invalidToken = true
 
     ).finally => @loading = false

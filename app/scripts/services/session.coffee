@@ -13,6 +13,11 @@ angular.module 'hyyVotingFrontendApp'
     @requestLink = (email) ->
       Restangular.all('tokens').post(email: email)
 
+    @signIn = (token) ->
+      Restangular.all('sessions').post(token: token).then(
+        (data) => @save data
+      )
+
     @getToken = ->
       console.log "goodToken: ", $window.sessionStorage.getItem 'goodToken'
       $window.sessionStorage.getItem 'goodToken'

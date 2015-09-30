@@ -8,14 +8,19 @@
  # Service in the hyyVotingFrontendApp.
 ###
 angular.module 'hyyVotingFrontendApp'
-  .service 'SessionSrv', ($window) ->
+  .service 'SessionSrv', ($window, Restangular) ->
 
-    @requestLink = ->
-      Promise.resolve message: "lol"
+    @requestLink = (email) ->
+      Restangular.all('tokens').post(email: email)
 
-    @getToken = ->
+    @signIn = (token) ->
+      Restangular.all('sessions').post(token: token).then(
+        (data) => @save data
+      )
+
+    @getJwt = ->
       console.log "goodToken: ", $window.sessionStorage.getItem 'goodToken'
-      $window.sessionStorage.getItem 'goodToken'
+      $window.sessionStorage.getItem 'jwt'
 
     @getCandidatesUrl = ->
       url = $window.sessionStorage.getItem 'candidatesUrl'
@@ -31,9 +36,10 @@ angular.module 'hyyVotingFrontendApp'
 
     @save = (data) ->
       new Promise (resolve, reject) ->
-        $window.sessionStorage.setItem 'goodToken', data.goodToken
-        $window.sessionStorage.setItem 'alliancesUrl', data.alliances.url
-        $window.sessionStorage.setItem 'candidatesUrl', data.candidates.url
+        $window.sessionStorage.setItem 'goodToken', data.details.goodToken
+        $window.sessionStorage.setItem 'alliancesUrl', data.details.alliances.url
+        $window.sessionStorage.setItem 'candidatesUrl', data.details.candidates.url
+        $window.sessionStorage.setItem 'jwt', data.jwt
 
         resolve()
 

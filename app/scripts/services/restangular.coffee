@@ -8,8 +8,8 @@
  # Service in the hyyVotingFrontendApp.
 ###
 angular.module 'hyyVotingFrontendApp'
-  # .run (Restangular) ->
-    # Restangular.setBaseUrl "http://localhost:9000" # TODO load from env
+  .run (Restangular) ->
+    Restangular.setBaseUrl "http://localhost:3001" # TODO load from env
 
   .config (RestangularProvider) ->
     RestangularProvider.setDefaultHttpFields
@@ -18,7 +18,7 @@ angular.module 'hyyVotingFrontendApp'
   .service 'SessionRestangular', (Restangular, SessionSrv) ->
     return Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setDefaultHeaders
-        'goodToken': SessionSrv.getToken()
+        'Authorization': "Bearer #{SessionSrv.getJwt()}"
 
   .service 'UnauthenticatedRestangular', (Restangular) ->
     return Restangular

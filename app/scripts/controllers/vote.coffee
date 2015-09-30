@@ -8,7 +8,7 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', ($scope, Restangular, candidates, alliances, VoteSrv) ->
+  .controller 'VoteCtrl', ($scope, candidates, alliances, VoteSrv) ->
 
     @debug = false
 
@@ -43,17 +43,22 @@ angular.module 'hyyVotingFrontendApp'
       @submitting = true
 
       VoteSrv.submit(candidateId).then(
-        (success) =>
+        (success) ->
           console.log "Vote submitted for id", candidateId, success
 
         (failure) =>
           console.error "Vote failed for id", candidateId, failure
           @submitError = true
 
+      ).catch(
+        (e) =>
+          #TODO report to rollbar
+          console.error "Internal error. Vote failed!", e
+          @submitError = true
+
       ).finally( =>
         @submitted = true
         @submitting = false
-        $scope.$apply()
       )
 
     return

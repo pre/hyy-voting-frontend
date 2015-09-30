@@ -19,15 +19,18 @@ angular.module 'hyyVotingFrontendApp'
 
       SessionSrv.requestLink(email).then(
         (data) =>
-          console.log "Success sending link", data
+          console.log "Success requesting link", data
           @submitted = true
-          $scope.$apply() # TODO: Remove after Restangular
 
         (failure) =>
-          console.error "Failed sending link", failure
-          @error = failure.message
+          console.error "Failed requesting link", failure
+          @error = failure
+
       ).catch(
-        (e) -> console.error "Wat happened", e
+        (e) =>
+          # TODO report to Rollbar
+          console.error "Wat happened", e
+          @error = e
       ).finally =>
         @loading = false
 

@@ -18,9 +18,9 @@ angular.module 'hyyVotingFrontendApp'
         (data) => @save data
       )
 
-    @getToken = ->
+    @getJwt = ->
       console.log "goodToken: ", $window.sessionStorage.getItem 'goodToken'
-      $window.sessionStorage.getItem 'goodToken'
+      $window.sessionStorage.getItem 'jwt'
 
     @getCandidatesUrl = ->
       url = $window.sessionStorage.getItem 'candidatesUrl'

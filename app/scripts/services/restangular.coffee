@@ -18,7 +18,7 @@ angular.module 'hyyVotingFrontendApp'
   .service 'SessionRestangular', (Restangular, SessionSrv) ->
     return Restangular.withConfig (RestangularConfigurer) ->
       RestangularConfigurer.setDefaultHeaders
-        'goodToken': SessionSrv.getToken()
+        'Authorization': "Bearer #{SessionSrv.getJwt()}"
 
   .service 'UnauthenticatedRestangular', (Restangular) ->
     return Restangular

@@ -8,7 +8,7 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', ($scope, Restangular, candidates, alliances, VoteSrv) ->
+  .controller 'VoteCtrl', ($scope, candidates, alliances, VoteSrv) ->
 
     @debug = false
 

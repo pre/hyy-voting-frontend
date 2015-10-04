@@ -3,6 +3,7 @@
 ## Setup
 
 ~~~
+bundle install
 npm install
 bower install
 ~~~

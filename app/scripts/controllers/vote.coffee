@@ -47,6 +47,7 @@ angular.module 'hyyVotingFrontendApp'
           console.log "Vote submitted for id", candidateId, success
 
         (failure) =>
+          # TODO Report to Rollbar
           console.error "Vote failed for id", candidateId, failure
           @submitError = true
 

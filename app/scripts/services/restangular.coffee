@@ -9,7 +9,7 @@
 ###
 angular.module 'hyyVotingFrontendApp'
   .run (Restangular) ->
-    Restangular.setBaseUrl "http://localhost:3001" # TODO load from env
+    Restangular.setBaseUrl "http://localhost:3000/api" # TODO load from env
 
   .config (RestangularProvider) ->
     RestangularProvider.setDefaultHttpFields

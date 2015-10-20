@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - Install Node 0.12 with NVM
-- `npm install -g grunt-cli bower`
+- `npm install -g grunt-cli bower yo generator-karma generator-angular`
 
 ## Setup
 
@@ -16,6 +16,10 @@ bower install
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
+
+## Generators
+
+`yo angular:controller cat`
 
 ## Testing
 

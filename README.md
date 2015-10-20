@@ -1,5 +1,10 @@
 # hyy-voting-frontend
 
+## Prerequisites
+
+- Install Node 0.12 with NVM
+- `npm install -g grunt-cli bower`
+
 ## Setup
 
 ~~~

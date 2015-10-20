@@ -17,7 +17,7 @@ angular.module 'hyyVotingFrontendApp'
       (success) ->
         console.log "Redirect to 'vote'"
         $location.search('token', null)
-        $location.path('/vote')
+        $location.path('/elections')
 
       (failure) =>
         # TODO: Report to Rollbar unless failure.status == 401 unauthorized

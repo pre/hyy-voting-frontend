@@ -45,6 +45,7 @@ angular.module 'hyyVotingFrontendApp'
       VoteSrv.submit(candidateId).then(
         (success) ->
           console.log "Vote submitted for id", candidateId, success
+          # TODO: Redirect to /elections
 
         (failure) =>
           # TODO Report to Rollbar

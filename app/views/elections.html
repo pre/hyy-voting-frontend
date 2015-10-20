@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>Hallintovaalit</h1>
+</div>
+
+<div
+  class="jumbotron alert alert-danger"
+  ng-if="elections.loadError">
+
+  <div class="container">
+    <h1>Kävi hassusti :/</h1>
+
+    <p>
+      Ehdokastietojen lataaminen epäonnistui.
+    </p>
+
+    <p>
+      Pyydä <a ng-href="#/sign-up">uusi sisäänkirjautumislinkki</a>
+      ja yritä uudelleen.
+    </p>
+
+    <a
+      ng-href="#/sign-up"
+      class="btn btn-primary">
+      Uusi sisäänkirjautumislinkki
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>
+      Voit äänestää seuraavissa vaaleissa:
+    </p>
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <th>Vaali</th>
+        <th>Laitos</th>
+        <th>Äänestetty?</th>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="election in elections.all">
+          <td>
+            <a ng-href="#/vote?election={{ election.id }}">{{ election.type }}</a>
+          </td>
+          <td ng-bind="election.name"></td>
+          <td ng-bind="election.voted_at"></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

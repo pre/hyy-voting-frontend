@@ -1,44 +1,28 @@
 'use strict'
 
 angular.module 'hyyVotingFrontendApp'
-  .factory 'elections', ->
+  .factory 'elections', ($window) ->
+    _all = ->
+      JSON.parse $window.sessionStorage.getItem('elections')
+
+    _getElection = (electionId) ->
+      _.find _all(), 'id', parseInt(electionId)
+
+    save: (elections) ->
+      console.log "got elections", elections
+      $window.sessionStorage.setItem 'elections', JSON.stringify elections
+
     get: ->
-      [{
-        id: 1,
-        type: "faculty"
-        name: "Humanistinen tiedekunta",
-        candidates: {
-          url: "/mock_api/hum_tdk-candidates.json"
-        },
-        alliances: {
-          url: "/mock_api/hum_tdk-alliances.json"
-        },
-        voted_at: "2015-10-21"
-      },
+      new Promise (resolve, reject) ->
+        elections = $window.sessionStorage.getItem('elections')
 
-      {
-        id: 2,
-        type: "department",
-        name: "Filosofian laitos",
-        candidates: {
-          url: "/mock_api/hum_tdk-candidates.json"
-        },
-        alliances: {
-          url: "/mock_api/hum_tdk-alliances.json"
-        },
-        voted_at: null
-      },
+        if elections
+          resolve JSON.parse elections
+        else
+          reject "No elections available"
 
-      {
-        id: 3,
-        type: "college"
-        name: "Kollegio (Humanistit)",
-        candidates: {
-          url: "/mock_api/hum_tdk-candidates.json"
-        },
-        alliances: {
-          url: "/mock_api/hum_tdk-alliances.json"
-        },
-        voted_at: "2015-10-20"
-      },
-      ]
+    getCandidatesUrl: (electionId) ->
+      _getElection(electionId).candidates.url
+
+    getAlliancesUrl: (electionId) ->
+      _getElection(electionId).alliances.url

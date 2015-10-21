@@ -1,10 +1,10 @@
 'use strict'
 
 angular.module 'hyyVotingFrontendApp'
-  .factory 'candidates', (SessionRestangular, SessionSrv) ->
-    get: ->
+  .factory 'candidates', (SessionRestangular, elections) ->
+    get: (electionId) ->
       new Promise (resolve, reject) ->
-        url = SessionSrv.getCandidatesUrl()
+        url = elections.getCandidatesUrl(electionId)
 
         if url
           resolve SessionRestangular.allUrl('candidates', url).getList()

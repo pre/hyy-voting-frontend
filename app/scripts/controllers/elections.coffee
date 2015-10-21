@@ -8,9 +8,20 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'ElectionsCtrl', (elections) ->
+  .controller 'ElectionsCtrl', ($scope, elections) ->
 
-    @all = elections.get()
+    @all = null
+    @loadError = false
+
+    elections.get().then(
+      (data) =>
+        @all = data
+        $scope.$apply()
+
+      (failure) =>
+        console.error "Failed getting elections:", failure
+        @loadError = failure
+    )
 
 
     # TODO:

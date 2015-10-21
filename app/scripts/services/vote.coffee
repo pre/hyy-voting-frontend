@@ -12,6 +12,6 @@ angular.module 'hyyVotingFrontendApp'
 
     @submit = (candidateId) ->
       console.log "You voted #{candidateId}"
-      SessionRestangular.all('votes').post(candidate: { id: candidateId } )
+      SessionRestangular.all('votes').post(candidate_id: candidateId )
 
     return

@@ -3,30 +3,29 @@
 </div>
 
 <div
-  class="jumbotron alert alert-danger"
+  class="jumbotron alert alert-info"
   ng-if="elections.loadError">
 
   <div class="container">
-    <h1>Kävi hassusti :/</h1>
+    <h1>Sisäänkirjaudu</h1>
 
     <p>
-      Ehdokastietojen lataaminen epäonnistui.
-    </p>
-
-    <p>
-      Pyydä <a ng-href="#/sign-up">uusi sisäänkirjautumislinkki</a>
-      ja yritä uudelleen.
+      Pääset äänestämään sen jälkeen, kun olet pyytänyt
+      sisäänkirjautumislinkin sähköpostiisi.
     </p>
 
     <a
       ng-href="#/sign-up"
       class="btn btn-primary">
-      Uusi sisäänkirjautumislinkki
+      Pyydä sisäänkirjautumislinkki
     </a>
   </div>
 </div>
 
-<div class="row">
+<div
+  ng-if="!elections.loadError"
+  class="row">
+
   <div class="col-xs-12">
     <p>
       Voit äänestää seuraavissa vaaleissa:

@@ -15,7 +15,6 @@ angular.module 'hyyVotingFrontendApp'
 
     SessionSrv.signIn(@token).then(
       (success) ->
-        console.log "Redirect to 'vote'"
         $location.search('token', null)
         $location.path('/elections')
 

@@ -43,7 +43,7 @@ angular.module 'hyyVotingFrontendApp'
     @submit = (candidateId) ->
       @submitting = true
 
-      VoteSrv.submit(candidateId).then(
+      VoteSrv.submit(@electionId, candidateId).then(
         (success) ->
           console.log "Vote submitted for id", candidateId, success
           # TODO: Redirect to /elections

@@ -10,8 +10,12 @@
 angular.module 'hyyVotingFrontendApp'
   .service 'VoteSrv', (SessionRestangular) ->
 
-    @submit = (candidateId) ->
-      console.log "You voted #{candidateId}"
-      SessionRestangular.all('votes').post(candidate_id: candidateId )
+    @submit = (electionId, candidateId) ->
+      console.log "[election: #{electionId}] You voted id: #{candidateId}"
+      SessionRestangular
+        .one('elections', electionId)
+        .one('candidates', candidateId)
+        .all('vote')
+        .post()
 
     return

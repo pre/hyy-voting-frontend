@@ -11,18 +11,20 @@ angular.module 'hyyVotingFrontendApp'
   .controller 'ElectionsCtrl', ($scope, elections) ->
 
     @all = null
+    @loading = true
     @loadError = false
 
     elections.get().then(
       (data) =>
         @all = data
-        $scope.$apply()
 
       (failure) =>
-        console.error "Failed getting elections:", failure
         @loadError = failure
-    )
+        console.error "Failed getting elections:", failure
 
+    ).finally =>
+      @loading = false
+      $scope.$apply()
 
     # TODO:
     #  - list all elections

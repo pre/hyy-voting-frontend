@@ -3,6 +3,15 @@
 </div>
 
 <div
+  class="row">
+  <div class="col-xs-12">
+    <div ng-if="elections.loading">
+      Ladataan ..
+    </div>
+  </div>
+</div>
+
+<div
   class="jumbotron alert alert-info"
   ng-if="elections.loadError">
 
@@ -23,7 +32,7 @@
 </div>
 
 <div
-  ng-if="!elections.loadError"
+  ng-if="!elections.loadError && !elections.loading"
   class="row">
 
   <div class="col-xs-12">

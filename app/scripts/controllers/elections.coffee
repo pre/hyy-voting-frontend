@@ -1,12 +1,5 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name hyyVotingFrontendApp.controller:ElectionsCtrl
- # @description
- # # ElectionsCtrl
- # Controller of the hyyVotingFrontendApp
-###
 angular.module 'hyyVotingFrontendApp'
   .controller 'ElectionsCtrl', ($scope, elections) ->
 
@@ -20,6 +13,7 @@ angular.module 'hyyVotingFrontendApp'
 
       (failure) =>
         @loadError = failure
+        # TODO: Report to Rollbar
         console.error "Failed getting elections:", failure
 
     ).finally =>

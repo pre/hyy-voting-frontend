@@ -18,4 +18,9 @@ angular.module 'hyyVotingFrontendApp'
         .all('vote')
         .post()
 
+    @all = ->
+      SessionRestangular
+        .all("votes")
+        .getList()
+
     return

@@ -42,18 +42,20 @@
 
     <table class="table table-striped table-hover">
       <thead>
-        <th>Vaali</th>
-        <th>Laitos</th>
+        <th>Vaalin nimi</th>
         <th>Äänestetty?</th>
       </thead>
 
       <tbody>
         <tr ng-repeat="election in elections.all">
           <td>
-            <a ng-href="#/vote?election={{ election.id }}">{{ election.type }}</a>
+            <a ng-href="#/vote?election={{ election.id }}">{{ election.name }}</a>
           </td>
-          <td ng-bind="election.name"></td>
-          <td ng-bind="election.voted_at"></td>
+          <td>
+            <vt-vote-status
+              vt-vote-status-votes="elections.votes"
+              vt-vote-status-election="election"></vt-vote-status>
+          </td>
         </tr>
 
       </tbody>

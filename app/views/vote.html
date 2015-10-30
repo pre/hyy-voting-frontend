@@ -81,7 +81,20 @@
               class="alert alert-success"
               role="alert"
               ng-if="vote.submitted && !vote.submitError">
-              <strong>Äänesi on nyt kirjattu!</strong> Voit sulkea selainikkunan.
+
+              <p>
+                <strong>Äänesi on nyt kirjattu!</strong>
+              </p>
+
+              <p>
+                Jos sinulla oli äänioikeus muihinkin vaaleihin,
+                <br>
+                <a ng-href="#/elections">valitse seuraava vaali</a>.
+              </p>
+
+              <p>
+                Sulje lopuksi selainikkuna.
+              </p>
             </div>
 
             <div

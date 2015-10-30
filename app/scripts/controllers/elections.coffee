@@ -26,9 +26,4 @@ angular.module 'hyyVotingFrontendApp'
       @loading = false
       $scope.$apply()
 
-    # TODO:
-    #  - list all elections
-    #  - allow user to select election
-    #  - if only one election, redirect directly to it
-
     return

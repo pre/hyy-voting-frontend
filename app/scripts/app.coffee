@@ -39,5 +39,9 @@ angular
         templateUrl: 'views/vote.html'
         controller: 'VoteCtrl'
         controllerAs: 'vote'
+      .when '/elections',
+        templateUrl: 'views/elections.html'
+        controller: 'ElectionsCtrl'
+        controllerAs: 'elections'
       .otherwise
         redirectTo: '/'

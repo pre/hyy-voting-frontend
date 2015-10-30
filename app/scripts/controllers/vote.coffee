@@ -8,18 +8,19 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', ($scope, candidates, alliances, VoteSrv) ->
+  .controller 'VoteCtrl', ($scope, $location, candidates, alliances, VoteSrv) ->
 
     @debug = false
 
+    @electionId = $location.search().election
     @loadError = false
     @loading = true
     @selected = null
     @submitting = @submitted = false
     @alliances = []
-    @candidates = [] # TODO Tämän vois poistaa ja hakea suoraan alliancesista
+    @candidates = []
 
-    Promise.all [alliances.get(), candidates.get()]
+    Promise.all [alliances.get(@electionId), candidates.get(@electionId)]
       .then(
         (results) =>
           @alliances = results[0]
@@ -45,6 +46,7 @@ angular.module 'hyyVotingFrontendApp'
       VoteSrv.submit(candidateId).then(
         (success) ->
           console.log "Vote submitted for id", candidateId, success
+          # TODO: Redirect to /elections
 
         (failure) =>
           # TODO Report to Rollbar

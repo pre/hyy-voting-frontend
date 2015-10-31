@@ -23,4 +23,10 @@ angular.module 'hyyVotingFrontendApp'
         .all("votes")
         .getList()
 
+    @get = (electionId) ->
+      SessionRestangular
+        .one("elections", electionId)
+        .one('vote')
+        .get()
+
     return

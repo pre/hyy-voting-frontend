@@ -20,11 +20,16 @@ angular.module 'hyyVotingFrontendApp'
     @alliances = []
     @candidates = []
 
-    Promise.all [alliances.get(@electionId), candidates.get(@electionId)]
+    Promise.all [
+      alliances.get(@electionId),
+      candidates.get(@electionId),
+      VoteSrv.get(@electionId)
+    ]
       .then(
         (results) =>
           @alliances = results[0]
           @candidates = results[1]
+          @selected = results[2].candidate_id
 
         (failure) =>
           console.error "Fetching alliances/candidates failed:", failure

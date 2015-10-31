@@ -19,6 +19,7 @@ angular.module 'hyyVotingFrontendApp'
     @submitting = @submitted = false
     @alliances = []
     @candidates = []
+    @savedVote = null
 
     Promise.all [
       alliances.get(@electionId),
@@ -29,7 +30,8 @@ angular.module 'hyyVotingFrontendApp'
         (results) =>
           @alliances = results[0]
           @candidates = results[1]
-          @selected = results[2].candidate_id
+          @savedVote = results[2]
+          @selected = @savedVote.candidate_id
 
         (failure) =>
           #TODO: Report to Rollbar
@@ -46,13 +48,17 @@ angular.module 'hyyVotingFrontendApp'
     @select = (candidate) ->
       @selected = candidate.id
 
+    @isUnsaved = ->
+      return false unless @selected and @savedVote
+
+      @selected != @savedVote.candidate_id
+
     @submit = (candidateId) ->
       @submitting = true
 
       VoteSrv.submit(@electionId, candidateId).then(
         (success) ->
           console.log "Vote submitted for id", candidateId, success
-          # TODO: Redirect to /elections
 
         (failure) =>
           # TODO Report to Rollbar
@@ -79,7 +85,7 @@ angular.module 'hyyVotingFrontendApp'
 
   .directive 'voteProspect', ->
     restrict: 'E'
-    template: 'Numero: {{ prospect.number }} <br> Nimi: {{ prospect.name }}'
+    template: 'Numero: <strong>{{ prospect.number }}</strong> <br> Nimi: <strong>{{ prospect.name }}</strong>'
     scope:
       selected: '=vtSelected'
       all: '=vtAll'

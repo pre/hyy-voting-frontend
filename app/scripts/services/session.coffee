@@ -11,7 +11,10 @@ angular.module 'hyyVotingFrontendApp'
   .service 'SessionSrv', ($window, Restangular, elections) ->
 
     @requestLink = (email) ->
-      Restangular.all('tokens').post(email: email)
+      Restangular
+        .all('sessions')
+        .all('link')
+        .post(email: email)
 
     @signIn = (token) ->
       Restangular.all('sessions').post(token: token).then(

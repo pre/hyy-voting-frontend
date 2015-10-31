@@ -48,7 +48,7 @@
             class="btn btn-default btn-primary"
             ng-disabled="request.$invalid || session.loading"
             ng-hide="session.submitted || session.error"
-            ng-click="session.requestLink()">
+            ng-click="session.requestLink(session.email)">
 
             <div ng-show="session.loading">
               <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>

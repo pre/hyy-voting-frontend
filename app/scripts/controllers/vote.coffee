@@ -32,6 +32,7 @@ angular.module 'hyyVotingFrontendApp'
           @selected = results[2].candidate_id
 
         (failure) =>
+          #TODO: Report to Rollbar
           console.error "Fetching alliances/candidates failed:", failure
           @loadError = true
       )

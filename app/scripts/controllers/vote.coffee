@@ -30,8 +30,10 @@ angular.module 'hyyVotingFrontendApp'
         (results) =>
           @alliances = results[0]
           @candidates = results[1]
-          @savedVote = results[2]
-          @selected = @savedVote.candidate_id
+
+          if !_.isEmpty results[2]
+            @savedVote = results[2]
+            @selected = @savedVote.candidate_id
 
         (failure) =>
           #TODO: Report to Rollbar
@@ -49,7 +51,7 @@ angular.module 'hyyVotingFrontendApp'
       @selected = candidate.id
 
     @isUnsaved = ->
-      return false unless @selected and @savedVote
+      return false if !@selected or !@savedVote or _.isEmpty(@savedVote)
 
       @selected != @savedVote.candidate_id
 

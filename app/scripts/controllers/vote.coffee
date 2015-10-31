@@ -93,12 +93,3 @@ angular.module 'hyyVotingFrontendApp'
     link: (scope, element, attrs) ->
       scope.$watch 'selected', (newValue, oldValue) ->
         scope.prospect = _.find scope.all, 'id', newValue
-
-  .directive 'voteConfirmClick', ->
-    link: (scope, element, attr) ->
-      msg = attr.voteConfirmClick || "Are you sure?"
-      clickAction = attr.voteConfirmAction
-
-      element.bind 'click', (event) ->
-        if (window.confirm(msg))
-          scope.$eval(clickAction)

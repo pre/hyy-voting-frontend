@@ -72,8 +72,7 @@
           <div class="panel-footer">
             <button
               class="btn btn-primary"
-              vote-confirm-click="Haluatko äänestää valitsemaasi henkilöä? Voit muuttaa ääntäsi jälkikäteen."
-              vote-confirm-action="vote.submit(vote.selected)"
+              ng-click="vote.submit(vote.selected)"
               ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
               ng-hide="vote.submitted"
               >

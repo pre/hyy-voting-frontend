@@ -95,12 +95,7 @@
               <br>
               Status: <span ng-bind="session.error.status"></span>
               <br>
-              Code: <span ng-bind="session.error.data"></span>
-
-              <div ng-if="session.error && !session.error.data">
-                <hr>
-                Raw: <pre><code><span ng-bind="session.error | json"></span></code></pre>
-              </div>
+              Code: <span ng-bind="session.error.data | json"></span>
             </p>
 
           </div>

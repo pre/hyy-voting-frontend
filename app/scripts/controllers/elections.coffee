@@ -16,7 +16,6 @@ angular.module 'hyyVotingFrontendApp'
 
         (failure) =>
           @loadError = failure
-          errorMonitor.error failure, "Failed getting elections"
 
       ).finally =>
         @loading = false

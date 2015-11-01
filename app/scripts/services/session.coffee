@@ -1,12 +1,5 @@
 'use strict'
 
-###*
- # @ngdoc service
- # @name hyyVotingFrontendApp.Session
- # @description
- # # Session
- # Service in the hyyVotingFrontendApp.
-###
 angular.module 'hyyVotingFrontendApp'
   .service 'SessionSrv', ($window, Restangular, elections) ->
 
@@ -24,10 +17,18 @@ angular.module 'hyyVotingFrontendApp'
     @getJwt = ->
       $window.sessionStorage.getItem 'jwt'
 
+    @getUser = ->
+      try
+        JSON.parse $window.sessionStorage.getItem 'user'
+      catch e
+        console.log "Could not get current user", e
+        {}
+
     @save = (data) ->
       new Promise (resolve, reject) ->
         elections.save data.elections
         $window.sessionStorage.setItem 'jwt', data.jwt
+        $window.sessionStorage.setItem 'user', JSON.stringify data.user
 
         resolve()
 

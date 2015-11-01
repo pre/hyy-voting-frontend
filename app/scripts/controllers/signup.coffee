@@ -8,7 +8,7 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'SignUpCtrl', (SessionSrv, $scope, $location) ->
+  .controller 'SignUpCtrl', (SessionSrv, $scope, $location, errorMonitor) ->
     @loading = false
     @submitted = false
     @error = null
@@ -19,7 +19,6 @@ angular.module 'hyyVotingFrontendApp'
 
       SessionSrv.requestLink(email).then(
         (data) =>
-          console.log "Success requesting link", data
           @submitted = true
 
         (failure) =>
@@ -28,8 +27,7 @@ angular.module 'hyyVotingFrontendApp'
 
       ).catch(
         (e) =>
-          # TODO report to Rollbar
-          console.error "Wat happened", e
+          errorMonitor.error e, "Requesting session link failed"
           @error = e
       ).finally =>
         @loading = false

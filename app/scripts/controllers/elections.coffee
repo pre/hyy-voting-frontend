@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module 'hyyVotingFrontendApp'
-  .controller 'ElectionsCtrl', ($scope, elections, VoteSrv) ->
+  .controller 'ElectionsCtrl', ($scope, elections, VoteSrv, errorMonitor) ->
 
     @all = null
     @votes = null
@@ -13,12 +13,10 @@ angular.module 'hyyVotingFrontendApp'
         (results) =>
           @all = results[0]
           @votes = results[1]
-          console.log "got votes", @votes
 
         (failure) =>
           @loadError = failure
-          # TODO: Report to Rollbar
-          console.error "Failed getting elections:", failure
+          errorMonitor.error failure, "Failed getting elections"
 
       ).finally =>
         @loading = false

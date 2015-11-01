@@ -8,7 +8,7 @@
  # Controller of the hyyVotingFrontendApp
 ###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', ($scope, $location, candidates, alliances, VoteSrv) ->
+  .controller 'VoteCtrl', ($scope, $location, candidates, alliances, VoteSrv, errorMonitor) ->
 
     @debug = false
 
@@ -36,9 +36,8 @@ angular.module 'hyyVotingFrontendApp'
             @selected = @savedVote.candidate_id
 
         (failure) =>
-          #TODO: Report to Rollbar
-          console.error "Fetching alliances/candidates failed:", failure
           @loadError = true
+          errorMonitor.error failure, "Fetching alliances/candidates failed"
       )
       .finally =>
         @loading = false
@@ -63,15 +62,14 @@ angular.module 'hyyVotingFrontendApp'
           console.log "Vote submitted for id", candidateId, success
 
         (failure) =>
-          # TODO Report to Rollbar
           console.error "Vote failed for id", candidateId, failure
           @submitError = true
+          errorMonitor.error failure, "Vote failed"
 
       ).catch(
         (e) =>
-          #TODO report to rollbar
-          console.error "Internal error. Vote failed!", e
           @submitError = true
+          errorMonitor.error e, "Vote failed for unknown error."
 
       ).finally( =>
         @submitted = true

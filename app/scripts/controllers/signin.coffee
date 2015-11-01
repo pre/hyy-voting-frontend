@@ -1,14 +1,7 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name hyyVotingFrontendApp.controller:SigninCtrl
- # @description
- # # SigninCtrl
- # Controller of the hyyVotingFrontendApp
-###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'SignInCtrl', ($location, $window, SessionSrv) ->
+  .controller 'SignInCtrl', ($location, $window, SessionSrv, errorMonitor) ->
     @loading = true
     @token = $location.search().token
     @invalidToken = null
@@ -19,9 +12,11 @@ angular.module 'hyyVotingFrontendApp'
         $location.path('/elections')
 
       (failure) =>
-        # TODO: Report to Rollbar unless failure.status == 401 unauthorized
         console.error "Sign in failed: ", failure
         @invalidToken = true
+
+        if failure.status != 403
+          errorMonitor.error failure, "Sign in failed for other reason than HTTP 403"
 
     ).finally => @loading = false
 

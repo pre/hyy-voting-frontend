@@ -43,5 +43,9 @@ angular
         templateUrl: 'views/elections.html'
         controller: 'ElectionsCtrl'
         controllerAs: 'elections'
+      .when '/profile',
+        templateUrl: 'views/profile.html'
+        controller: 'ProfileCtrl'
+        controllerAs: 'profile'
       .otherwise
         redirectTo: '/'

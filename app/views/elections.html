@@ -6,7 +6,7 @@
   class="row">
   <div class="col-xs-12">
     <div ng-if="elections.loading">
-      Ladataan ..
+      Ladataan .. Loading .. Laddar ..
     </div>
   </div>
 </div>
@@ -32,7 +32,18 @@
 </div>
 
 <div
-  ng-if="!elections.loadError && !elections.loading"
+  ng-if="!elections.isElectionsActive"
+  class="row">
+
+  <div class="col-xs-12">
+    <p>
+      Äänestäminen ei ole vielä alkanut.
+    </p>
+  </div>
+</div>
+
+<div
+  ng-if="!elections.loadError && !elections.loading && elections.isElectionsActive"
   class="row">
 
   <div class="col-xs-12">

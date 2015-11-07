@@ -14,6 +14,10 @@ angular.module 'hyyVotingFrontendApp'
         (data) => @save data
       )
 
+    @signOut = ->
+      new Promise (resolve, reject) ->
+        resolve $window.sessionStorage.clear()
+
     @getJwt = ->
       $window.sessionStorage.getItem 'jwt'
 

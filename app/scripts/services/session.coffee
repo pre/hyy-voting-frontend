@@ -14,6 +14,10 @@ angular.module 'hyyVotingFrontendApp'
         (data) => @save data
       )
 
+    @signOut = ->
+      new Promise (resolve, reject) ->
+        resolve $window.sessionStorage.clear()
+
     @getJwt = ->
       $window.sessionStorage.getItem 'jwt'
 
@@ -24,12 +28,26 @@ angular.module 'hyyVotingFrontendApp'
         console.log "Could not get current user", e
         {}
 
+    @getVoter = ->
+      try
+        JSON.parse $window.sessionStorage.getItem 'voter'
+
+      catch e
+        console.error "Could not get current voter", e
+        null
+
     @save = (data) ->
       new Promise (resolve, reject) ->
-        elections.save data.elections
         $window.sessionStorage.setItem 'jwt', data.jwt
         $window.sessionStorage.setItem 'user', JSON.stringify data.user
+        $window.sessionStorage.setItem 'voter', JSON.stringify data.voter
 
-        resolve()
+        if data.elections
+          elections.save data.elections
+          type = "elections"
+        else
+          type = "eligibility"
+
+        resolve({type: type})
 
     return

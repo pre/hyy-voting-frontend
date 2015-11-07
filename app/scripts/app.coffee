@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/sign-in.html'
         controller: 'SignInCtrl'
         controllerAs: 'session'
+      .when '/sign-out',
+        templateUrl: 'views/sign-out.html'
+        controller: 'SignOutCtrl'
+        controllerAs: 'signOut'
       .when '/results',
         templateUrl: 'views/results.html'
         controller: 'ResultCtrl'
@@ -43,5 +47,9 @@ angular
         templateUrl: 'views/elections.html'
         controller: 'ElectionsCtrl'
         controllerAs: 'elections'
+      .when '/profile',
+        templateUrl: 'views/profile.html'
+        controller: 'ProfileCtrl'
+        controllerAs: 'profile'
       .otherwise
         redirectTo: '/'

@@ -1,17 +1,11 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name hyyVotingFrontendApp.controller:MainCtrl
- # @description
- # # MainCtrl
- # Controller of the hyyVotingFrontendApp
-###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'MainCtrl', ->
-    @awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+  .controller 'MainCtrl', (Environment) ->
+    @isElectionsActive = Environment.isElectionsActive()
+    @isEligibilityActive = Environment.isEligibilityActive()
+    @isSignInActive = @isEligibilityActive || @isElectionsActive
+    @eligibilitySignInStartsAt = Environment.eligibilitySignInStartsAt.format('DD.MM.YYYY hh:mm')
+    @electionSignInStartsAt = Environment.electionSignInStartsAt.format('DD.MM.YYYY hh:mm')
+
     return

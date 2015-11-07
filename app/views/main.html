@@ -1,39 +1,56 @@
 <div class="jumbotron">
 
-  <!-- if elections not active, eligibility check active -->
-  <div ng-if="true">
-    <h1>Vaaalikelpoisuuden tarkastaminen</h1>
+  <div>
+    <h1>Hallintovaalit</h1>
 
     <p class="lead">
       <img src="images/logo/hyy-seppele.png" style="margin: 1.5em; height: 150px" alt="HYYn logo"><br>
-
-      <!--  eng. the right to vote and to stand as candidate -->
-      Voit tarkastaa vaalikelpoisuutesi tilaamalla sisäänkirjautumislinkin
-      sähköpostiosoitteeseen, jonka olet ilmoittanut DD.MM.2015 mennessä
-      Helsingin yliopiston opiskelijarekisteriin.
-      <!-- #TODO: päivämäärä -->
     </p>
 
-    <p>
+    <p
+      class="lead"
+      ng-if="main.isEligibilityActive">
+        <!--  eng. the right to vote and to stand as candidate -->
+        Voit tarkastaa vaalikelpoisuutesi tilaamalla sisäänkirjautumislinkin
+        sähköpostiosoitteeseen, jonka olet ilmoittanut DD.MM.2015 mennessä
+        Helsingin yliopiston opiskelijarekisteriin.
+        <!-- #TODO: päivämäärä -->
+    </p>
+
+    <p
+      class="lead"
+      ng-if="main.isElectionsActive">
+
+        Tilaa sisäänkirjautumislinkki sähköpostiosoitteeseen, jonka olet ilmoittanut
+        22.10.2015 mennessä Helsingin yliopiston opiskelijarekisteriin.
+    </p>
+
+    <div ng-if="!main.isSignInActive">
+      <p class="lead">
+        Sisäänkirjautuminen alkaa päivämäärinä:
+      </p>
+
+      <p>
+        Vaalikelpoisuuden tarkastaminen
+        <strong><span ng-bind="main.eligibilitySignInStartsAt"></span></strong>
+
+        <br>
+        Äänestäminen
+        <strong><span ng-bind="main.electionSignInStartsAt"></span></strong>
+      </p>
+    </div>
+
+    <p ng-if="main.isSignInActive">
       <a class="btn btn-lg btn-success" ng-href="#/sign-up">
-        Aloita tästä <span class="glyphicon glyphicon-ok"></span>
-      </a>
-    </p>
-  </div>
+        <span ng-if="main.isEligibilityActive">
+          Tarkasta vaalikelpoisuus
+        </span>
 
-  <!-- if elections active -->
-  <div ng-if="false">
-    <h1>Tervetuloa äänestämään</h1>
+        <span ng-if="main.isElectionsActive">
+          Äänestämään!
+        </span>
 
-    <p class="lead">
-      <img src="images/logo/hyy-seppele.png" style="margin: 1.5em; height: 150px" alt="HYYn logo"><br>
-      Tilaa sisäänkirjautumislinkki sähköpostiosoitteeseen, jonka olet ilmoittanut
-      22.10.2015 mennessä Helsingin yliopiston opiskelijarekisteriin.
-    </p>
-
-    <p>
-      <a class="btn btn-lg btn-success" ng-href="#/sign-up">
-        Äänestämään! <span class="glyphicon glyphicon-ok"></span>
+        <span class="glyphicon glyphicon-ok"></span>
       </a>
     </p>
   </div>

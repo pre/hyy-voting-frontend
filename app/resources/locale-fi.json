@@ -1,8 +1,19 @@
 {
-  "directives": {
-    "language-select": {
-      "Language": "Kieli"
+  "pages": {
+    "main": {
+      "page_title": "Hallintovaalit",
+      "you_may_check_eligibility":
+        "Voit tarkastaa vaalikelpoisuutesi tilaamalla sisäänkirjautumislinkin sähköpostiosoitteeseen, jonka olet ilmoittanut DD.MM.2015 mennessä Helsingin yliopiston opiskelijarekisteriin.",
+      "you_may_request_session_link":
+        "Tilaa sisäänkirjautumislinkki sähköpostiosoitteeseen, jonka olet ilmoittanut DD.MM.2015 mennessä Helsingin yliopiston opiskelijarekisteriin.",
+      "signin_will_commence_at":
+        "Palvelu on avoinna seuraavista päivämääristä alkaen:",
+      "eligibility_check": "Vaalikelpoisuuden tarkastaminen",
+      "voting": "Äänestäminen",
+
+      "button_caption_eligibility": "Tarkasta vaalikelpoisuus",
+      "button_caption_vote": "Äänestämään!"
+
     }
-  },
-  "HEADLINE": "SUOMEKSI! Toimii!"
+  }
 }

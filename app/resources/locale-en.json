@@ -1,3 +1,18 @@
 {
-  "HEADLINE": "In english! It works."
+  "pages": {
+    "main": {
+      "page_title": "Administration Elections",
+      "you_may_check_eligibility":
+        "You may check your eligibility for the elections by requesting a sign in link. Link will be sent to the email address you have submitted to the Helsinki University Student Registry by DD.MM.2015.",
+      "you_may_request_session_link":
+        "Request a sign in link to the email address you have submitted to the Helsinki University Student Registry by DD.MM.2015",
+      "signin_will_commence_at":
+        "The service is available as follows:",
+      "eligibility_check": "Eligibility for the elections",
+      "voting": "Voting",
+
+      "button_caption_eligibility": "Check Eligibility",
+      "button_caption_vote": "To the Voting!"
+    }
+  }
 }

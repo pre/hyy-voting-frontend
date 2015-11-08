@@ -25,5 +25,17 @@
       "button_caption_vote": "Äänestämään!"
 
     }
+  },
+
+  "partials": {
+    "info": {
+      "main_title": "Helsingin yliopiston hallintovaalit",
+      "ingress":
+        "Hallinnon opiskelijaedustajien vaalissa valitaan opiskelijaedustajat kollegioon, tiedekuntaneuvostoon ja laitosneuvostoon.",
+      "signin_is_available_at":
+        "Sisäänkirjautuminen järjestelmään onnistuu",
+      "election_dates_explained":
+        "dd DD.MM.2015 klo HH:00 - HH:00 ja dd DD.MM.2015 klo HH:00 - HH:00 välisenä aikana. Äänestäminen päättyy dd DD.MM.2015 klo HH:05 niiden osalta, jotka ehtivät kirjautua sisään ennen dd DD.MM.2015 klo HH:00."
+    }
   }
 }

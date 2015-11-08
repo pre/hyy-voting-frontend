@@ -24,5 +24,18 @@
       "button_caption_eligibility": "Check Eligibility",
       "button_caption_vote": "To the Voting!"
     }
+  },
+
+  "partials": {
+    "info": {
+      "main_title": "University of Helsinki Administration Elections",
+      "ingress":
+        "Elections of the student members to the College, the Department Council and the Faculty Council.",
+      "signin_is_available_at":
+        "Signing in is availailable as follows",
+      "election_dates_explained":
+        "between dd DD.MM.2015 at HH:00 and HH:00 ja dd DD.MM.2015 at HH:00 - HH:00. Voting will end at dd DD.MM.2015 klo HH:05 for those who signed in before dd DD.MM.2015 klo HH:00."
+    }
   }
+
 }

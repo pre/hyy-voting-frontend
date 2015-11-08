@@ -62,6 +62,11 @@
       }
     },
 
+    "sign_out": {
+      "page_title": "Signed Out",
+      "ingress": "You may close the browser window."
+    },
+
     "profile": {
       "page_title": "Personal Information",
       "you_are_eligible":

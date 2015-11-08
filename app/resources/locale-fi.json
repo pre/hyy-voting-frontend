@@ -62,6 +62,11 @@
       }
     },
 
+    "sign_out": {
+      "page_title": "Olet kirjautunut ulos",
+      "ingress": "Voit sulkea selainikkunan."
+    },
+
     "profile": {
       "page_title": "Omat tiedot",
       "you_are_eligible":

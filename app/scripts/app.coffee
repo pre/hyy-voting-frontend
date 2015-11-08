@@ -1,13 +1,5 @@
 'use strict'
 
-###*
- # @ngdoc overview
- # @name hyyVotingFrontendApp
- # @description
- # # hyyVotingFrontendApp
- #
- # Main module of the application.
-###
 angular
   .module 'hyyVotingFrontendApp', [
     'ngCookies',
@@ -15,8 +7,36 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'restangular'
+    'restangular',
+    'pascalprecht.translate'
   ]
+
+  .constant 'LOCALES', {
+    'locales': {
+      'fi': 'Suomi',
+      'se': 'Svenska',
+      'en': 'English'
+    },
+    'preferredLocale': 'fi'
+  }
+
+  .constant('DEBUG_MODE',
+    #/*DEBUG_MODE*/
+    true
+    #/*DEBUG_MODE*/
+  )
+
+  .config ($translateProvider, DEBUG_MODE, LOCALES) ->
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'resources/locale-',
+      suffix: '.json'
+    })
+
+    $translateProvider.preferredLanguage(LOCALES.preferredLocale)
+    $translateProvider.useMissingTranslationHandler('missingTranslationHandler')
+    $translateProvider.useSanitizeValueStrategy('sanitize')
+    $translateProvider.useLocalStorage()
+
   .config ($routeProvider) ->
     $routeProvider
       .when '/',

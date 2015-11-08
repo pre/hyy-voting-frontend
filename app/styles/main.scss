@@ -152,3 +152,10 @@ body {
     position: fixed;
     top: 10px;
 }
+
+.language-select {
+  $height: $font-size-base*$line-height-base + 14px;
+  line-height: $height;
+  margin-top: 8px;
+  cursor: pointer;
+}

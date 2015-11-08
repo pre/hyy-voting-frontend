@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="hyyVotingFrontendApp">
+  <body ng-app="hyyVotingFrontendApp" ng-controller="MainCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -40,6 +40,10 @@
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
+          <div class="pull-right">
+            <div vt-translate-language-select></div>
+          </div>
+
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -103,6 +107,10 @@
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -126,6 +134,9 @@
         <script src="scripts/services/environment.js"></script>
         <script src="scripts/controllers/profile.js"></script>
         <script src="scripts/controllers/sign-out.js"></script>
+        <script src="scripts/directives/vt-translate-language-select.js"></script>
+        <script src="scripts/services/localesrv.js"></script>
+        <script src="scripts/services/missingtranslationhandler.js"></script>
         <!-- endbuild -->
 </body>
 </html>

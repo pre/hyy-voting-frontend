@@ -35,7 +35,12 @@
         "Signing in is availailable as follows",
       "election_dates_explained":
         "between dd DD.MM.2015 at HH:00 and HH:00 ja dd DD.MM.2015 at HH:00 - HH:00. Voting will end at dd DD.MM.2015 klo HH:05 for those who signed in before dd DD.MM.2015 klo HH:00."
+    },
+
+    "contact": {
+      "more_info": "More information",
+      "hyy_ae_link_caption": "Student Union's info page",
+      "in_case_of_fire": "In case of a problem, please contact"
     }
   }
-
 }

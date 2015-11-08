@@ -36,6 +36,12 @@
         "Sisäänkirjautuminen järjestelmään onnistuu",
       "election_dates_explained":
         "dd DD.MM.2015 klo HH:00 - HH:00 ja dd DD.MM.2015 klo HH:00 - HH:00 välisenä aikana. Äänestäminen päättyy dd DD.MM.2015 klo HH:05 niiden osalta, jotka ehtivät kirjautua sisään ennen dd DD.MM.2015 klo HH:00."
+    },
+
+    "contact": {
+      "more_info": "Lisätietoa",
+      "hyy_ae_link_caption": "HYYn hallintovaalisivusto",
+      "in_case_of_fire": "Ongelmatilanteessa ota yhteys HYYn vaalityöntekijään"
     }
   }
 }

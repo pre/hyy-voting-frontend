@@ -1,4 +1,14 @@
 {
+  "index": {
+    "menu": {
+      "title": "Hallintovaalit",
+      "sign_up": "Kirjaudu",
+      "elections": "Äänestä",
+      "profile": "Omat Tiedot",
+      "sign_out": "Poistu"
+    }
+  },
+
   "pages": {
     "main": {
       "page_title": "Hallintovaalit",

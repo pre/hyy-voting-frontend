@@ -1,4 +1,14 @@
 {
+  "index": {
+    "menu": {
+      "title": "Elections",
+      "sign_up": "Sign Up",
+      "elections": "Vote",
+      "profile": "Eligibility",
+      "sign_out": "Sign Out"
+    }
+  },
+
   "pages": {
     "main": {
       "page_title": "Administration Elections",

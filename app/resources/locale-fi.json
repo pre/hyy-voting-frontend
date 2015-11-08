@@ -60,7 +60,23 @@
         "pls_explain":
           "Kerro vaalityöntekijälle virheen tekninen syy:"
       }
+    },
+
+    "profile": {
+      "page_title": "Omat tiedot",
+      "you_are_eligible":
+        "Olet vaalikelpoinen oman laitoksesi ja tiedekunnan vaaleissa.",
+      "in_case_of_problem":
+        "Jos tiedoissa on epäselvyyksiä, ota yhteys ylioppilaskuntaan.",
+      "voter": {
+        "name": "Nimi",
+        "email": "Email",
+        "phone": "Puhelin",
+        "faculty": "Tiedekunta",
+        "department": "Laitos"
+      }
     }
+
   },
 
   "partials": {

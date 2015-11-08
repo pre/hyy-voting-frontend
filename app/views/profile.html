@@ -1,32 +1,35 @@
 <div class="page-header">
-  <h1>Omat tiedot</h1>
+  <h1 translate>pages.profile.page_title</h1>
 </div>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-8">
-    <p>
-      Olet vaalikelpoinen oman laitoksesi ja tiedekunnan vaaleissa.
+<div
+  class="row"
+  translate-namespace="pages.profile">
+
+  <div class="col-xs-12">
+    <p translate>
+      .you_are_eligible
     </p>
 
     <dl class="dl-horizontal">
-      <dt>Nimi</dt>
+      <dt translate>.voter.name</dt>
       <dd ng-bind="profile.voter.name"></dd>
 
-      <dt>Email</dt>
+      <dt translate>.voter.email</dt>
       <dd ng-bind="profile.voter.email"></dd>
 
-      <dt>Phone</dt>
+      <dt translate>.voter.phone</dt>
       <dd ng-bind="profile.voter.phone"></dd>
 
-      <dt>Faculty</dt>
+      <dt translate>.voter.faculty</dt>
       <dd ng-bind-template="{{ profile.voter.faculty.name }} ({{ profile.voter.faculty.code }})"></dd>
 
-      <dt>Department</dt>
+      <dt translate>.voter.department</dt>
       <dd ng-bind-template="{{ profile.voter.department.name }} ({{ profile.voter.department.code }})"></dd>
     </dl>
 
-    <p>
-      Jos tiedoissa on epäselvyyksiä, ota yhteys ylioppilaskuntaan.
+    <p translate>
+      .in_case_of_problem
     </p>
 
   </div>

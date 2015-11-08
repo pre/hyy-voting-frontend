@@ -1,41 +1,40 @@
 <div class="page-header">
-  <h1>Kirjaudu sisään</h1>
+  <h1 translate>pages.sign_up.page_title</h1>
 </div>
 
-<div class="row">
+<div
+  class="row"
+  translate-namespace="pages.sign_up">
+
   <div class="col-xs-12">
-    <p>
-      Anna opiskelijarekisteriin tallentamasi sähköpostiosoite, niin sinulle lähetetään sisäänkirjautumislinkki.
+    <p translate>
+      .ingress
+    </p>
+
+    <p translate>
+      .password_instructions
     </p>
 
     <p>
-      Salasana lähetetään ainoastaan ennalta tunnettuun sähköpostiosoitteeseen.
-      Tarkista opiskelijarekisteriin antamasi sähköpostiosoitteesi
-      <a href="https://weboodi.helsinki.fi">kirjautumalla WebOodiin</a>.
+      <span translate>.spam_instructions</span>
+      <span translate>.in_case_of_fire</span>
+      <!-- #TODO: yhteystiedot -->
     </p>
 
     <p>
-      Tarkista myös sähköpostisi roskapostikansio, mikäli et saa sisäänkirjautumislinkkiä.
-      Viime kädessä ota yhteys HYYn vaalityöntekijään
-      <a href="mailto:vaalit@hyy.fi">vaalit@hyy.fi</a>
-      tai +358 50 551 6147.
-    </p>
-
-    <p>
-      <strong>Huom!</strong>
+      <strong translate>.attention</strong>
       <!-- #TODO: vaalipäivät -->
-      <li>Äänestys on auki ti 3.11.2015 klo 9:00 - 20:00 ja ke 4.11.2015 klo 9:00 - 17:00
-      välisenä aikana.</li>
-      <li>Henkilökuntaan kuuluvilla ei ole äänioikeutta
-      hallinnon opiskelijaedustajien vaalissa.</li>
-      <li>Syötä sähköpostiosoitteeseen vain pieniä kirjaimia.</li>
-      <li>Varmista, ettei selaimesi ole Private Browsing tilassa, kun avaat linkin.</li>
+      <li translate>.election_dates_explained</li>
+      <li translate>.staff_eligibility_note</li>
+      <li translate>.private_browsing_note</li>
     </p>
 
     <form class="form-horizontal css-form" name="request">
       <div class="form-group">
-        <label for="email" class="col-sm-2 control-label">
-          Sähköposti
+        <label
+          for="email"
+          class="col-sm-2 control-label"
+          translate=".input_caption_email">
         </label>
 
         <div class="col-sm-10">
@@ -63,23 +62,22 @@
 
             <div ng-show="session.loading">
               <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-              Lähetetään ..
+              <span translate=".button_caption_submitting"></span>
             </div>
 
-            <span ng-hide="session.loading">
-              Lähetä sisäänkirjautumislinkki
+            <span ng-hide="session.loading" translate>
+              .button_caption_submit
             </span>
 
           </button>
 
           <div ng-show="session.submitted">
-            <p>
-              Sisäänkirjautumislinkki on lähetetty antamaasi osoitteeseen!
+            <p translate>
+              .link_has_been_sent
             </p>
 
-            <p>
-              Kirjaudu sisään noudattamalla sähköpostiosoiteeseesi
-              lähetettyjä ohjeita.
+            <p translate>
+              .pls_check_email
             </p>
           </div>
 
@@ -89,24 +87,25 @@
             >
 
             <p>
-              <strong>Jotain meni pieleen!</strong>
-              Linkkiä ei voitu lähettää.
+              <strong translate>.something_went_wrong.title</strong>
+              <span translate>.something_went_wrong.detail</span>
             </p>
 
-            <p>
-              Jos ongelma toistuu, ota yhteys HYYn vaalityöntekijään
-              HYYn vaalityöntekijään vaalit@hyy.fi
-              +358 50 551 6147.
+            <p translate>
+              .something_went_wrong.if_happens_again
+              <!-- #TODO: yhteystieto -->
             </p>
 
             <hr>
 
             <p>
-              Kerro vaalityöntekijälle virheen tekninen syy:
+              <span translate>
+                .something_went_wrong.pls_explain
+              </span>
               <br>
               Status: <span ng-bind="session.error.status"></span>
               <br>
-              Code: <span ng-bind="session.error.data | json"></span>
+              Data: <span ng-bind="session.error.data | json"></span>
             </p>
 
           </div>
@@ -120,22 +119,3 @@
 
   </div> <!-- col -->
 </div> <!-- row -->
-
-
-<div class="row">
-  <div class="col-xs-12">
-    <hr>
-    <p>
-      Ge din e-postadress som du har registrerat I studentregistret och vi skickar dig en inloggningslänk.
-      Lösenordet skickas endast till en förutbestämd e-postadress. Kolla vilken address du uppgett till studentregistret genom att logga in I WebOodi.
-      Kolla också skräppostmapp om du inte får inloggningslänken. Ta i sista hand kontakt med HUS valprojektarbetare vaalit@hyy.fi eller +358 50 551 6147.
-    </p>
-
-    <p>
-      Give the same e-mail address you have in University’s student registry, and we will send you a registration link.
-      Your password will be sent to the email address you have given to the student registry. You can check which email address you have used on the contact details page on WebOodi.
-      Check also your spam filter if there’s a problem receiving the registration link. If nothing else works contact Silva Loikkanen vaalit@hyy.fi or +358 50 551 6147.
-    </p>
-
-  </div>
-</div>

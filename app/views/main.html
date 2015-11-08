@@ -1,7 +1,9 @@
-<div class="jumbotron">
+<div
+  class="jumbotron"
+  translate-namespace="pages.main">
 
   <div>
-    <h1>Hallintovaalit</h1>
+    <h1 translate>.page_title</h1>
 
     <p class="lead">
       <img src="images/logo/hyy-seppele.png" style="margin: 1.5em; height: 150px" alt="HYYn logo"><br>
@@ -9,45 +11,47 @@
 
     <p
       class="lead"
+      translate
       ng-if="main.isEligibilityActive">
+        .you_may_check_eligibility
         <!--  eng. the right to vote and to stand as candidate -->
-        Voit tarkastaa vaalikelpoisuutesi tilaamalla sisäänkirjautumislinkin
-        sähköpostiosoitteeseen, jonka olet ilmoittanut DD.MM.2015 mennessä
-        Helsingin yliopiston opiskelijarekisteriin.
         <!-- #TODO: päivämäärä -->
     </p>
 
     <p
       class="lead"
+      translate
       ng-if="main.isElectionsActive">
-
-        Tilaa sisäänkirjautumislinkki sähköpostiosoitteeseen, jonka olet ilmoittanut
-        22.10.2015 mennessä Helsingin yliopiston opiskelijarekisteriin.
+        .you_may_request_session_link
+        <!-- #TODO: päivämäärä -->
     </p>
 
     <div ng-if="!main.isSignInActive">
-      <p class="lead">
-        Sisäänkirjautuminen alkaa päivämäärinä:
+      <p
+        class="lead"
+        translate>
+          .signin_will_commence_at
+
       </p>
 
       <p>
-        Vaalikelpoisuuden tarkastaminen
+        <span translate>.eligibility_check</span>
         <strong><span ng-bind="main.eligibilitySignInStartsAt"></span></strong>
 
         <br>
-        Äänestäminen
+        <span translate>.voting</span>
         <strong><span ng-bind="main.electionSignInStartsAt"></span></strong>
       </p>
     </div>
 
     <p ng-if="main.isSignInActive">
       <a class="btn btn-lg btn-success" ng-href="#/sign-up">
-        <span ng-if="main.isEligibilityActive">
-          Tarkasta vaalikelpoisuus
+        <span ng-if="main.isEligibilityActive" translate>
+          .button_caption_eligibility
         </span>
 
-        <span ng-if="main.isElectionsActive">
-          Äänestämään!
+        <span ng-if="main.isElectionsActive" translate>
+          .button_caption_vote
         </span>
 
         <span class="glyphicon glyphicon-ok"></span>

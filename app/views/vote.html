@@ -1,30 +1,32 @@
 <div class="page-header">
   <h1 translate>
-    .pages.vote.page_title
+    pages.vote.page_title
   </h1>
 </div>
 
 <div
   class="jumbotron alert alert-danger"
   ng-if="vote.loadError"
-  translate-namespace="pages.vote">
+  translate-namespace="pages.vote.error">
 
   <div class="container">
-    <h1>Kävi hassusti :/</h1>
+    <h1 translate>
+      .something_went_wrong
+    </h1>
 
-    <p>
-      Ehdokastietojen lataaminen epäonnistui.
+    <p translate>
+      .could_not_load_candidates
     </p>
 
-    <p>
-      Pyydä <a ng-href="#/sign-up">uusi sisäänkirjautumislinkki</a>
-      ja yritä uudelleen.
+    <p translate>
+      .request_a_new_link_and_try_again
     </p>
 
     <a
       ng-href="#/sign-up"
-      class="btn btn-primary">
-      Uusi sisäänkirjautumislinkki
+      class="btn btn-primary"
+      translate>
+      .button_request_link
     </a>
   </div>
 </div>

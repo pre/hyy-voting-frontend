@@ -94,7 +94,14 @@
     },
 
     "vote": {
-      "page_title": "Äänestä"
+      "page_title": "Äänestä",
+
+      "error": {
+        "something_went_wrong": "Kävi hassusti :/",
+        "could_not_load_candidates": "Ehdokastietojen lataaminen epäonnistui.",
+        "request_a_new_link_and_try_again": "Pyydä uusi sisäänkirjautumislinkki ja yritä uudelleen.",
+        "button_request_link": "Pyydä linkki"
+      }
     },
 
     "elections": {

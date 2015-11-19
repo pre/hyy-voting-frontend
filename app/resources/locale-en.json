@@ -91,7 +91,34 @@
         "faculty": "Faculty",
         "department": "Department"
       }
+    },
+
+    "elections": {
+      "page_title": "Vote",
+      "sign_in": "Sign In",
+      "request_link_please": "You can vote after you have requested a sign in link to your email.",
+      "button_request_link": "Request link",
+
+      "you_can_vote_in_the_following": "You can vote in the following elections:",
+
+      "table_header": {
+        "election_name": "Election Name",
+        "status": "Already voted?"
+      },
+
+      "not_started": {
+        "voting_has_not_started_yet": "Voting has not started yet."
+      },
+
+      "empty": {
+        "no_elections_available": "You are not eligible to vote in any elections."
+      }
     }
+
+  },
+
+  "common": {
+    "loading": "Loading"
   },
 
   "partials": {

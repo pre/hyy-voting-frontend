@@ -91,8 +91,37 @@
         "faculty": "Tiedekunta",
         "department": "Laitos"
       }
+    },
+
+    "vote": {
+      "page_title": "Äänestä"
+    },
+
+    "elections": {
+      "page_title": "Äänestä",
+      "sign_in": "Sisäänkirjaudu",
+      "request_link_please": "Pääset äänestämään sen jälkeen, kun olet pyytänyt sisäänkirjautumislinkin sähköpostiisi.",
+      "button_request_link": "Pyydä linkki",
+      "you_can_vote_in_the_following": "Voit äänestää seuraavissa vaaleissa:",
+
+      "table_header": {
+        "election_name": "Vaalin nimi",
+        "status": "Äänestetty"
+      },
+
+      "not_started": {
+        "voting_has_not_started_yet": "Äänestäminen ei ole vielä alkanut."
+      },
+
+      "empty": {
+        "no_elections_available": "Sinulla ei ole äänioikeutta yhteenkään vaaliin."
+      }
     }
 
+  },
+
+  "common": {
+    "loading": "Ladataan"
   },
 
   "partials": {

@@ -25,6 +25,17 @@
       "button_caption_vote": "To the Voting!"
     },
 
+    "sign_in": {
+      "loading": "Loading",
+
+      "error": {
+        "title_invalid_key": "Invalid Key Given",
+        "lead": "Your sign in link is not valid or has expired.",
+        "private_browsing_note": "Please check that your browser is not in Private Browsing Mode.",
+        "request_new_link": "Reqeust new link"
+      }
+    },
+
     "sign_up": {
       "page_title": "Sign Up",
       "ingress":

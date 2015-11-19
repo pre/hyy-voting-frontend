@@ -25,6 +25,17 @@
       "button_caption_vote": "Äänestämään!"
     },
 
+    "sign_in": {
+      "loading": "Ladataan",
+
+      "error": {
+        "title_invalid_key": "Avain ei kelpaa",
+        "lead": "Sisäänkirjautumislinkkisi on vanhentunut tai virheellinen.",
+        "private_browsing_note": "Tarkista myös, ettei selaimesi ole Private Browsing tilassa.",
+        "request_new_link": "Pyydä uusi linkki"
+      }
+    },
+
     "sign_up": {
       "page_title": "Kirjaudu sisään",
       "ingress":

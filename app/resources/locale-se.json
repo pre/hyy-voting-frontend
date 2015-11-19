@@ -25,6 +25,17 @@
       "button_caption_vote": "Rösta!"
     },
 
+    "sign_in": {
+      "loading": "Laddar",
+
+      "error": {
+        "title_invalid_key": "Länk kan inte användas",
+        "lead": "Inloggningslänk har utgått eller är ogiltig.",
+        "private_browsing_note": "Kontrollera att din webbläsare inte är i Private Browsing-läge.",
+        "request_new_link": "Skicka ny länk"
+      }
+    },
+
     "sign_up": {
       "page_title": "Logga in",
       "ingress":

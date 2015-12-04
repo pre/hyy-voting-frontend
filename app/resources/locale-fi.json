@@ -63,13 +63,17 @@
         "Sisäänkirjautumislinkki on lähetetty antamaasi osoitteeseen!",
       "pls_check_email":
         "Kirjaudu sisään noudattamalla sähköpostiosoiteeseesi lähetettyjä ohjeita.",
+
       "something_went_wrong": {
-        "title": "Jotain meni pieleen!",
         "detail": "Linkkiä ei voitu lähettää.",
         "if_happens_again":
           "Jos ongelma toistuu, ota yhteys HYYn vaalityöntekijään HYYn vaalityöntekijään vaalit@hyy.fi +358 50 551 6147.",
         "pls_explain":
           "Kerro vaalityöntekijälle virheen tekninen syy:"
+      },
+
+      "errors": {
+        "not_eligible_in_any_election": "Sinulla ei ole äänioikeutta yhteenkään vaaliin."
       }
     },
 

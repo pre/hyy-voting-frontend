@@ -63,13 +63,17 @@
         "En inloggningslänk har skickats till den adress du uppgav!",
       "pls_check_email":
         "Logga in genom att följa anvisningarna som skickats till din e-postadress.",
+
       "something_went_wrong": {
-        "title": "Något gick fel!",
         "detail": "Länken kunde inte skickas.",
         "if_happens_again":
           "Om problemet upprepas, kontakta HUS valarbetare, vaalit@hyy.fi eller +358 50 551 6147.",
         "pls_explain":
           "Förklara för valarbetaren vad som gick fel:"
+      },
+
+      "errors": {
+        "not_eligible_in_any_election": "Du har inte rösträtt vid någon av de nuvarande valet."
       }
     },
 

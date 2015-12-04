@@ -25,6 +25,11 @@ angular.module 'hyyVotingFrontendApp'
           console.error "Failed requesting link", failure
           @error = failure
 
+          if !!@error.data?.key
+            @error.translation_key = @error.data.key
+          else
+            @error.is_unknown = true
+
       ).catch(
         (e) =>
           errorMonitor.error e, "Requesting session link failed"

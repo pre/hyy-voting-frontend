@@ -63,13 +63,17 @@
         "Link for sign in has been sent!",
       "pls_check_email":
         "Please follow the instructions in your email and sign in.",
+
       "something_went_wrong": {
-        "title": "Something went wrong!",
         "detail": "We were unable to send you the link.",
         "if_happens_again":
           "If the problem happens again, please contact the election staff of the Student Union vaalit@hyy.fi +358 50 551 6147.",
         "pls_explain":
           "Please let us know the technical error message:"
+      },
+
+      "errors": {
+        "not_eligible_in_any_election": "You are not eligible in any of the current elections."
       }
     },
 

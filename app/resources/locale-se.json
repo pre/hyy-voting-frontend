@@ -94,14 +94,38 @@
     },
 
     "vote": {
-      "page_title": "Äänestä",
+      "page_title": "Rösta",
 
       "error": {
-        "something_went_wrong": "Kävi hassusti :/",
-        "could_not_load_candidates": "Ehdokastietojen lataaminen epäonnistui.",
-        "request_a_new_link_and_try_again": "Pyydä uusi sisäänkirjautumislinkki ja yritä uudelleen.",
-        "button_request_link": "Pyydä linkki"
+        "something_went_wrong": "Oh noes :/",
+        "could_not_load_candidates": "Nedladdning av kandidat list gick fel.",
+        "request_a_new_link_and_try_again": "Skicka ny inloggningslänk och försök igen.",
+        "button_request_link": "Skicka ny länk"
+      },
+
+      "vote-ballot": {
+        "title": "Röstsedel",
+        "header-number": "Nummer",
+        "header-name": "Namn",
+        "ingress": "Välj kandidat från listan nedan.",
+        "about-to-change-existing-vote": "Du är på väg att ändra en tidigare gjuten röst. Förändring kommer att spelas in när du klickar på 'Rösta'.",
+        "button-submit-caption": "Rösta",
+        "submitting": "Röstar .."
+
+      },
+
+      "vote-has-been-cast": "Din röst har registrerats!",
+      "if-you-are-eligible-in-others": "Om du har rösträtt vid flera val,",
+      "choose-next-election": "välj nästa val",
+      "close-window-when-finished": "Stäng webbläsarfönstret när du är klar.",
+
+      "search": {
+        "title": "Sök en kandidat",
+        "candidate-name": "Kandidat namn",
+        "header-number": "Number",
+        "header-candidate": "Kandidat (personlig biträdande)"
       }
+
     },
 
     "elections": {

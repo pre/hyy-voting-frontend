@@ -81,7 +81,7 @@
     "profile": {
       "page_title": "Personal Information",
       "you_are_eligible":
-        "You are eligible for the elections of your faculty and department.",
+        "You are eligible in the elections of your faculty and department.",
       "in_case_of_problem":
         "If there is a problem with your information, please contact the Student Union.",
       "voter": {
@@ -101,7 +101,29 @@
         "could_not_load_candidates": "Candidates could not be loaded.",
         "request_a_new_link_and_try_again": "Request a new sign in link and try again.",
         "button_request_link": "Request link"
+      },
+
+      "vote-ballot": {
+        "title": "Vote ballot",
+        "header-number": "Number",
+        "header-name": "Name",
+        "ingress": "Choose candidate from the list below.",
+        "about-to-change-existing-vote": "You are about to change a previously cast vote. Change will be recorded after you click 'Vote'.",
+        "button-submit-caption": "Vote"
+      },
+
+      "vote-has-been-cast": "Your vote is now recorded!",
+      "if-you-are-eligible-in-others": "If you are eligible in multiple elections,",
+      "choose-next-election": "select next election",
+      "close-window-when-finished": "Close the browser window when you have finished.",
+
+      "search": {
+        "title": "Find a candidate",
+        "candidate-name": "Candidate name",
+        "header-number": "Nummer",
+        "header-candidate": "Candidate (personal vice member)"
       }
+
     },
 
     "elections": {

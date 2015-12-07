@@ -3,6 +3,7 @@
 angular.module 'hyyVotingFrontendApp'
   .service 'Environment', ->
 
+    # TODO: Read these from an injected js file
     @eligibilitySignInStartsAt = do ->
       moment('2015-11-12T07:00:00') # UTC
 

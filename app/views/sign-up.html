@@ -87,8 +87,13 @@
             >
 
             <p>
-              <strong translate>.something_went_wrong.title</strong>
-              <span translate>.something_went_wrong.detail</span>
+              <strong translate>.something_went_wrong.detail</strong>
+            </p>
+
+            <p ng-if="!session.error.is_unknown">
+              <span
+                translate="{{session.error.translation_key}}"
+                translate-namespace=".errors"></span>
             </p>
 
             <p translate>
@@ -96,17 +101,20 @@
               <!-- #TODO: yhteystieto -->
             </p>
 
-            <hr>
+            <div ng-if="session.error.is_unknown">
+              <p>
+                <hr>
 
-            <p>
-              <span translate>
-                .something_went_wrong.pls_explain
-              </span>
-              <br>
-              Status: <span ng-bind="session.error.status"></span>
-              <br>
-              Data: <span ng-bind="session.error.data | json"></span>
-            </p>
+                <span translate>
+                  .something_went_wrong.pls_explain
+                </span>
+
+                <br>
+                Status: <span ng-bind="session.error.status"></span>
+                <br>
+                Data: <span ng-bind="session.error.data | json"></span>
+              </p>
+            </div>
 
           </div>
 

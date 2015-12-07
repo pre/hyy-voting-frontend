@@ -1,9 +1,12 @@
 <!-- This page is only presented on an error. User is redirected on success. -->
 
-<div class="row">
+<div
+  class="row"
+  translate-namespace="pages.sign_in">
+
   <div class="col-xs-12">
-    <div ng-if="session.loading">
-      Ladataan ..
+    <div ng-if="session.loading" translate>
+      .loading
     </div>
 
     <div ng-if="!session.loading">
@@ -11,21 +14,22 @@
         <div class="jumbotron alert alert-danger">
 
           <div class="container">
-            <h1>Avain ei kelpaa</h1>
+            <h1 translate>.error.title_invalid_key</h1>
 
-            <p class="lead">
-              Sisäänkirjautumislinkkisi on vanhentunut tai virheellinen.
+            <p class="lead" translate>
+              .error.lead
             </p>
 
-            <p>
-              Tarkista myös, ettei selaimesi ole Private Browsing tilassa.
+            <p translate>
+              .error.private_browsing_note
             </p>
 
             <p>
               <a
+                translate
                 ng-href="#/sign-up"
                 class="btn btn-primary">
-                Pyydä uusi sisäänkirjautumislinkki
+                .error.request_new_link
               </a>
             </p>
           </div>

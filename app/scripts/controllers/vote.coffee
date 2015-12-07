@@ -85,7 +85,11 @@ angular.module 'hyyVotingFrontendApp'
 
   .directive 'voteProspect', ->
     restrict: 'E'
-    template: 'Numero: <strong>{{ prospect.number }}</strong> <br> Nimi: <strong>{{ prospect.name }}</strong>'
+    template: '''
+      <span translate>.vote-ballot.header-number</span>: <strong>{{ prospect.number }}</strong>
+      <br>
+      <span translate>.vote-ballot.header-name</span>: <strong>{{ prospect.name }}</strong>
+    '''
     scope:
       selected: '=vtSelected'
       all: '=vtAll'

@@ -30,7 +30,7 @@
 
       "error": {
         "title_invalid_key": "Avain ei kelpaa",
-        "lead": "Sisäänkirjautumislinkkisi on vanhentunut tai virheellinen.",
+        "lead": "Sisäänkirjautumislinkkisi on vanhentunut tai äänestys on suljettu.",
         "private_browsing_note": "Tarkista myös, ettei selaimesi ole Private Browsing tilassa.",
         "request_new_link": "Pyydä uusi linkki"
       }
@@ -73,7 +73,8 @@
       },
 
       "errors": {
-        "not_eligible_in_any_election": "Sinulla ei ole äänioikeutta yhteenkään vaaliin."
+        "not_eligible_in_any_election": "Sinulla ei ole äänioikeutta yhteenkään vaaliin.",
+        "session_creation_not_permitted": "Äänestys ei ole avoinna. Näet äänestämisen aukiolon päivämäärän ja kellonajan yllä."
       }
     },
 

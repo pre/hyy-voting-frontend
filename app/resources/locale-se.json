@@ -31,8 +31,15 @@
       "error": {
         "title_invalid_key": "Länk kan inte användas",
         "lead": "Inloggningslänk har utgått eller röstning är stängd.",
-        "private_browsing_note": "Kontrollera att din webbläsare inte är i Private Browsing-läge.",
-        "request_new_link": "Skicka ny länk"
+        "private_browsing_note": "Kontrollera att din webbläsare inte är i Private Browsing -läge.",
+        "request_new_link": "Skicka ny länk",
+
+        "private_browsing_mode": {
+          "title": "Fel med Private Browsing -läge",
+          "lead": "Din webbläsare är i \"Private Browsing\" -läge, vilket förhindrar röstningstjänst från att fungera.",
+          "what_now": "Vänligen öppna inloggningslänken i ett vanligt webbläsarfönster."
+        }
+
       }
     },
 

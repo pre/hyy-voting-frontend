@@ -10,28 +10,42 @@
     </div>
 
     <div ng-if="!session.loading">
-      <div ng-if="session.invalidToken">
+
+      <div ng-if="session.error">
         <div class="jumbotron alert alert-danger">
 
-          <div class="container">
-            <h1 translate>.error.title_invalid_key</h1>
+          <div ng-if="session.invalidToken">
+            <div class="container">
+              <h1 translate>.error.title_invalid_key</h1>
 
-            <p class="lead" translate>
-              .error.lead
-            </p>
+              <p class="lead" translate>
+                .error.lead
+              </p>
 
-            <p translate>
-              .error.private_browsing_note
-            </p>
+              <p>
+                <a
+                  translate
+                  ng-href="#/sign-up"
+                  class="btn btn-primary">
+                  .error.request_new_link
+                </a>
+              </p>
+            </div>
+          </div>
 
-            <p>
-              <a
-                translate
-                ng-href="#/sign-up"
-                class="btn btn-primary">
-                .error.request_new_link
-              </a>
-            </p>
+          <div ng-if="session.privateBrowsingModeError">
+            <div class="container">
+              <h1 translate>.error.private_browsing_mode.title</h1>
+
+              <p class="lead" translate>
+                .error.private_browsing_mode.lead
+              </p>
+
+              <p translate>
+                .error.private_browsing_mode.what_now
+              </p>
+
+            </div>
           </div>
         </div>
 

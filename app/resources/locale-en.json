@@ -32,7 +32,14 @@
         "title_invalid_key": "Invalid link",
         "lead": "Your sign in link has expired or voting is closed.",
         "private_browsing_note": "Please check that your browser is not in Private Browsing Mode.",
-        "request_new_link": "Reqeust new link"
+        "request_new_link": "Reqeust new link",
+
+        "private_browsing_mode": {
+          "title": "You're in Private Browsing Mode",
+          "lead": "Your browser has \"Private Browsing Mode\" enabled, which prevents the voting service from functioning.",
+          "what_now": "Please open the sign in link in a normal browser window."
+        }
+
       }
     },
 

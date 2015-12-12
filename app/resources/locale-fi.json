@@ -32,7 +32,14 @@
         "title_invalid_key": "Avain ei kelpaa",
         "lead": "Sisäänkirjautumislinkkisi on vanhentunut tai äänestys on suljettu.",
         "private_browsing_note": "Tarkista myös, ettei selaimesi ole Private Browsing tilassa.",
-        "request_new_link": "Pyydä uusi linkki"
+        "request_new_link": "Pyydä uusi linkki",
+
+        "private_browsing_mode": {
+          "title": "Selaimesi on yksityistilassa",
+          "lead": "Selaimesi käyttää \"Private Browsing Mode\" -yksityisyysasetusta, mikä estää vaalijärjestelmän toiminnan.",
+          "what_now": "Avaa sisäänkirjautumislinkki tavallisessa selainikkunassa."
+        }
+
       }
     },
 

@@ -113,7 +113,8 @@
         "header-name": "Nimi",
         "ingress": "Valitse ehdokas alla olevasta listasta.",
         "about-to-change-existing-vote": "Olet muuttamassa aiemmin antamaasi ääntä. Muutos kirjataan vasta kun painat 'Äänestä'.",
-        "button-submit-caption": "Äänestä"
+        "button-submit-caption": "Äänestä",
+        "submitting": "Äänestetään .."
       },
 
       "vote-has-been-cast": "Äänesi on nyt kirjattu!",

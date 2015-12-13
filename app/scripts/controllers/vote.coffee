@@ -47,6 +47,8 @@ angular.module 'hyyVotingFrontendApp'
       @selected != null
 
     @select = (candidate) ->
+      return if @submitting || @submitted
+
       @selected = candidate.id
 
     @isUnsaved = ->

@@ -26,7 +26,15 @@
         <!-- #TODO: päivämäärä -->
     </p>
 
-    <div ng-if="!main.isSignInActive">
+    <div ng-if="main.hasElectionsEnded">
+      <p
+        class="lead">
+          Vaalit ovat päättyneet.
+      </p>
+
+    </div>
+
+    <div ng-if="!main.isSignInActive && !main.hasElectionsEnded">
       <p
         class="lead"
         translate>

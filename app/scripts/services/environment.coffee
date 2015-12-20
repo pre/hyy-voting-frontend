@@ -24,4 +24,7 @@ angular.module 'hyyVotingFrontendApp'
       moment().isAfter(@electionSignInStartsAt) &&
         moment().isBefore(@electionSignInEndsAt)
 
+    @hasElectionsEnded = ->
+      moment().isAfter(@electionSignInEndsAt)
+
     return

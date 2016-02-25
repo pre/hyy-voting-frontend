@@ -4,6 +4,9 @@
 
 - Install Node 0.12 with NVM
 - `npm install -g grunt-cli bower yo generator-karma generator-angular`
+- Install RVM
+- After installing RVM, let RVM install Ruby version defined in .ruby-version (chdir out & back from project directory).
+- `gem install bundler`
 
 ## Setup
 
@@ -19,10 +22,15 @@ bower install
 - Set Rollbar client access token in app/main.html
   - Error monitoring can be simulated by
     `window.onerror("TestRollbarError: testing window.onerror", window.location.href)`
+- Ensure you have development API up and running (see restangular.coffee for backend selection).
 
-## Build & development
+## Build for deploy
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt`
+
+## Development
+
+Run `grunt serve` and access http://localhost:9000
 
 ## Generators
 

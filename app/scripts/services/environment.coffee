@@ -11,10 +11,10 @@ angular.module 'hyyVotingFrontendApp'
       moment('2015-12-14 17:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @electionSignInStartsAt = do ->
-      moment('2015-12-16 09:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
+      moment('2016-02-16 09:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @electionSignInEndsAt = do ->
-      moment('2015-12-16 17:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
+      moment('2016-12-16 17:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @isEligibilityActive = ->
       moment().isAfter(@eligibilitySignInStartsAt) &&

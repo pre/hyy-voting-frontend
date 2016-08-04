@@ -20,7 +20,7 @@ angular.module 'hyyVotingFrontendApp'
 
     SessionSrv.signIn(@token).then(
       (session) =>
-        $location.search('token', null)
+        $location.search('token', null) # delete 'token' from current url
 
         @redirectAccordingTo(session)
 

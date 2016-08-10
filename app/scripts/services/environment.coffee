@@ -3,18 +3,20 @@
 angular.module 'hyyVotingFrontendApp'
   .service 'Environment', ->
 
-    # TODO: Read these from an injected js file
+    @apiBaseUrl = do ->
+      _VAALIT.api.baseUrl
+
     @eligibilitySignInStartsAt = do ->
-      moment('2015-11-12 07:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
+      moment(_VAALIT.eligibility.signIn.startsAt, 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @eligibilitySignInEndsAt = do ->
-      moment('2015-12-14 17:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
+      moment(_VAALIT.eligibility.signIn.endsAt, 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @electionSignInStartsAt = do ->
-      moment('2016-02-16 09:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
+      moment(_VAALIT.voting.signIn.startsAt, 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @electionSignInEndsAt = do ->
-      moment('2016-12-16 17:00', 'YYYY-MM-DD HH:mm').utcOffset('+0200')
+      moment(_VAALIT.voting.signIn.endsAt, 'YYYY-MM-DD HH:mm').utcOffset('+0200')
 
     @isEligibilityActive = ->
       moment().isAfter(@eligibilitySignInStartsAt) &&

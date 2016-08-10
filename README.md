@@ -18,6 +18,7 @@ bower install
 
 ## Configuration
 
+- See `app/scripts/app.coffee` for application routes.
 - Set Google tracking id in app/main.html
 - Set Rollbar client access token in app/main.html
   - Error monitoring can be simulated by

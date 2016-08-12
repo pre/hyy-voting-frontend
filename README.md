@@ -40,3 +40,8 @@ Run `grunt serve` and access http://localhost:9000
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## Tips
+
+* If you get error `Unknown provider: xyzProvider <- xyz <- XyzCtrl`,
+  add `<script src="..../xyz.js">` to the bottom of `app/index.html`.

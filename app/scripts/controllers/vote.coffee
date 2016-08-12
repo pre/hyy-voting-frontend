@@ -1,14 +1,7 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name hyyVotingFrontendApp.controller:VoteCtrl
- # @description
- # # VoteCtrl
- # Controller of the hyyVotingFrontendApp
-###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'VoteCtrl', ($scope, $location, candidates, alliances, VoteSrv, errorMonitor) ->
+  .controller 'VoteCtrl', ($scope, $location, candidates, coalitions, VoteSrv, errorMonitor) ->
 
     @debug = false
 
@@ -17,18 +10,18 @@ angular.module 'hyyVotingFrontendApp'
     @loading = true
     @selected = null
     @submitting = @submitted = false
-    @alliances = []
+    @coalitions = []
     @candidates = []
     @savedVote = null
 
     Promise.all [
-      alliances.get(@electionId),
+      coalitions.get(@electionId),
       candidates.get(@electionId),
       VoteSrv.get(@electionId)
     ]
       .then(
         (results) =>
-          @alliances = results[0]
+          @coalitions = results[0]
           @candidates = results[1]
 
           if !_.isEmpty results[2]
@@ -37,7 +30,7 @@ angular.module 'hyyVotingFrontendApp'
 
         (failure) =>
           @loadError = true
-          errorMonitor.error failure, "Fetching alliances/candidates failed"
+          errorMonitor.error failure, "Fetching coalitions/candidates failed"
       )
       .finally =>
         @loading = false

@@ -169,45 +169,64 @@
           </div>
         </div>
 
-        <!-- ALLIANCES -->
-        <div
-          ng-repeat="a in vote.alliances"
-          ng-show="filteredCandidates.length"
+        <!--  COALITIONS -->
+        <section
+          ng-repeat="coalition in vote.coalitions"
           >
 
-          <h1 ng-bind="a.name"></h1>
+          <!-- #TODO: extract to css-->
+          <h1 style="border-bottom: 1px solid #333333;" ng-bind="coalition.name"></h1>
 
-          <!-- CANDIDATES OF ALLIANCE -->
-          <table class="table table-striped table-hover">
-            <thead>
-              <th></th>
-              <th translate>.search.header-number</th>
-              <th translate>.search.header-candidate</th>
-            </thead>
 
-            <tbody>
-              <tr
-                ng-repeat="c in filteredCandidates = (a.candidates | filter:vote.candidate)"
-                ng-class="{ 'info': vote.selected == c.id }"
-                >
+          <!-- #TODO:translate -->
+          <!-- #TODO: set visibility by css if coalition has alliance elements -->
+          <p ng-show="vote.candidate.name">
+            Hakemallasi ehdokasnimellä ei löytynyt ketään tästä vaalirenkaasta.
+          </p>
 
-                <td>
-                <label>
-                  <input
-                    type="radio"
-                    ng-disabled="vote.submitting || vote.submitted"
-                    ng-model="vote.selected"
-                    ng-value="c.id">
+
+          <!-- ALLIANCES OF COALITION -->
+          <section
+            ng-repeat="alliance in coalition.alliances"
+            ng-show="filteredCandidates.length"
+            >
+
+            <h2
+              ng-bind="alliance.name"
+              ng-if="coalition.alliance_count > 1"
+              >
+            </h2>
+
+            <!-- CANDIDATES OF ALLIANCE -->
+            <table class="table table-striped table-hover">
+              <thead>
+                <th></th>
+                <th translate>.search.header-number</th>
+                <th translate>.search.header-candidate</th>
+              </thead>
+
+              <tbody>
+                <tr
+                  ng-repeat="c in filteredCandidates = (alliance.candidates | filter:vote.candidate)"
+                  ng-class="{ 'info': vote.selected == c.id }"
+                  >
+
+                  <td>
+                    <input
+                      type="radio"
+                      ng-disabled="vote.submitting || vote.submitted"
+                      ng-model="vote.selected"
+                      ng-value="c.id">
                   </td>
                   <td ng-click="vote.select(c)">{{ c.number }}</td>
                   <td ng-click="vote.select(c)">{{ c.name }}</td>
-                </label>
-              </tr>
-            </td>
-          </table>
 
-        </div>
+                </tr>
+              </tbody>
+            </table>
 
+          </section> <!-- /alliances -->
+        </section> <!-- /coalitions -->
       </div> <!-- /loading -->
 
     </form>

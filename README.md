@@ -51,6 +51,7 @@ Run `grunt serve` and access http://localhost:9000
 
 Running `grunt test` will run the unit tests with karma.
 
+
 ## Deploy Frontend alongside with API
 
 ```bash
@@ -78,3 +79,10 @@ In API/public, `git log` should now display 'Theme of this deploy' as the newest
 # Commit 'Theme of this deploy' into API's git repository:
 (in API) git add public && git commit -m 'deploy Theme of this deploy'
 ```
+
+
+## Tips
+
+* If you get error `Unknown provider: xyzProvider <- xyz <- XyzCtrl`,
+  add `<script src="..../xyz.js">` to the bottom of `app/index.html`.
+

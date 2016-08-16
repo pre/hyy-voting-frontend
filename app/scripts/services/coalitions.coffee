@@ -1,9 +1,9 @@
 'use strict'
 
 angular.module 'hyyVotingFrontendApp'
-  .factory 'alliances', (SessionRestangular) ->
+  .factory 'coalitions', (SessionRestangular) ->
     get: (electionId) ->
       SessionRestangular
         .one("elections", electionId)
-        .all("alliances")
-        .getList()
+        .all("coalitions")
+        .getList(with_candidates: true)

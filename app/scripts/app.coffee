@@ -55,10 +55,6 @@ angular
         templateUrl: 'views/sign-out.html'
         controller: 'SignOutCtrl'
         controllerAs: 'signOut'
-      .when '/results',
-        templateUrl: 'views/results.html'
-        controller: 'ResultCtrl'
-        controllerAs: 'result'
       .when '/vote',
         templateUrl: 'views/vote.html'
         controller: 'VoteCtrl'

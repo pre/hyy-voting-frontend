@@ -16,6 +16,8 @@ body {
 
 /*
  * Prevent iOS Safari from zooming in when focusing in an input field.
+ * If input's font-size is less than 16px, iOS Safari will zoom when input
+ * gains focus.
  *
  * http://stackoverflow.com/a/26069511/422848
  * http://stackoverflow.com/a/16255670/422848
@@ -138,12 +140,8 @@ body {
 }
 
 .vote-ballot {
-  width: 450px;
+  min-width: 250px;
   z-index: 10;
-}
-
-.vote-ballot .panel-body {
-  height: 9.5em;
 }
 
 .vote-ballot .alert {
@@ -160,9 +158,16 @@ body {
   width: 100%;
 }
 
+/*
+ * Lets the fixed element float freely on the right side of the page.
+ *
+ * http://stackoverflow.com/a/6794097/422848
+ */
 .fix-to-top {
-    position: fixed;
-    top: 10px;
+  position: fixed;
+  top: 10px;
+  left: 80%;
+  transform: translate(-80%);
 }
 
 .language-select {

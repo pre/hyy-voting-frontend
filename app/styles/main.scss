@@ -14,6 +14,24 @@ body {
   padding: 0;
 }
 
+/*
+ * Prevent iOS Safari from zooming in when focusing in an input field.
+ *
+ * http://stackoverflow.com/a/26069511/422848
+ * http://stackoverflow.com/a/16255670/422848
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .form-control {
+    font-size: 16px;
+  }
+}
+/* Use Bootstrap default font-size otherwise */
+@media (min-width: 768px) {
+  .form-control {
+    font-size: 14px;
+  }
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

@@ -176,3 +176,22 @@ body {
   margin-top: 8px;
   cursor: pointer;
 }
+
+/*
+ * Candidate list
+ */
+// Radio button of candidate selection
+table.candidate-list td:nth-child(1), table.candidate-list th:nth-child(1) {
+  width: 2em;
+  text-align: right;
+}
+// Candidate number
+table.candidate-list td:nth-child(2), table.candidate-list th:nth-child(2) {
+  width: 4.5em;
+  text-align: right;
+}
+
+// Candidate name
+table.candidate-list td:nth-child(3), table.candidate-list th:nth-child(3) {
+  text-align: left;
+}

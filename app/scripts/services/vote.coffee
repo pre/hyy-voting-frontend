@@ -6,24 +6,27 @@ angular.module 'hyyVotingFrontendApp'
     @submit = (electionId, candidateId) ->
       SessionRestangular
         .one('elections', electionId)
-        .one('candidates', candidateId)
         .all('vote')
-        .post()
+        .post(candidate_id: candidateId)
 
+    #TODO:halloped Find out elections where user has already voted
     @all = ->
-      #TODO: API
       new Promise (resolve, reject) ->
         resolve {}
-
       # SessionRestangular
       #   .all("votes")
       #   .getList()
 
-    @get = (electionId) ->
-      #TODO: API
+    @getVotingRight = (electionId) ->
+      SessionRestangular
+        .one("elections", electionId)
+        .one('voting_right')
+        .get()
+
+    #TODO:halloped Display who user has voted previously (vote can be changed)
+    @getPreviousVote = (electionId) ->
       new Promise (resolve, reject) ->
         resolve {}
-
       # SessionRestangular
       #   .one("elections", electionId)
       #   .one('vote')

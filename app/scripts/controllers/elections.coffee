@@ -16,11 +16,11 @@ angular.module 'hyyVotingFrontendApp'
         @loading = false
 
     @loadElections = ->
-      Promise.all [elections.get(), VoteSrv.all()]
+      Promise.all [elections.get()] #TODO:Halloped VoteSrv.all_voting_rights
         .then(
           (results) =>
             @all = results[0]
-            @votes = results[1]
+            # @voting_right = results[1] # TODO:Halloped
 
           (failure) =>
             @loadError = failure

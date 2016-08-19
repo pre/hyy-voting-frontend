@@ -13,20 +13,24 @@ angular.module 'hyyVotingFrontendApp'
     @coalitions = []
     @candidates = []
     @savedVote = null
+    @votingRight = null
 
     Promise.all [
       coalitions.get(@electionId),
       candidates.get(@electionId),
-      VoteSrv.get(@electionId)
+      VoteSrv.getVotingRight(@electionId)
+      # VoteSrv.getPreviousVote(@electionId) #TODO:halloped
     ]
       .then(
         (results) =>
           @coalitions = results[0]
           @candidates = results[1]
+          @votingRight = results[2]
 
-          if !_.isEmpty results[2]
-            @savedVote = results[2]
-            @selected = @savedVote.candidate_id
+          # TODO:halloped Display previously cast vote
+          # if !_.isEmpty results[3]
+          #   @savedVote = results[3]
+          #   @selected = @savedVote.candidate_id
 
         (failure) =>
           @loadError = true
@@ -39,8 +43,11 @@ angular.module 'hyyVotingFrontendApp'
     @isProspectSelected = ->
       @selected != null
 
+    # NOTE:
+    # Conditions used for disallowing candidate select must match the rules of
+    # `ng-disabled` in views/vote.html (ng-model `vote.selected`).
     @select = (candidate) ->
-      return if @submitting || @submitted
+      return if @submitting || @submitted || @votingRight.used
 
       @selected = candidate.id
 
@@ -53,12 +60,12 @@ angular.module 'hyyVotingFrontendApp'
       @submitting = true
 
       VoteSrv.submit(@electionId, candidateId).then(
-        (success) ->
-          console.log "Vote submitted for id", candidateId, success
+        (data) =>
+          @votingRight = data
 
         (failure) =>
-          console.error "Vote failed for id", candidateId, failure
           @submitError = true
+          @votingRight = failure.data.error.voting_right
           errorMonitor.error failure, "Vote failed"
 
       ).catch(

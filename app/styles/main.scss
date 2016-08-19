@@ -14,6 +14,26 @@ body {
   padding: 0;
 }
 
+/*
+ * Prevent iOS Safari from zooming in when focusing in an input field.
+ * If input's font-size is less than 16px, iOS Safari will zoom when input
+ * gains focus.
+ *
+ * http://stackoverflow.com/a/26069511/422848
+ * http://stackoverflow.com/a/16255670/422848
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .form-control {
+    font-size: 16px;
+  }
+}
+/* Use Bootstrap default font-size otherwise */
+@media (min-width: 768px) {
+  .form-control {
+    font-size: 14px;
+  }
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -93,12 +113,6 @@ body {
 /* Spinner */
 .glyphicon-refresh-animate {
     animation: spin 1.0s infinite linear;
-    -webkit-animation: spin2 1.0s infinite linear;
-}
-
-@-webkit-keyframes spin2 {
-    from { -webkit-transform: rotate(0deg);}
-    to { -webkit-transform: rotate(360deg);}
 }
 
 @keyframes spin {
@@ -126,12 +140,8 @@ body {
 }
 
 .vote-ballot {
-  width: 450px;
+  min-width: 250px;
   z-index: 10;
-}
-
-.vote-ballot .panel-body {
-  height: 9.5em;
 }
 
 .vote-ballot .alert {
@@ -148,9 +158,16 @@ body {
   width: 100%;
 }
 
+/*
+ * Lets the fixed element float freely on the right side of the page.
+ *
+ * http://stackoverflow.com/a/6794097/422848
+ */
 .fix-to-top {
-    position: fixed;
-    top: 10px;
+  position: fixed;
+  top: 10px;
+  left: 80%;
+  transform: translate(-80%);
 }
 
 .language-select {
@@ -158,4 +175,23 @@ body {
   line-height: $height;
   margin-top: 8px;
   cursor: pointer;
+}
+
+/*
+ * Candidate list
+ */
+// Radio button of candidate selection
+table.candidate-list td:nth-child(1), table.candidate-list th:nth-child(1) {
+  width: 2em;
+  text-align: right;
+}
+// Candidate number
+table.candidate-list td:nth-child(2), table.candidate-list th:nth-child(2) {
+  width: 4.5em;
+  text-align: right;
+}
+
+// Candidate name
+table.candidate-list td:nth-child(3), table.candidate-list th:nth-child(3) {
+  text-align: left;
 }

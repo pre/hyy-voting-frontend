@@ -1,9 +1,11 @@
+<!-- PAGE HEADER -->
 <div class="page-header">
   <h1 translate>
     pages.vote.page_title
   </h1>
 </div>
 
+<!-- SOMETHING WENT WRONG -->
 <div
   class="jumbotron alert alert-danger"
   ng-if="vote.loadError"
@@ -31,6 +33,7 @@
   </div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div
   class="row"
   translate-namespace="pages.vote">
@@ -47,25 +50,39 @@
           set-class-when-at-top="fix-to-top"
           padding-when-at-top="10">
           <!-- N.B. padding-when-at-top must match the fixed position px,
-               otherwise a jumpy side-effect will occurr -->
+               which is defined by `top` in .fix-to-top class.
+               Otherwise a jumpy side-effect will occurr when scrolling down.
+          -->
 
           <div class="panel-heading">
             <h3 class="panel-title" translate>.vote-ballot.title</h3>
           </div>
 
           <div class="panel-body">
+
+            <!--
+            Display an initial help text for a new voter who has not yet
+            selected a candidate.
+            -->
             <span
               ng-hide="vote.isProspectSelected()"
               translate>
               .vote-ballot.ingress
             </span>
 
+            <!-- Display candidate which is selected from the list -->
             <vote-prospect
               ng-show="vote.isProspectSelected()"
               vt-selected="vote.selected"
               vt-all="vote.candidates">
             </vote-prospect>
 
+            <!--
+            Displayed when a vote can be changed,
+            user has previously submitted a vote,
+            he has now reloaded the voting page,
+            and he has selected a new candidate from the list.
+            -->
             <div
               ng-if="vote.isUnsaved()"
               class="alert alert-warning">
@@ -78,11 +95,15 @@
           </div>
 
           <div class="panel-footer">
+
+            <!--
+            Primary action button: cast a new vote
+            -->
             <button
               class="btn btn-primary"
               ng-click="vote.submit(vote.selected)"
               ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
-              ng-hide="vote.submitted"
+              ng-hide="vote.submitted || vote.votingRight.used"
               >
 
                 <div ng-show="vote.submitting && !vote.submitted">
@@ -97,6 +118,9 @@
                 </div>
             </button>
 
+            <!--
+            Notification of a successfully cast new vote.
+            -->
             <div
               class="alert alert-success"
               role="alert"
@@ -106,16 +130,27 @@
                 <strong translate>.vote-has-been-cast</strong>
               </p>
 
+              <!--
+              Halloped: If you are have voting right in multiple elections,
+                        choose next election.
+              -->
+              <!--
               <p>
                 <span translate>.if-you-are-eligible-in-others</span>
                 <a ng-href="#/elections" translate>.choose-next-election</a>.
               </p>
+              -->
 
               <p translate>
                 .close-window-when-finished
               </p>
             </div>
 
+            <!--
+            Notification of a failed casting of vote.
+
+            #TODO:translate
+            -->
             <div
               class="alert alert-danger"
               role="alert"
@@ -132,12 +167,29 @@
               </p>
             </div>
 
+
+            <!--
+            Notification of an already used voting right.
+            -->
+            <div
+                ng-if="!vote.submitted && vote.votingRight.used"
+                class="alert alert-warning">
+              <p>
+                <!--#TODO:translate-->
+                Olet jo käyttänyt äänioikeutesi
+                {{ vote.votingRight.updated_at | moment:'DD.MM.YYYY HH:mm' }}.
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
 
+      <!-- LOADING INDICATOR -->
       <div ng-if="vote.loading">
-        <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+        <div class="col-md-12 text-center" style="padding-bottom: 2em;">
+          <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+        </div>
       </div>
 
       <div ng-if="!vote.loading">
@@ -145,6 +197,7 @@
         <!-- SEARCH -->
         <div class="form-horizontal">
           <h2 translate>.search.title</h2>
+          <!-- Search by candidate number -->
           <!--
           <div class="form-group">
             <label for="candidateNumber" class="col-sm-3 control-label">Numero</label>
@@ -154,25 +207,26 @@
           </div>
           -->
 
-          <div class="form-group">
-            <label
-              for="candidateName"
-              class="col-sm-3 control-label"
-              translate>
-              .search.candidate-name
-            </label>
-
-            <div class="col-sm-8">
-              <input class="form-control" ng-model="vote.candidate.name">
+          <!-- Search by candidate name -->
+          <div class="row form-group">
+            <div class="col-sm-6">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+                  <span translate>.search.candidate-name</span>
+                </span>
+                <input
+                  type="search"
+                  class="form-control"
+                  ng-model="vote.candidate.name">
+              </div>
             </div>
-
           </div>
+
         </div>
 
         <!--  COALITIONS -->
-        <section
-          ng-repeat="coalition in vote.coalitions"
-          >
+        <section ng-repeat="coalition in vote.coalitions">
 
           <!-- #TODO: extract to css-->
           <h1 style="border-bottom: 1px solid #333333;" ng-bind="coalition.name"></h1>
@@ -198,7 +252,8 @@
             </h2>
 
             <!-- CANDIDATES OF ALLIANCE -->
-            <table class="table table-striped table-hover">
+            <table
+              class="table table-striped table-hover table-condensed candidate-list">
               <thead>
                 <th></th>
                 <th translate>.search.header-number</th>
@@ -212,9 +267,14 @@
                   >
 
                   <td>
+                    <!--
+                      NOTE:
+                      Conditions for disabling candidate selection in `ng-disabled`
+                      must the same what are used in `vote.select()`
+                    -->
                     <input
                       type="radio"
-                      ng-disabled="vote.submitting || vote.submitted"
+                      ng-disabled="vote.submitting || vote.submitted || vote.votingRight.used"
                       ng-model="vote.selected"
                       ng-value="c.id">
                   </td>

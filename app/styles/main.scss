@@ -195,3 +195,12 @@ table.candidate-list td:nth-child(2), table.candidate-list th:nth-child(2) {
 table.candidate-list td:nth-child(3), table.candidate-list th:nth-child(3) {
   text-align: left;
 }
+
+.coalition-header {
+  border-bottom: 1px solid #333333;
+  font-size: 1.5em;
+}
+
+.alliance-header {
+  font-size: 1.25em;
+}

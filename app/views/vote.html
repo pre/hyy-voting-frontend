@@ -232,8 +232,9 @@
         <!--  COALITIONS -->
         <section ng-repeat="coalition in vote.coalitions">
 
-          <!-- #TODO: extract to css-->
-          <h1 style="border-bottom: 1px solid #333333;" ng-bind="coalition.name"></h1>
+          <h1
+            class="coalition-header"
+            ng-bind="coalition.name"></h1>
 
 
           <!-- #TODO:translate -->
@@ -251,6 +252,7 @@
             >
 
             <h2
+              class="alliance-header"
               ng-bind="alliance.name"
               ng-if="coalition.alliance_count > 1"
               >

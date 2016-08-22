@@ -54,6 +54,19 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Deploy Frontend alongside with API
 
+Frontend is distributed as a `git submodule`:
+  * Code is generated with `grunt build`.
+  * Then a commit is pushed to Frontend's independent distribution repository.
+  * As a last step, Voting API's copy of the submodule is updated.
+  * Updating the submodule is automated by `bin/distribute.sh`.
+
+Submodule distribution allows the maintainer track exactly which compilation
+of the Frontend is being used against the API. If Frontend's code was deployed
+independently to eg. Amazon S3, then it could be updated without
+any changes being required in the API. This is not preferred in an
+election system, where each production deploy (of both API and Frontend) need
+to be carefully audited.
+
 ```bash
 # Setup Frontend's git submodule (first time only)
 git submodule add git@github.com:pre/hyy-voting-frontend-dist.git
@@ -61,14 +74,9 @@ git submodule add git@github.com:pre/hyy-voting-frontend-dist.git
 
 ```bash
 # Update code in Frontend's git submodule (for each deploy)
-(in Frontend) grunt build
-(in Frontend) cd dist
-(in Frontend) git status
-(in Frontend) git add -A .
-(in Frontend) git commit -m 'Theme of this deploy'
-(in Frontend) git push
+(in Frontend) bin/distribute.sh
 
-# Apply Frontend's new deploy in API
+# Update API's git submodule to apply Frontend's new code
 (in API) cd public
 (in API) git checkout master
 (in API) git pull
@@ -85,4 +93,3 @@ In API/public, `git log` should now display 'Theme of this deploy' as the newest
 
 * If you get error `Unknown provider: xyzProvider <- xyz <- XyzCtrl`,
   add `<script src="..../xyz.js">` to the bottom of `app/index.html`.
-

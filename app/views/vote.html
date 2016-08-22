@@ -64,11 +64,15 @@
             Display an initial help text for a new voter who has not yet
             selected a candidate.
             -->
-            <span
-              ng-hide="vote.isProspectSelected()"
-              translate>
-              .vote-ballot.ingress
-            </span>
+            <div ng-hide="vote.isProspectSelected()">
+              <p translate>
+                .vote-ballot.ingress
+              </p>
+              <!-- #TODO:translate -->
+              <p>
+                Äänesi kirjataan vasta, kun painat "Äänestä".
+              </p>
+            </div>
 
             <!-- Display candidate which is selected from the list -->
             <vote-prospect
@@ -235,7 +239,8 @@
           <!-- #TODO:translate -->
           <!-- #TODO: set visibility by css if coalition has alliance elements -->
           <p ng-show="vote.candidate.name">
-            Hakemallasi ehdokasnimellä ei löytynyt ketään tästä vaalirenkaasta.
+            Tästä vaalirenkaasta on piilotettu vaaliliittot,
+            jotka eivät vastanneet hakuehtoasi.
           </p>
 
 

@@ -22,8 +22,7 @@
       class="lead"
       translate
       ng-if="main.isElectionsActive">
-        .you_may_request_session_link
-        <!-- #TODO: päivämäärä -->
+        .sign_in_using_university_account
     </p>
 
     <div ng-if="main.hasElectionsEnded">
@@ -43,8 +42,10 @@
       </p>
 
       <p>
+        <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
         <span translate>.eligibility_check</span>
         <strong><span ng-bind="main.eligibilitySignInStartsAt"></span></strong>
+        -->
 
         <br>
         <span translate>.voting</span>
@@ -53,10 +54,12 @@
     </div>
 
     <p ng-if="main.isSignInActive">
-      <a class="btn btn-lg btn-success" ng-href="#/sign-up">
+      <a class="btn btn-lg btn-success" ng-href="/haka/auth/new">
+        <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
         <span ng-if="main.isEligibilityActive" translate>
           .button_caption_eligibility
         </span>
+        -->
 
         <span ng-if="main.isElectionsActive" translate>
           .button_caption_vote

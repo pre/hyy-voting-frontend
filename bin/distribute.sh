@@ -19,7 +19,10 @@ echo ""
 git status
 
 echo ""
-echo "All good? Ready for git add? (Y/n)"
+echo "All good?"
+echo "- You checked that 'grunt serve' was not running before building?"
+echo "- Ready for git add?"
+echo -n "(Y/n) "
 read okay
 if [ "$okay" == "n" ] || [ "$okay" == "N" ]; then
   exit 0

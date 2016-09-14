@@ -33,6 +33,11 @@ Run `grunt serve` and access http://localhost:9000
 
 ### Accessing the local web server
 
+- You will need a valid JWT Access Token from the API:
+  - (in API) `rake jwt:voter:generate`
+  - open http://localhost:9000/#/sign-in?token=JWT_ACCESS_TOKEN
+  - See API's README for details.
+
 - When the development API is running, you will have TWO frontends available: one served locally by `grunt serve` (localhost:9000) and the one which is served by Rails from `API/public` folder (localhost:3000). Use only either of them at the same time.
   * If you need to access localhost:3000 (ie. `API/public` served by Rails), prevent confusion by *not* running `grunt serve` at the same time. :)
 

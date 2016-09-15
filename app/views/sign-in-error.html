@@ -1,0 +1,65 @@
+<div
+  class="row"
+  translate-namespace="pages.sign_in_error">
+
+  <div class="col-xs-12">
+
+    <div class="jumbotron alert alert-danger">
+      <div class="container">
+
+        <div
+          ng-if="signInError.noVotingRight"
+          translate-namespace=".no_voting_right">
+
+          <h1 translate>.title</h1>
+          <p class="lead" translate>.lead</p>
+          <p translate>.body</p>
+          <p>
+            <a
+              translate
+              ng-href="#/"
+              class="btn btn-primary">
+              .button_caption
+            </a>
+          </p>
+        </div>
+
+        <div
+          ng-if="signInError.invalidSamlResponse"
+          translate-namespace=".invalid_saml_response">
+
+          <h1 translate>.title</h1>
+          <p class="lead" translate>.lead</p>
+          <p translate>.body</p>
+          <p>
+            <a
+              translate
+              ng-href="#/"
+              class="btn btn-primary">
+              .button_caption
+            </a>
+          </p>
+        </div>
+
+        <div
+          ng-if="signInError.general"
+          translate-namespace=".general">
+
+          <h1 translate>.title</h1>
+          <p class="lead" translate>.lead</p>
+          <p translate>.body</p>
+          <p>
+            <a
+              translate
+              ng-href="#/"
+              class="btn btn-primary">
+              .button_caption
+            </a>
+          </p>
+        </div>
+      </div>
+
+
+    </div> <!-- jumbotron alert -->
+  </div> <!-- col -->
+</div> <!-- row -->

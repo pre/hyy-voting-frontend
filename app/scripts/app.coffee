@@ -51,6 +51,10 @@ angular
         templateUrl: 'views/sign-in.html'
         controller: 'SignInCtrl'
         controllerAs: 'session'
+      .when '/sign-in-error',
+        templateUrl: 'views/sign-in-error.html'
+        controller: 'SignInErrorCtrl'
+        controllerAs: 'signInError'
       .when '/sign-out',
         templateUrl: 'views/sign-out.html'
         controller: 'SignOutCtrl'

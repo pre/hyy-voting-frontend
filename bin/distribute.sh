@@ -2,18 +2,24 @@
 
 set -e
 
-# cwd dist
-echo 'Checking out "master" in "dist/"'
-echo 'If this fails do "cd dist && git reset --hard origin/master"'
+DIST_FOLDER="dist"
+
+# cwd ${DIST_FOLDER}
+echo "Checking out master in '${DIST_FOLDER}'"
+echo "If this fails do 'cd ${DIST_FOLDER} && git reset --hard origin/master'"
 echo ''
-pushd dist
+pushd ${DIST_FOLDER}
 git checkout master
 git clean -dfx
 popd
 
+
 # cwd /
 grunt build
-pushd dist
+
+
+# cwd ${DIST_FOLDER}
+pushd ${DIST_FOLDER}
 
 echo ""
 git status
@@ -33,8 +39,24 @@ echo "What's the commit message? (eg. theme for the deploy)"
 read message
 git commit -m "$message"
 
-echo "Pushing changes"
+echo "Pushing submodule's changes"
 git push
+
+
+# cwd /
+popd
+
+git add ${DIST_FOLDER}
+git status
+
+echo "Ready to commit submodule changes in parent repository?"
+echo -n "(Y/n) "
+read okay
+if [ "$okay" == "n" ] || [ "$okay" == "N" ]; then
+  exit 0
+fi
+
+git commit -m "deploy (${DIST_FOLDER}) Update submodule"
 
 echo ""
 echo "Next: Update the git submodule in API/public folder."

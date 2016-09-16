@@ -179,9 +179,13 @@
     "elections": {
       "page_title": "Äänestä",
       "sign_in": "Sisäänkirjaudu",
-      "request_link_please": "Pääset äänestämään sen jälkeen, kun olet pyytänyt sisäänkirjautumislinkin sähköpostiisi.",
-      "button_request_link": "Pyydä linkki",
+      "sign_up_please": "Pääset äänestämään sen jälkeen, kun olet kirjautunut sisään.",
+      "sign_up_button_caption": "Aloitetaan!",
+
       "you_can_vote_in_the_following": "Voit äänestää seuraavissa vaaleissa:",
+      "choose_election": "Avaa vaali, valitse ehdokas ja paina \"äänestä\".",
+      "submit_vote_help": "Äänesi rekisteröidään, kun painat \"äänestä\"-nappia ehdokkaan valitsemisen jälkeen.",
+      "vote_is_immutable": "Et voi muuttaa antamaasi ääntä jälkikäteen.",
 
       "table_header": {
         "election_name": "Vaalin nimi",

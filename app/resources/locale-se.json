@@ -180,10 +180,13 @@
     "elections": {
       "page_title": "Rösta",
       "sign_in": "Logga In",
-      "request_link_please": "Du kan rösta genom att beställa en inloggningslänk till epost.",
-      "button_request_link": "Beställ länk",
+      "sign_up_please": "Du kan rösta genom att logga in.",
+      "sign_up_button_caption": "Det ska vi göra!",
 
       "you_can_vote_in_the_following": "Du kan rösta i följande valen:",
+      "choose_election": "Öppna valet, välj en kandidat och tryck \"rösta\".",
+      "submit_vote_help": "Din röst registreras när dy trycker på \"rösta\"-knappen efter att ha valt en kandidat.",
+      "vote_is_immutable": "Du kan inte ändra din röst efteråt.",
 
       "table_header": {
         "election_name": "Val namn",

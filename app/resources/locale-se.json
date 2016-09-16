@@ -158,11 +158,13 @@
         "header-number": "Nummer",
         "header-name": "Namn",
         "ingress": "Välj kandidat från listan nedan.",
+        "registration-note": "Din röst är inte registrerad förrän du trycker \"Rösta\".",
         "about-to-change-existing-vote": "Du är på väg att ändra en tidigare gjuten röst. Förändring kommer att spelas in när du klickar på 'Rösta'.",
         "button-submit-caption": "Rösta",
         "submitting": "Röstar .."
       },
 
+      "voting-right-already-used": "Du har redan röstat på",
       "vote-has-been-cast": "Din röst har registrerats!",
       "if-you-are-eligible-in-others": "Om du har rösträtt vid flera val,",
       "choose-next-election": "välj nästa val",

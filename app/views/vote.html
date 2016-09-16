@@ -68,9 +68,9 @@
               <p translate>
                 .vote-ballot.ingress
               </p>
-              <!-- #TODO:translate -->
-              <p>
-                Äänesi kirjataan vasta, kun painat "Äänestä".
+
+              <p translate>
+                .vote-ballot.registration-note
               </p>
             </div>
 
@@ -184,8 +184,7 @@
                 ng-if="!vote.submitted && vote.votingRight.used"
                 class="alert alert-warning">
               <p>
-                <!--#TODO:translate-->
-                Olet jo käyttänyt äänioikeutesi
+                <span translate>.voting-right-already-used</span>
                 {{ vote.votingRight.updated_at | moment:'DD.MM.YYYY HH:mm' }}.
               </p>
             </div>

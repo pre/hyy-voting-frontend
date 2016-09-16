@@ -158,11 +158,13 @@
         "header-number": "Numero",
         "header-name": "Nimi",
         "ingress": "Valitse ehdokas alla olevasta listasta.",
+        "registration-note": "Äänesi kirjataan vasta, kun painat \"Äänestä\".",
         "about-to-change-existing-vote": "Olet muuttamassa aiemmin antamaasi ääntä. Muutos kirjataan vasta kun painat 'Äänestä'.",
         "button-submit-caption": "Äänestä",
         "submitting": "Äänestetään .."
       },
 
+      "voting-right-already-used": "Olet jo käyttänyt äänioikeutesi",
       "vote-has-been-cast": "Äänesi on kirjattu!",
       "if-you-are-eligible-in-others": "Jos sinulla on äänioikeus useassa vaalissa,",
       "choose-next-election": "valitse seuraava vaali",

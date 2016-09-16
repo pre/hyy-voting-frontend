@@ -166,6 +166,7 @@
         "submitting": "Voting .."
       },
 
+      "coalition-index-text": "Coalitions consist of alliances and alliances consist of candidates.",
       "voting-right-already-used": "You have already voted at",
       "vote-has-been-cast": "Your vote is now recorded!",
       "if-you-are-eligible-in-others": "If you are eligible in multiple elections,",
@@ -176,7 +177,8 @@
         "title": "Find a candidate",
         "candidate-name": "Candidate name",
         "header-number": "Number",
-        "header-candidate": "Candidate"
+        "header-candidate": "Candidate",
+        "browser-search-tip": "You can also use browser's search."
       }
 
     },

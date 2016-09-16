@@ -228,8 +228,39 @@
                   ng-model="vote.candidate.name">
               </div>
             </div>
+
+            <div class="col-sm-6">
+              <span translate>.search.browser-search-tip</span>
+            </div>
+
           </div>
 
+        </div>
+
+        <!-- Coalition Index -->
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+            <h3 class="panel-title">Vaalirenkaat</h3>
+          </div>
+
+          <div class="panel-body list-group-item-info">
+            <p translate>
+              .coalition-index-text
+            </p>
+          </div>
+
+          <!-- List group -->
+          <div class="list-group">
+            <a
+              ng-repeat="coalition in vote.coalitions"
+              du-smooth-scroll="{{ 'coalition-' + coalition.id }}"
+              offset="30"
+              duration="1000"
+              class="list-group-item clickable">
+                {{ coalition.name }}
+            </a>
+          </div>
         </div>
 
         <!--  COALITIONS -->
@@ -237,6 +268,7 @@
 
           <h1
             class="coalition-header"
+            id="{{ 'coalition-' + coalition.id }}"
             ng-bind="coalition.name"></h1>
 
 

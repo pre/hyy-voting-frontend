@@ -8,7 +8,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'restangular',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'duScroll'
   ]
 
   .constant 'LOCALES', {

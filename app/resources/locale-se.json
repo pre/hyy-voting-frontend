@@ -166,6 +166,7 @@
         "submitting": "Röstar .."
       },
 
+      "coalition-index-text": "Koalitioner består av allianser och allianser består av kandidater.",
       "voting-right-already-used": "Du har redan röstat på",
       "vote-has-been-cast": "Din röst har registrerats!",
       "if-you-are-eligible-in-others": "Om du har rösträtt vid flera val,",
@@ -176,7 +177,8 @@
         "title": "Sök en kandidat",
         "candidate-name": "Kandidat namn",
         "header-number": "Nummer",
-        "header-candidate": "Kandidat"
+        "header-candidate": "Kandidat",
+        "browser-search-tip": "Du kan också använda webbläsarens sökning."
       }
 
     },

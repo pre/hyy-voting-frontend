@@ -151,8 +151,8 @@
       "error": {
         "something_went_wrong": "Something happened",
         "could_not_load_candidates": "Candidates could not be loaded.",
-        "request_a_new_link_and_try_again": "Request a new sign in link and try again.",
-        "button_request_link": "Request link"
+        "try_again": "Sign out and retry to signing in.",
+        "button_caption": "Try again"
       },
 
       "vote-ballot": {

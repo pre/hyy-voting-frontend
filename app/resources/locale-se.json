@@ -149,10 +149,10 @@
       "page_title": "Rösta",
 
       "error": {
-        "something_went_wrong": "Oh noes :/",
+        "something_went_wrong": "Något hände",
         "could_not_load_candidates": "Nedladdning av kandidat list gick fel.",
-        "request_a_new_link_and_try_again": "Skicka ny inloggningslänk och försök igen.",
-        "button_request_link": "Skicka ny länk"
+        "try_again": "Logga ut och försök igen att logga in.",
+        "button_caption": "Försök igen"
       },
 
       "vote-ballot": {

@@ -27,28 +27,26 @@
 
     <div ng-if="main.hasElectionsEnded">
       <p
-        class="lead">
-          Vaalit ovat päättyneet.
+        class="lead"
+        translate>
+          .voting_has_ended
+      </p>
+
+      <p>
+        <span translate>.result_will_be_published_at</span>
+        <a href="http://vaalitulos.hyy.fi">vaalitulos.hyy.fi</a>.
       </p>
 
     </div>
 
     <div ng-if="!main.isSignInActive && !main.hasElectionsEnded">
-      <p
-        class="lead"
-        translate>
-          .signin_will_commence_at
-
-      </p>
-
-      <p>
+      <p class="lead">
         <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
         <span translate>.eligibility_check</span>
         <strong><span ng-bind="main.eligibilitySignInStartsAt"></span></strong>
         -->
 
-        <br>
-        <span translate>.voting</span>
+        <span translate>.voting_opens_at</span>
         <strong><span ng-bind="main.electionSignInStartsAt"></span></strong>
       </p>
     </div>

@@ -16,10 +16,10 @@
         "Voit tarkastaa vaalikelpoisuutesi tilaamalla sisäänkirjautumislinkin sähköpostiosoitteeseen, jonka olet ilmoittanut 15.9.2015 mennessä Helsingin yliopiston opiskelijarekisteriin.",
       "sign_in_using_university_account":
         "Kirjaudu sisään Helsingin yliopiston käyttäjätunnuksellasi.",
-      "signin_will_commence_at":
-        "Palvelu on avoinna seuraavista päivämääristä alkaen:",
       "eligibility_check": "Vaalikelpoisuuden tarkastaminen",
-      "voting": "Äänestäminen",
+      "voting_opens_at": "Äänestäminen avautuu",
+      "voting_has_ended": "Äänestys on päättynyt",
+      "result_will_be_published_at": "Tulos julkistetaan osoitteessa",
 
       "button_caption_eligibility": "Tarkasta vaalikelpoisuus",
       "button_caption_vote": "Äänestämään!"

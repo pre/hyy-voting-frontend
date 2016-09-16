@@ -69,43 +69,57 @@
 
     "sign_up": {
       "page_title": "Kirjaudu sisään",
-      "ingress":
-        "Anna opiskelijarekisteriin tallentamasi sähköpostiosoite, niin sinulle lähetetään sisäänkirjautumislinkki.",
-      "password_instructions":
-        "Salasana lähetetään ainoastaan ennalta tunnettuun sähköpostiosoitteeseen. Tarkista opiskelijarekisteriin antamasi sähköpostiosoitteesi <a href='https://weboodi.helsinki.fi'>kirjautumalla WebOodiin</a>.",
-      "spam_instructions":
-        "Tarkista myös sähköpostisi roskapostikansio, mikäli et saa sisäänkirjautumislinkkiä.",
-      "in_case_of_fire":
-        "Viime kädessä ota yhteys HYYn vaalityöntekijään <a href='mailto:vaalit@hyy.fi'>vaalit@hyy.fi</a> tai +358 50 551 6147.",
-
       "attention": "Huom!",
-      "election_dates_explained":
-        "Äänestys on auki ti 15.12.2015 klo 9:00 - 20:00 ja ke 16.12.2015 klo 9:00 - 17:00 välisenä aikana.",
-      "staff_eligibility_note":
-        "Vakituiseen henkilökuntaan kuuluvilla ei ole äänioikeutta hallinnon opiskelijaedustajien vaalissa.",
-      "private_browsing_note":
-        "Varmista, ettei selaimesi ole Private Browsing tilassa, kun avaat linkin.",
+      "voting_days_are": "Äänestyspäivät ovat {{ firstPeriod }} ja {{ secondPeriod }}",
+      "voting_open_hours_are": "Äänestys on avoinna klo {{ range }} välisenä aikana.",
+      "primary_button_caption": "Kirjaudu sisään",
+      "if_cannot_sign_in": "Mikäli et voi käyttää yliopiston käyttäjätunnusta tai sisäänkirjautuminen ei jostain syystä onnistu, ota yhteys HYYn vaalityöntekijään {{ name }}, {{ email }}, {{ phone }}.",
 
-      "input_caption_email": "Sähköposti",
-      "button_caption_submit": "Lähetä sisäänkirjautumislinkki",
-      "button_caption_submitting": "Lähetetään ..",
+      "edari": {
+        "eligibility": "Olet äänioikeutettu, kun olet ilmoittautunut läsnäolevaksi ja maksanut HYYn jäsenmaksun. Voit sisäänkirjautua äänestämään Helsingin yliopiston käyttäjätunnuksellasi.",
 
-      "link_has_been_sent":
-        "Sisäänkirjautumislinkki on lähetetty antamaasi osoitteeseen!",
-      "pls_check_email":
-        "Kirjaudu sisään noudattamalla sähköpostiosoiteeseesi lähetettyjä ohjeita.",
-
-      "something_went_wrong": {
-        "detail": "Linkkiä ei voitu lähettää.",
-        "if_happens_again":
-          "Jos ongelma toistuu, ota yhteys HYYn vaalityöntekijään HYYn vaalityöntekijään vaalit@hyy.fi +358 50 551 6147.",
-        "pls_explain":
-          "Kerro vaalityöntekijälle virheen tekninen syy:"
+        "late_member_note": "Mikäli ilmoittauduit läsnäolevaksi vasta äskettäin, opiskelijanumeroasi ei välttämättä vielä löydy äänoikeutettujen listasta. Tällöin saat kirjautumisen jälkeen saat ilmoituksen, ettei sinulla ole äänioikeutta. Sinulle voidaan kuitenkin luoda äänioikeus, mikäli esität tositteen jäsenmaksun maksamisesta HYYn keskustoimistolla."
       },
 
-      "errors": {
-        "not_eligible_in_any_election": "Sinulla ei ole äänioikeutta yhteenkään vaaliin.",
-        "session_creation_not_permitted": "Äänestys ei ole avoinna. Näet äänestämisen aukiolon päivämäärän ja kellonajan yllä."
+      "request_link": {
+        "ingress":
+          "Anna opiskelijarekisteriin tallentamasi sähköpostiosoite, niin sinulle lähetetään sisäänkirjautumislinkki.",
+        "password_instructions":
+          "Salasana lähetetään ainoastaan ennalta tunnettuun sähköpostiosoitteeseen. Tarkista opiskelijarekisteriin antamasi sähköpostiosoitteesi <a href='https://weboodi.helsinki.fi'>kirjautumalla WebOodiin</a>.",
+        "spam_instructions":
+          "Tarkista myös sähköpostisi roskapostikansio, mikäli et saa sisäänkirjautumislinkkiä.",
+        "in_case_of_fire":
+          "Viime kädessä ota yhteys HYYn vaalityöntekijään <a href='mailto:vaalit@hyy.fi'>vaalit@hyy.fi</a> tai +358 50 551 6147.",
+
+        "attention": "Huom!",
+        "election_dates_explained":
+          "Äänestys on auki ti 15.12.2015 klo 9:00 - 20:00 ja ke 16.12.2015 klo 9:00 - 17:00 välisenä aikana.",
+        "staff_eligibility_note":
+          "Vakituiseen henkilökuntaan kuuluvilla ei ole äänioikeutta hallinnon opiskelijaedustajien vaalissa.",
+        "private_browsing_note":
+          "Varmista, ettei selaimesi ole Private Browsing tilassa, kun avaat linkin.",
+
+        "input_caption_email": "Sähköposti",
+        "button_caption_submit": "Lähetä sisäänkirjautumislinkki",
+        "button_caption_submitting": "Lähetetään ..",
+
+        "link_has_been_sent":
+          "Sisäänkirjautumislinkki on lähetetty antamaasi osoitteeseen!",
+        "pls_check_email":
+          "Kirjaudu sisään noudattamalla sähköpostiosoiteeseesi lähetettyjä ohjeita.",
+
+        "something_went_wrong": {
+          "detail": "Linkkiä ei voitu lähettää.",
+          "if_happens_again":
+            "Jos ongelma toistuu, ota yhteys HYYn vaalityöntekijään HYYn vaalityöntekijään vaalit@hyy.fi +358 50 551 6147.",
+          "pls_explain":
+            "Kerro vaalityöntekijälle virheen tekninen syy:"
+        },
+
+        "errors": {
+          "not_eligible_in_any_election": "Sinulla ei ole äänioikeutta yhteenkään vaaliin.",
+          "session_creation_not_permitted": "Äänestys ei ole avoinna. Näet äänestämisen aukiolon päivämäärän ja kellonajan yllä."
+        }
       }
     },
 

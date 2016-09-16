@@ -14,6 +14,11 @@ angular.module 'hyyVotingFrontendApp'
     @error = null
     @email = null
 
+    # Display text and button related to the sign in link.
+    # Disabled when Haka authentication is the primary way.
+    # Requesting the link must also be allowed in API if enabled here.
+    @allowLinkRequest = false
+
     @requestLink = (email) ->
       @loading = true
 

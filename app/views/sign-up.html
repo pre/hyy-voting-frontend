@@ -6,7 +6,55 @@
   class="row"
   translate-namespace="pages.sign_up">
 
-  <div class="col-xs-12">
+  <!-- HAKA AUTHENTICATION -->
+  <div
+    ng-if="!session.allowLinkRequest"
+    class="col-xs-12">
+
+    <p translate>
+      .edari.eligibility
+    </p>
+
+    <p translate>
+      .edari.late_member_note
+    </p>
+
+    <!-- #NOTE:Contact info -->
+    <p translate translate-values="{ name: 'Silva Loikkanen', email: 'vaalit@hyy.fi', phone: '+358 50 551 6147'}">
+      .if_cannot_sign_in
+    </p>
+
+    <!-- #NOTE:Date -->
+    <p>
+      <strong translate>.attention</strong>
+
+      <li translate
+          translate-values="{ firstPeriod: '26.-28.10.', secondPeriod: '31.10.-2.11.2016' }">
+          .voting_days_are
+      </li>
+
+      <li translate
+          translate-values="{ range: '10-18' }">
+          .voting_open_hours_are
+      </li>
+    </p>
+
+    <hr>
+
+    <a
+      href="/haka/auth/new"
+      class="btn btn-lg btn-primary btn-block"
+      translate>
+      .primary_button_caption
+    </a>
+  </div> <!-- HAKA AUTHENTICATION -->
+
+  <!-- REQUEST SIGN IN LINK -->
+  <div
+    ng-if="session.allowLinkRequest"
+    translate-namespace=".request_link"
+    class="col-xs-12">
+
     <p translate>
       .ingress
     </p>
@@ -116,13 +164,9 @@
             </div>
 
           </div>
-
         </div>
-
-
       </div>
-
     </form>
+  </div> <!-- REQUEST SIGN IN LINK -->
 
-  </div> <!-- col -->
 </div> <!-- row -->

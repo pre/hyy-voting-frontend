@@ -101,10 +101,15 @@
           <div class="panel-footer">
 
             <!--
-            Primary action button: cast a new vote
+            Primary action button: cast a new vote.
+
+            Note: If button type is "submit", then pressing enter when the
+                  the search field has focus (and a candidate is selected)
+                  will submit the form. Having type="button" will prevent this.
             -->
             <button
               class="btn btn-primary"
+              type="button"
               ng-click="vote.submit(vote.selected)"
               ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
               ng-hide="vote.submitted || vote.votingRight.used"

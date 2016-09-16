@@ -207,13 +207,11 @@
 
   "partials": {
     "info": {
-      "main_title": "Förvaltningsvalet vid Helsingfors universitet",
+      "main_title": "HUS delegationsval",
       "ingress":
-        "I valet av studentrepresentanter i förvaltningen väljs studentrepresentanterna i kollegiet, fakultetsrådet och institutionrådet.",
-      "signin_is_available_at":
-        "Du kan logga in i systemet under tiden",
+        "I delegationsvalet väljs studentkårens högsta beslutande organ, delegationen, som har 60 medlemmar. Röstberättigade är alla medlemmar i HUS, det vill säga de cirka 27 000 studenterna vid Helsingfors universitet. ",
       "election_dates_explained":
-        "15.12.2015 kl. 9:00–20:00 och 16.12.2015 kl. 9:00–17:00. Röstningen upphör 16.12.2015 kl. 17:05 för dem som har hunnit logga in före 16.12.2015 kl. 17:00."
+        "Valdag är {{ firstPeriod }} och {{ secondPeriod }}. Röstning är öppen kl. {{ range }}."
     },
 
     "contact": {

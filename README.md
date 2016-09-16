@@ -98,3 +98,5 @@ In API/public, `git log` should now display 'Theme of this deploy' as the newest
 
 * If you get error `Unknown provider: xyzProvider <- xyz <- XyzCtrl`,
   add `<script src="..../xyz.js">` to the bottom of `app/index.html`.
+
+* For information that will change for each election: `git grep "#NOTE"`.

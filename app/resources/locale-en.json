@@ -207,13 +207,11 @@
 
   "partials": {
     "info": {
-      "main_title": "University of Helsinki Administration Elections",
+      "main_title": "HYY Council Elections",
       "ingress":
-        "Elections of the student members to the College, the Department Council and the Faculty Council.",
-      "signin_is_available_at":
-        "Signing in is availailable as follows",
+        "HYY’s Representative Council elections are conducted to elect 60 members into the council, the highest decision-making body of the Student Union. All HYY’s members, around 27,000 students at the University of Helsinki, have the right to vote in the elections.",
       "election_dates_explained":
-        "between Tue 15.12.2015 at 9:00 - 20:00 and Wed 16.12.2015 at 9:00 - 17:00. Voting will end at Wed 16.12.2015 at 17:05 for those who signed in before Wed 16.12.2015 by 17:00."
+        "Election days are {{ firstPeriod }} and {{ secondPeriod }}. Voting is open during {{ range }}."
     },
 
     "contact": {

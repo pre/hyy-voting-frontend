@@ -205,13 +205,11 @@
 
   "partials": {
     "info": {
-      "main_title": "Helsingin yliopiston hallintovaalit",
+      "main_title": "HYYn edustajistovaalit",
       "ingress":
-        "Hallinnon opiskelijaedustajien vaalissa valitaan opiskelijaedustajat kollegioon, tiedekuntaneuvostoon ja laitosneuvostoon.",
-      "signin_is_available_at":
-        "Sisäänkirjautuminen järjestelmään onnistuu",
+        "HYYn edustajistovaaleissa valitaan ylioppilaskunnan ylin päättävä elin, 60-henkinen edustajisto. Äänioikeutettuja ovat HYYn jäsenet eli noin 27 000 Helsingin yliopiston opiskelijaa.",
       "election_dates_explained":
-        "ti 15.12.2015 klo 9:00 - 20:00 ja ke 16.12.2015 klo 9:00 - 17:00 välisenä aikana. Äänestäminen päättyy ke 16.12.2015 klo 17:05 niiden osalta, jotka ehtivät kirjautua sisään ennen ke 16.12.2015 klo 17:00."
+        "Äänestyspäivät ovat {{ firstPeriod }} ja {{ secondPeriod }}. Äänestys on avoinna klo {{ range }}."
     },
 
     "contact": {

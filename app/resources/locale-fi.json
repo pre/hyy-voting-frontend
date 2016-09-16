@@ -17,6 +17,7 @@
       "sign_in_using_university_account":
         "Kirjaudu sisään Helsingin yliopiston käyttäjätunnuksellasi.",
       "eligibility_check": "Vaalikelpoisuuden tarkastaminen",
+      "voting_opening_hours": "Äänestäminen on avoinna klo {{ open }} - {{ close }}.",
       "voting_opens_at": "Äänestäminen avautuu",
       "voting_has_ended": "Äänestys on päättynyt",
       "result_will_be_published_at": "Tulos julkistetaan osoitteessa",

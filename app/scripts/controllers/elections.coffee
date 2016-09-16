@@ -7,10 +7,10 @@ angular.module 'hyyVotingFrontendApp'
     @votes = null
     @loading = true
     @loadError = false
-    @isElectionsActive = Environment.isElectionsActive()
+    @isElectionActive = Environment.isElectionActive()
 
     @init = ->
-      if @isElectionsActive
+      if @isElectionActive
         @loadElections()
       else
         @loading = false

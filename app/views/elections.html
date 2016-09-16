@@ -35,7 +35,7 @@
 </div>
 
 <div
-  ng-if="!elections.isElectionsActive"
+  ng-if="!elections.isElectionActive"
   class="row"
   translate-namespace="pages.elections.not_started">
 
@@ -59,7 +59,7 @@
 </div>
 
 <div
-  ng-if="!elections.loadError && !elections.loading && elections.isElectionsActive && elections.all.length > 0"
+  ng-if="!elections.loadError && !elections.loading && elections.isElectionActive && elections.all.length > 0"
   class="row"
   translate-namespace="pages.elections">
 

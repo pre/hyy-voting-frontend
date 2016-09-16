@@ -18,14 +18,7 @@
         <!-- #TODO: päivämäärä -->
     </p>
 
-    <p
-      class="lead"
-      translate
-      ng-if="main.isElectionsActive">
-        .sign_in_using_university_account
-    </p>
-
-    <div ng-if="main.hasElectionsEnded">
+    <div ng-if="main.hasElectionEnded">
       <p
         class="lead"
         translate>
@@ -39,7 +32,8 @@
 
     </div>
 
-    <div ng-if="!main.isSignInActive && !main.hasElectionsEnded">
+    <!-- Voting has not started  -->
+    <div ng-if="!main.hasElectionStarted">
       <p class="lead">
         <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
         <span translate>.eligibility_check</span>
@@ -51,21 +45,40 @@
       </p>
     </div>
 
-    <p ng-if="main.isSignInActive">
-      <a class="btn btn-lg btn-success" ng-href="/haka/auth/new">
-        <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
-        <span ng-if="main.isEligibilityActive" translate>
-          .button_caption_eligibility
+    <!-- Voting has started but time is outside opening hours -->
+    <div ng-if="main.hasElectionStarted && !main.isSignInActive && !main.hasElectionEnded">
+      <p class="lead">
+        <span
+          translate
+          translate-values="{ open: main.dailyOpeningTime.format('HH:mm'), close: main.dailyClosingTime.format('HH:mm') }">
+          .voting_opening_hours
         </span>
-        -->
+      </p>
+    </div>
 
-        <span ng-if="main.isElectionsActive" translate>
-          .button_caption_vote
-        </span>
+    <div ng-if="main.isSignInActive">
+      <p
+        class="lead"
+        translate>
+          .sign_in_using_university_account
+      </p>
 
-        <span class="glyphicon glyphicon-ok"></span>
-      </a>
-    </p>
+      <p>
+        <a class="btn btn-lg btn-success" ng-href="/haka/auth/new">
+          <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
+          <span ng-if="main.isEligibilityActive" translate>
+            .button_caption_eligibility
+          </span>
+          -->
+
+          <span ng-if="main.isElectionActive" translate>
+            .button_caption_vote
+          </span>
+
+          <span class="glyphicon glyphicon-ok"></span>
+        </a>
+      </p>
+    </div>
   </div>
 
 </div>

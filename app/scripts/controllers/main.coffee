@@ -2,12 +2,15 @@
 
 angular.module 'hyyVotingFrontendApp'
   .controller 'MainCtrl', (Environment) ->
-    @isElectionsActive = Environment.isElectionsActive()
+    @isSignInActive = Environment.isSignInActive()
+    @isElectionActive = Environment.isElectionActive()
     @isEligibilityActive = Environment.isEligibilityActive()
-    @hasElectionsEnded = Environment.hasElectionsEnded()
+    @hasElectionStarted = Environment.hasElectionStarted()
+    @hasElectionEnded = Environment.hasElectionEnded()
 
-    @isSignInActive = @isEligibilityActive || @isElectionsActive
     @eligibilitySignInStartsAt = Environment.eligibilitySignInStartsAt
     @electionSignInStartsAt = Environment.electionSignInStartsAt
+    @dailyOpeningTime = Environment.dailyOpeningTime
+    @dailyClosingTime = Environment.dailyClosingTime
 
     return

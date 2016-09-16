@@ -32,8 +32,10 @@ var _VAALIT = {
 
   voting: {
     signIn: {
-      startsAt: '2015-11-02 09:00:00 +0200',
-      endsAt: '2016-12-16 17:00 +0200',
+      dailyOpeningTime: '10:00',
+      dailyClosingTime: '18:00',
+      startsAt: '2016-09-16 09:00:00 +0200',
+      endsAt: '2016-12-17 22:50 +0200',
     },
   },
 

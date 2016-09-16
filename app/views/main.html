@@ -43,11 +43,11 @@
       <p class="lead">
         <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
         <span translate>.eligibility_check</span>
-        <strong><span ng-bind="main.eligibilitySignInStartsAt"></span></strong>
+        <strong>{{ main.eligibilitySignInStartsAt | moment:'DD.MM.YYYY hh:mm' }}</strong>
         -->
 
         <span translate>.voting_opens_at</span>
-        <strong><span ng-bind="main.electionSignInStartsAt"></span></strong>
+        <strong>{{ main.electionSignInStartsAt | moment:'DD.MM.YYYY hh:mm' }}</strong>
       </p>
     </div>
 

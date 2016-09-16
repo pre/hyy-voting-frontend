@@ -7,7 +7,7 @@ angular.module 'hyyVotingFrontendApp'
     @hasElectionsEnded = Environment.hasElectionsEnded()
 
     @isSignInActive = @isEligibilityActive || @isElectionsActive
-    @eligibilitySignInStartsAt = Environment.eligibilitySignInStartsAt.format('DD.MM.YYYY hh:mm')
-    @electionSignInStartsAt = Environment.electionSignInStartsAt.format('DD.MM.YYYY hh:mm')
+    @eligibilitySignInStartsAt = Environment.eligibilitySignInStartsAt
+    @electionSignInStartsAt = Environment.electionSignInStartsAt
 
     return

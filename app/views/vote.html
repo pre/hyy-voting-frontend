@@ -110,21 +110,28 @@
             <button
               class="btn btn-primary"
               type="button"
+              vt-confirm-click="isVoteConfirmVisible"
               ng-click="vote.submit(vote.selected)"
               ng-disabled="!vote.isProspectSelected() || vote.submitting || vote.submitted"
               ng-hide="vote.submitted || vote.votingRight.used"
               >
 
-                <div ng-show="vote.submitting && !vote.submitted">
+                <span ng-show="vote.submitting && !vote.submitted">
                   <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
                   <span translate>.vote-ballot.submitting</span>
-                </div>
+                </span>
 
-                <div
-                  ng-hide="vote.submitting || vote.submitted || vote.submitError"
+                <span
+                  ng-hide="vote.submitting || vote.submitted || vote.submitError || isVoteConfirmVisible"
                   translate>
-                  .vote-ballot.button-submit-caption
-                </div>
+                    .vote-ballot.button-submit-caption
+                </span>
+
+                <span
+                  ng-show="isVoteConfirmVisible"
+                  translate>
+                    .vote-ballot.button-submit-confirm
+                </span>
             </button>
 
             <!--

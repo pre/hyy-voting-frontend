@@ -179,7 +179,8 @@
         "candidate-name": "Candidate name",
         "header-number": "Number",
         "header-candidate": "Candidate",
-        "browser-search-tip": "You can also use browser's search."
+        "browser-search-tip": "You can also use browser's search.",
+        "when-no-results": "Alliances, which did not match your search query, are not displayed."
       }
 
     },

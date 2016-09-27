@@ -179,7 +179,8 @@
         "candidate-name": "Ehdokasnimi",
         "header-number": "Numero",
         "header-candidate": "Ehdokas",
-        "browser-search-tip": "Voit käyttää myös selaimen hakutoimintoa."
+        "browser-search-tip": "Voit käyttää myös selaimen hakutoimintoa.",
+        "when-no-results": "Vaaliliitot, jotka eivät vastanneet hakuehtoasi, eivät ole näkyvissä."
       }
     },
 

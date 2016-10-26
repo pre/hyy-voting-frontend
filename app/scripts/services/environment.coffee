@@ -7,22 +7,22 @@ angular.module 'hyyVotingFrontendApp'
       _VAALIT.api.baseUrl
 
     @eligibilitySignInStartsAt = do ->
-      moment(_VAALIT.eligibility.signIn.startsAt, 'YYYY-MM-DD HH:mm')
+      moment.tz(_VAALIT.eligibility.signIn.startsAt, 'YYYY-MM-DD HH:mm', 'Europe/Helsinki')
 
     @eligibilitySignInEndsAt = do ->
-      moment(_VAALIT.eligibility.signIn.endsAt, 'YYYY-MM-DD HH:mm')
+      moment.tz(_VAALIT.eligibility.signIn.endsAt, 'YYYY-MM-DD HH:mm', 'Europe/Helsinki')
 
     @dailyOpeningTime = do ->
-      moment(_VAALIT.voting.signIn.dailyOpeningTime, 'HH:mm')
+      moment.tz(_VAALIT.voting.signIn.dailyOpeningTime, 'HH:mm', 'Europe/Helsinki')
 
     @dailyClosingTime = do ->
-      moment(_VAALIT.voting.signIn.dailyClosingTime, 'HH:mm')
+      moment.tz(_VAALIT.voting.signIn.dailyClosingTime, 'HH:mm', 'Europe/Helsinki')
 
     @electionSignInStartsAt = do ->
-      moment(_VAALIT.voting.signIn.startsAt, 'YYYY-MM-DD HH:mm')
+      moment.tz(_VAALIT.voting.signIn.startsAt, 'YYYY-MM-DD HH:mm', 'Europe/Helsinki')
 
     @electionSignInEndsAt = do ->
-      moment(_VAALIT.voting.signIn.endsAt, 'YYYY-MM-DD HH:mm')
+      moment.tz(_VAALIT.voting.signIn.endsAt, 'YYYY-MM-DD HH:mm', 'Europe/Helsinki')
 
     @isEligibilityActive = ->
       moment().isAfter(@eligibilitySignInStartsAt) &&

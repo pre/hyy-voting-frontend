@@ -34,6 +34,7 @@ module.exports = (config) ->
       'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js'
       'bower_components/angular-translate-storage-local/angular-translate-storage-local.js'
       'bower_components/angular-scroll/angular-scroll.js'
+      'bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js'
       'bower_components/angular-mocks/angular-mocks.js'
       # endbower
       # bower:coffee

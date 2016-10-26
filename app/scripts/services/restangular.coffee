@@ -13,7 +13,7 @@ angular.module 'hyyVotingFrontendApp'
 
   .config (RestangularProvider) ->
     RestangularProvider.setDefaultHttpFields
-      timeout: 10000 # milliseconds
+      timeout: 25000 # milliseconds
 
   .service 'SessionRestangular', (Restangular, SessionSrv) ->
     return Restangular.withConfig (RestangularConfigurer) ->

@@ -18,7 +18,7 @@
         <!-- #TODO: päivämäärä -->
     </p>
 
-    <div ng-if="main.hasElectionEnded">
+    <div ng-if="main.hasElectionTerminated">
       <p
         class="lead"
         translate>
@@ -46,13 +46,23 @@
     </div>
 
     <!-- Voting has started but time is outside opening hours -->
-    <div ng-if="main.hasElectionStarted && !main.isSignInActive && !main.hasElectionEnded">
+    <div ng-if="main.hasElectionStarted && !main.isSignInActive && !main.hasSignInEnded">
       <p class="lead">
         <span
           translate
           translate-values="{ open: main.dailyOpeningTime.format('HH:mm'), close: main.dailyClosingTime.format('HH:mm') }">
           .voting_opening_hours
         </span>
+      </p>
+    </div>
+
+    <!-- Current voting period has already ended, but election will continue eg. next week. -->
+    <div ng-if="main.hasElectionStarted && main.hasSignInEnded && !main.hasElectionTerminated">
+      <p
+        class="lead"
+        translate
+        translate-values="{ day: '31.10.', time: '10' }">
+        .voting_continues_at
       </p>
     </div>
 

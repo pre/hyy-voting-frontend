@@ -6,7 +6,8 @@ angular.module 'hyyVotingFrontendApp'
     @isElectionActive = Environment.isElectionActive()
     @isEligibilityActive = Environment.isEligibilityActive()
     @hasElectionStarted = Environment.hasElectionStarted()
-    @hasElectionEnded = Environment.hasElectionEnded()
+    @hasElectionTerminated = Environment.hasElectionTerminated()
+    @hasSignInEnded = Environment.hasSignInEnded()
 
     @eligibilitySignInStartsAt = Environment.eligibilitySignInStartsAt
     @electionSignInStartsAt = Environment.electionSignInStartsAt

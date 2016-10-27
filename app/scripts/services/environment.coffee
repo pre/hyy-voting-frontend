@@ -24,6 +24,9 @@ angular.module 'hyyVotingFrontendApp'
     @electionSignInEndsAt = do ->
       moment.tz(_VAALIT.voting.signIn.endsAt, 'YYYY-MM-DD HH:mm', 'Europe/Helsinki')
 
+    @electionTerminatesAt = do ->
+      moment.tz(_VAALIT.voting.signIn.terminatesAt, 'YYYY-MM-DD HH:mm', 'Europe/Helsinki')
+
     @isEligibilityActive = ->
       moment().isAfter(@eligibilitySignInStartsAt) &&
         moment().isBefore(@eligibilitySignInEndsAt)
@@ -40,7 +43,10 @@ angular.module 'hyyVotingFrontendApp'
     @hasElectionStarted = ->
       moment().isAfter(@electionSignInStartsAt)
 
-    @hasElectionEnded = ->
+    @hasElectionTerminated = ->
+      moment().isAfter(@electionTerminatesAt)
+
+    @hasSignInEnded = ->
       moment().isAfter(@electionSignInEndsAt)
 
     return

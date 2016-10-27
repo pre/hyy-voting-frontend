@@ -21,6 +21,7 @@
       "voting_opens_at": "Äänestäminen avautuu",
       "voting_has_ended": "Äänestys on päättynyt",
       "result_will_be_published_at": "Tulos julkistetaan osoitteessa",
+      "voting_continues_at": "Äänestys jatkuu {{ day }} klo {{ time }}",
 
       "button_caption_eligibility": "Tarkasta vaalikelpoisuus",
       "button_caption_vote": "Äänestämään!"

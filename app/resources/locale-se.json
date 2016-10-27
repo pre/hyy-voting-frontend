@@ -21,6 +21,7 @@
       "voting_opens_at": "Röstning öppnar på",
       "voting_has_ended": "Röstning har upphört.",
       "result_will_be_published_at": "Resultatet publiceras på",
+      "voting_continues_at": "Omröstningen fortsätter {{ day }} kl {{ time }}",
 
       "button_caption_eligibility": "Kontrollera valbarheten",
       "button_caption_vote": "Rösta!"

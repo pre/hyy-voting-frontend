@@ -34,8 +34,9 @@ var _VAALIT = {
     signIn: {
       dailyOpeningTime: '10:00',
       dailyClosingTime: '18:00',
-      startsAt: '2016-09-16 09:00:00 +0200',
-      endsAt: '2016-12-17 22:50 +0200',
+      startsAt: '2016-10-25 09:00:00 +0300',
+      endsAt: '2016-10-30 18:00 +0300',
+      terminatesAt: '2016-11-02 18:00 +0200',
     },
   },
 

@@ -80,7 +80,7 @@
       "edari": {
         "eligibility": "Du har en rösträtt om du har inskrivna i och betalat medlemsavgiften för studentkåren. Du kan logga in för att rösta genom att använda universitets användarkonto.",
 
-        "late_member_note": "#TODO Mikäli ilmoittauduit läsnäolevaksi vasta äskettäin, opiskelijanumeroasi ei välttämättä vielä löydy äänoikeutettujen listasta. Tällöin saat kirjautumisen jälkeen saat ilmoituksen, ettei sinulla ole äänioikeutta. Sinulle voidaan kuitenkin luoda äänioikeus, mikäli esität tositteen jäsenmaksun maksamisesta HYYn keskustoimistolla."
+        "late_member_note": "Ifall du nyligen gjort din närvaroanmälan kan det vara att ditt studentnummer inte finns på listan för dm med rösträtt i valet. I så fall får du ett meddelande när du loggar in att du inte har rösträtt. Vi kan ändå skapa åt dig din rösträtt ifall du visar upp kvitto på betald studentkårsavgift på Studentkårens centralkansli."
       },
 
       "request_link": {

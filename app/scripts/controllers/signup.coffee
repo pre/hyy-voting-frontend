@@ -1,14 +1,7 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name hyyVotingFrontendApp.controller:SignUpCtrl
- # @description
- # # SignUpCtrl
- # Controller of the hyyVotingFrontendApp
-###
 angular.module 'hyyVotingFrontendApp'
-  .controller 'SignUpCtrl', (SessionSrv, $scope, $location, errorMonitor) ->
+  .controller 'SignUpCtrl', (Environment, SessionSrv, $scope, $location, errorMonitor) ->
     @loading = false
     @submitted = false
     @error = null
@@ -18,6 +11,8 @@ angular.module 'hyyVotingFrontendApp'
     # Disabled when Haka authentication is the primary way.
     # Requesting the link must also be allowed in API if enabled here.
     @allowLinkRequest = false
+
+    @isSignInActive = Environment.isSignInActive()
 
     @requestLink = (email) ->
       @loading = true

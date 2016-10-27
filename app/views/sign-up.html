@@ -42,11 +42,18 @@
     <hr>
 
     <a
+      ng-show="session.isSignInActive"
       href="/haka/auth/new"
       class="btn btn-lg btn-primary btn-block"
       translate>
       .primary_button_caption
     </a>
+
+    <p
+      ng-hide="session.isSignInActive"
+      translate>
+      .sign_in_is_not_active
+    </p>
   </div> <!-- HAKA AUTHENTICATION -->
 
   <!-- REQUEST SIGN IN LINK -->

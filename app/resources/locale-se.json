@@ -74,7 +74,8 @@
       "voting_days_are": "Röstningen pågår {{ firstPeriod }} och {{ secondPeriod }}",
       "voting_open_hours_are": "Röstningen är öppen mellan {{ range }}.",
       "primary_button_caption": "Logga in",
-      "if_cannot_sign_in": "Om du inte kan få tillgång till universitets användarkonto eller loggning in misslyckas av någon anledning, kontakta valet personal {{ name }}, {{ email }}, {{ phone }}.",
+      "if_cannot_sign_in": "Om du inte kan få tillgång till universitets användarkonto eller loggning in misslyckas av någon anledning, kontakta valarbetare {{ name }}, {{ email }}, {{ phone }}.",
+      "sign_in_is_not_active": "Röstningen är inte öppen just nu.",
 
       "edari": {
         "eligibility": "Du har en rösträtt om du har inskrivna i och betalat medlemsavgiften för studentkåren. Du kan logga in för att rösta genom att använda universitets användarkonto.",

@@ -75,6 +75,7 @@
       "voting_open_hours_are": "Äänestys on avoinna klo {{ range }} välisenä aikana.",
       "primary_button_caption": "Kirjaudu sisään",
       "if_cannot_sign_in": "Mikäli et voi käyttää yliopiston käyttäjätunnusta tai sisäänkirjautuminen ei jostain syystä onnistu, ota yhteys HYYn vaalityöntekijään {{ name }}, {{ email }}, {{ phone }}.",
+      "sign_in_is_not_active": "Äänestäminen ei ole tällä hetkellä avoinna.",
 
       "edari": {
         "eligibility": "Olet äänioikeutettu, kun olet ilmoittautunut läsnäolevaksi ja maksanut HYYn jäsenmaksun. Voit sisäänkirjautua äänestämään Helsingin yliopiston käyttäjätunnuksellasi.",

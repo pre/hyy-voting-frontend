@@ -65,8 +65,16 @@ angular.module 'hyyVotingFrontendApp'
 
         (failure) =>
           @submitError = true
-          @votingRight = failure.data.error.voting_right
+
+          # Sometimes failure does not contain `error` and sometimes
+          # it does not contain `error.voting_right`. Report `failure` to
+          # errorMonitor before accessing contents of `failure.data`.
+          # Error will be reported again in the `catch` block if
+          # `failure.data.error.voting_right` is not present.
+          #
+          # https://app.asana.com/0/93660496528742/203329110576045
           errorMonitor.error failure, "Vote failed"
+          @votingRight = failure.data.error.voting_right
 
       ).catch(
         (e) =>

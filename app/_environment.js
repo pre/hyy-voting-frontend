@@ -4,15 +4,15 @@
 //
 // PLEASE NOTE:
 //
-// In production and test environments, the API will provide this file.
+// In production and test environments, the voting-api service will provide this file.
 //
 // This file WILL NOT BE AVAILABLE in `dist/` folder after `grunt build`.
 // Error "_VAALIT is not defined" means that something went wrong with
-// API providing http://where.ever.we.are/_environment.js
+// voting-api providing http://where.ever.we.are/_environment.js
 //
-// See also: `config/frontend_environment.js.erb` in API.
+// See also: `config/frontend_environment.js.erb` in voting-api.
 //
-// Be sure to reflect any changes here to the API also!
+// Be sure to reflect any changes here to voting-api also!
 //
 var _VAALIT = {
   api: {

@@ -19,6 +19,8 @@
 bundle install
 yarn install
 bower install
+
+git submodule update --init
 ~~~
 
 ## Configuration
@@ -104,7 +106,14 @@ In API/public, `git log` should now display 'Theme of this deploy' as the newest
 ```
 
 
-## Tips
+## Tips & Troubleshooting
+
+* After bin/distribute.sh - if you get `fatal: in unpopulated submodule 'dist'`
+  you haven't cloned the git submodule. The build now created naked files under
+  the `dist/` folder.
+  * Remove the `dist/` folder (`rm -fr dist/`)
+  * Refresh the git submodule `git submodule update --init`
+  * Try again with distribute.sh
 
 * If you get error `Unknown provider: xyzProvider <- xyz <- XyzCtrl`,
   add `<script src="..../xyz.js">` to the bottom of `app/index.html`.

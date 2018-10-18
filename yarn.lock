@@ -795,7 +795,7 @@ clean-css@3.1.x:
     commander "2.6.x"
     source-map ">=0.1.43 <0.2"
 
-clean-css@^3.1.0:
+clean-css@~3.4.2:
   version "3.4.28"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-3.4.28.tgz#bf1945e82fc808f55695e6ddeaec01400efd03ff"
   integrity sha1-vxlF6C/ICPVWlebd6uwBQA79A/8=
@@ -1805,11 +1805,6 @@ finalhandler@0.4.0:
     on-finished "~2.3.0"
     unpipe "~1.0.0"
 
-find-index@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/find-index/-/find-index-0.1.1.tgz#675d358b2ca3892d795a1ab47232f8b6e2e0dde4"
-  integrity sha1-Z101iyyjiS15Whq0cjL4tuLg3eQ=
-
 find-up@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
@@ -1924,7 +1919,7 @@ fstream@^1.0.0, fstream@~1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
-gaze@^0.5.1, gaze@~0.5.1:
+gaze@~0.5.1:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/gaze/-/gaze-0.5.2.tgz#40b709537d24d1d45767db5a908689dfe69ac44f"
   integrity sha1-QLcJU30k0dRXZ9takIaJ3+aaxE8=
@@ -1987,18 +1982,6 @@ glob-parent@^3.0.0:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
 
-glob-stream@^4.0.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/glob-stream/-/glob-stream-4.1.1.tgz#b842df10d688c7eb6bcfcebd846f3852296b3200"
-  integrity sha1-uELfENaIx+trz869hG84UilrMgA=
-  dependencies:
-    glob "^4.3.1"
-    glob2base "^0.0.12"
-    minimatch "^2.0.1"
-    ordered-read-streams "^0.1.0"
-    through2 "^0.6.1"
-    unique-stream "^2.0.2"
-
 glob-stream@^5.3.2:
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/glob-stream/-/glob-stream-5.3.5.tgz#a55665a9a8ccdc41915a87c701e32d4e016fad22"
@@ -2013,21 +1996,7 @@ glob-stream@^5.3.2:
     to-absolute-glob "^0.1.1"
     unique-stream "^2.0.2"
 
-glob-watcher@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/glob-watcher/-/glob-watcher-0.0.8.tgz#68aeb661e7e2ce8d3634381b2ec415f00c6bc2a4"
-  integrity sha1-aK62Yefizo02NDgbLsQV8AxrwqQ=
-  dependencies:
-    gaze "^0.5.1"
-
-glob2base@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/glob2base/-/glob2base-0.0.12.tgz#9d419b3e28f12e83a362164a277055922c9c0d56"
-  integrity sha1-nUGbPijxLoOjYhZKJ3BVkiycDVY=
-  dependencies:
-    find-index "^0.1.1"
-
-glob@^4.0.5, glob@^4.3.1:
+glob@^4.0.5:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-4.5.3.tgz#c6cb73d3226c1efef04de3c56d012f03377ee15f"
   integrity sha1-xstz0yJsHv7wTePFbQEvAzd+4V8=
@@ -2149,7 +2118,7 @@ got@^5.0.0:
     unzip-response "^1.0.2"
     url-parse-lax "^1.0.0"
 
-graceful-fs@^3.0.0, graceful-fs@^3.0.1, graceful-fs@^3.0.2, graceful-fs@~3.0.0, graceful-fs@~3.0.1:
+graceful-fs@^3.0.1, graceful-fs@^3.0.2, graceful-fs@~3.0.0, graceful-fs@~3.0.1:
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-3.0.11.tgz#7613c778a1afea62f25c630a086d7f3acbbdd818"
   integrity sha1-dhPHeKGv6mLyXGMKCG1/Osu92Bg=
@@ -2255,13 +2224,13 @@ grunt-contrib-copy@^0.7.0:
   dependencies:
     chalk "~0.5.1"
 
-grunt-contrib-cssmin@^0.12.0:
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-cssmin/-/grunt-contrib-cssmin-0.12.3.tgz#4157596096fb7656fc464b4cc7b0746de1f39014"
-  integrity sha1-QVdZYJb7dlb8RktMx7B0beHzkBQ=
+grunt-contrib-cssmin@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-cssmin/-/grunt-contrib-cssmin-1.0.2.tgz#1734cbd3d84ca7364758b7e58ff18e52aa60bb76"
+  integrity sha1-FzTL09hMpzZHWLflj/GOUqpgu3Y=
   dependencies:
     chalk "^1.0.0"
-    clean-css "^3.1.0"
+    clean-css "~3.4.2"
     maxmin "^1.1.0"
 
 grunt-contrib-htmlmin@^0.4.0:
@@ -2273,16 +2242,16 @@ grunt-contrib-htmlmin@^0.4.0:
     html-minifier "^0.7.0"
     pretty-bytes "^1.0.2"
 
-grunt-contrib-imagemin@^0.9.2:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-imagemin/-/grunt-contrib-imagemin-0.9.4.tgz#dba724b0b8978facedec1e0c6235f2253006c1fa"
-  integrity sha1-26cksLiXj6zt7B4MYjXyJTAGwfo=
+grunt-contrib-imagemin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-imagemin/-/grunt-contrib-imagemin-1.0.1.tgz#e47a35613376f4caa9c1f90446503cae1c944d79"
+  integrity sha1-5Ho1YTN29MqpwfkERlA8rhyUTXk=
   dependencies:
-    async "^0.9.0"
+    async "^1.5.2"
     chalk "^1.0.0"
     gulp-rename "^1.2.0"
-    imagemin "^3.1.0"
-    pretty-bytes "^1.0.1"
+    imagemin "^4.0.0"
+    pretty-bytes "^3.0.1"
 
 grunt-contrib-jshint@^0.11.0:
   version "0.11.3"
@@ -2689,20 +2658,17 @@ imagemin-svgo@^4.0.0:
     svgo "^0.6.0"
     through2 "^2.0.0"
 
-imagemin@^3.1.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-3.2.2.tgz#17a8ad67e0e8ee6ae1ae0c5cb752b26579452366"
-  integrity sha1-F6itZ+Do7mrhrgxct1KyZXlFI2Y=
+imagemin@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-4.0.0.tgz#e90e7f0936836595f18fa15fe906f4fa259ea847"
+  integrity sha1-6Q5/CTaDZZXxj6Ff6Qb0+iWeqEc=
   dependencies:
     buffer-to-vinyl "^1.0.0"
     concat-stream "^1.4.6"
-    get-stdin "^4.0.1"
-    meow "^3.3.0"
     optional "^0.1.0"
-    path-exists "^1.0.0"
     readable-stream "^2.0.0"
     stream-combiner2 "^1.1.1"
-    vinyl-fs "^1.0.0"
+    vinyl-fs "^2.1.1"
   optionalDependencies:
     imagemin-gifsicle "^4.0.0"
     imagemin-jpegtran "^4.0.0"
@@ -3505,13 +3471,6 @@ meow@^3.1.0, meow@^3.3.0, meow@^3.5.0:
     redent "^1.0.0"
     trim-newlines "^1.0.0"
 
-merge-stream@^0.1.7:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-0.1.8.tgz#48a07b3b4a121d74a3edbfdcdb4b08adbf0240b1"
-  integrity sha1-SKB7O0oSHXSj7b/c20sIrb8CQLE=
-  dependencies:
-    through2 "^0.6.1"
-
 merge-stream@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-1.0.1.tgz#4041202d508a342ba00174008df0c251b8c135e1"
@@ -3986,11 +3945,6 @@ ordered-esprima-props@~1.1.0:
   resolved "https://registry.yarnpkg.com/ordered-esprima-props/-/ordered-esprima-props-1.1.0.tgz#a9827086df5f010aa60e9bd02b6e0335cea2ffcb"
   integrity sha1-qYJwht9fAQqmDpvQK24DNc6i/8s=
 
-ordered-read-streams@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/ordered-read-streams/-/ordered-read-streams-0.1.0.tgz#fd565a9af8eb4473ba69b6ed8a34352cb552f126"
-  integrity sha1-/VZamvjrRHO6abbtijQ1LLVS8SY=
-
 ordered-read-streams@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/ordered-read-streams/-/ordered-read-streams-0.3.0.tgz#7137e69b3298bb342247a1bbee3881c80e2fd78b"
@@ -4224,6 +4178,13 @@ pretty-bytes@^1.0.0, pretty-bytes@^1.0.1, pretty-bytes@^1.0.2:
   dependencies:
     get-stdin "^4.0.1"
     meow "^3.1.0"
+
+pretty-bytes@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-3.0.1.tgz#27d0008d778063a0b4811bb35c79f1bd5d5fbccf"
+  integrity sha1-J9AAjXeAY6C0gRuzXHnxvV1fvM8=
+  dependencies:
+    number-is-nan "^1.0.0"
 
 pretty-ms@^2.1.0:
   version "2.1.0"
@@ -5055,14 +5016,6 @@ strip-bom-stream@^1.0.0:
     first-chunk-stream "^1.0.0"
     strip-bom "^2.0.0"
 
-strip-bom@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-1.0.0.tgz#85b8862f3844b5a6d5ec8467a93598173a36f794"
-  integrity sha1-hbiGLzhEtabV7IRnqTWYFzo295Q=
-  dependencies:
-    first-chunk-stream "^1.0.0"
-    is-utf8 "^0.2.0"
-
 strip-bom@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
@@ -5608,23 +5561,7 @@ vinyl-assign@^1.0.1:
     object-assign "^4.0.1"
     readable-stream "^2.0.0"
 
-vinyl-fs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vinyl-fs/-/vinyl-fs-1.0.0.tgz#d15752e68c2dad74364e7e853473735354692edf"
-  integrity sha1-0VdS5owtrXQ2Tn6FNHNzU1RpLt8=
-  dependencies:
-    duplexify "^3.2.0"
-    glob-stream "^4.0.1"
-    glob-watcher "^0.0.8"
-    graceful-fs "^3.0.0"
-    merge-stream "^0.1.7"
-    mkdirp "^0.5.0"
-    object-assign "^2.0.0"
-    strip-bom "^1.0.0"
-    through2 "^0.6.1"
-    vinyl "^0.4.0"
-
-vinyl-fs@^2.2.0:
+vinyl-fs@^2.1.1, vinyl-fs@^2.2.0:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/vinyl-fs/-/vinyl-fs-2.4.4.tgz#be6ff3270cb55dfd7d3063640de81f25d7532239"
   integrity sha1-vm/zJwy1Xf19MGNkDegfJddTIjk=
@@ -5647,7 +5584,7 @@ vinyl-fs@^2.2.0:
     vali-date "^1.0.0"
     vinyl "^1.0.0"
 
-vinyl@^0.4.0, vinyl@^0.4.3:
+vinyl@^0.4.3:
   version "0.4.6"
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-0.4.6.tgz#2f356c87a550a255461f36bbeb2a5ba8bf784847"
   integrity sha1-LzVsh6VQolVGHza76ypbqL94SEc=

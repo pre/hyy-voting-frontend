@@ -92,6 +92,7 @@ git submodule add git@github.com:pre/hyy-voting-frontend-dist.git
 ```bash
 # Update code in Frontend's git submodule (for each deploy)
 (in Frontend) bin/distribute.sh
+(in Frontend) git push
 
 # Update API's git submodule to apply Frontend's new code
 (in API) cd public

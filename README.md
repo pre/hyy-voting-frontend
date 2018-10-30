@@ -10,12 +10,12 @@
 - [Install nodenv](https://github.com/nodenv/nodenv)
 - Install Node version defined in `.node-version`
   - nodenv install 10.12.0
-- `npm install -g yarn grunt-cli yo`
-- `yarn install`
 
 ## Setup
 
 ~~~
+npm install -g yarn bower grunt-cli yo
+
 bundle install
 yarn install
 bower install

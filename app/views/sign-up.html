@@ -19,23 +19,24 @@
       .edari.late_member_note
     </p>
 
-    <!-- #NOTE:Contact info -->
-    <p translate translate-values="{ name: 'Silva Loikkanen', email: 'vaalit@hyy.fi', phone: '+358 46 921 7850'}">
+    <!-- #NOTE: Contact information -->
+    <p translate translate-values="{ name: 'Teemu Palkki', email: 'vaalit@hyy.fi', phone: '+358 50 449 7950'}">
       .if_cannot_sign_in
     </p>
 
-    <!-- #NOTE:Date -->
     <p>
       <strong translate>.attention</strong>
 
+      <!-- #NOTE: Voting days -->
       <li translate
-          translate-values="{ firstPeriod: '31.10.-2.11.', secondPeriod: '5.11.-7.11.2018' }">
-          .voting_days_are
+          translate-values="{ firstPeriod: '28.10.-30.10.', secondPeriod: '2.-4.11.2020' }">
+        .voting_days_are
       </li>
 
+      <!-- #NOTE: Voting hours -->
       <li translate
-          translate-values="{ range: '10-18' }">
-          .voting_open_hours_are
+          translate-values="{ range: '9-18' }">
+        .voting_open_hours_are
       </li>
     </p>
 
@@ -152,7 +153,6 @@
 
             <p translate>
               .something_went_wrong.if_happens_again
-              <!-- #TODO: yhteystieto -->
             </p>
 
             <div ng-if="session.error.is_unknown">

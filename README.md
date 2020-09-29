@@ -14,6 +14,7 @@
 ## Setup
 
 ~~~
+# You may need to reopen your shell to get these available in the nodenv shims (`exec zsh -l`)
 npm install -g yarn bower grunt-cli yo
 
 bundle install
@@ -58,7 +59,14 @@ Run `grunt serve` and access http://localhost:9000
 - RollbarError monitoring can be simulated with
     `window.onerror("TestRollbarError: testing window.onerror", window.location.href)`
 
+- Update the dates and contact information:
+  - Find all comments with "#NOTE" and change their content accordingly.
+  - Read through the locale files and find each date, email address and phone number.
 
+- When updating the localised content, it's useful to split the editor horizontally in three
+  visible editor panes each propagate the change one-by-one to every language file at once.
+  You can split the editor pane in Visual Code by dragging the open tab (where filename is
+  presented) to the bottom of the pane.
 
 ## Generators
 

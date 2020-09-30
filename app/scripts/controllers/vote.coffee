@@ -19,18 +19,12 @@ angular.module 'hyyVotingFrontendApp'
       coalitions.get(@electionId),
       candidates.get(@electionId),
       VoteSrv.getVotingRight(@electionId)
-      # VoteSrv.getPreviousVote(@electionId) #TODO:halloped
     ]
       .then(
         (results) =>
           @coalitions = results[0]
           @candidates = results[1]
           @votingRight = results[2]
-
-          # TODO:halloped Display previously cast vote
-          # if !_.isEmpty results[3]
-          #   @savedVote = results[3]
-          #   @selected = @savedVote.candidate_id
 
         (failure) =>
           @loadError = true

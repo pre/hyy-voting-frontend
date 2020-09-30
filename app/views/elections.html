@@ -64,12 +64,6 @@
   translate-namespace="pages.elections">
 
   <div class="col-xs-12">
-    <!--#TODO:halloped
-    <p translate>
-      .you_can_vote_in_the_following
-    </p>
-    -->
-
     <p>
       <span translate>.choose_election</span>
       <span translate>.vote_is_immutable</span>
@@ -78,7 +72,6 @@
     <table class="table table-striped table-hover">
       <thead>
         <th translate>.table_header.election_name</th>
-        <!--#TODO:Halloped <th translate>.table_header.status</th> -->
       </thead>
 
       <tbody>
@@ -86,14 +79,6 @@
           <td>
             <a ng-href="#/vote?election={{ election.id }}">{{ election.name }}</a>
           </td>
-          <!--
-          <td>
-            <#TODO:halloped Mark elections where user has already voted in
-              vt-vote-status
-              vt-vote-status-votes="elections.voting_right"
-              vt-vote-status-election="election"></vt-vote-status>
-          </td>
-          -->
         </tr>
 
       </tbody>

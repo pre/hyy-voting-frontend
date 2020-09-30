@@ -39,12 +39,4 @@ var _VAALIT = {
       terminatesAt: '2020-11-02 18:00 +0200',
     },
   },
-
-  eligibility: {
-    signIn: {
-      startsAt: '2015-11-12 07:00 +0200',
-      endsAt: '2015-12-14 17:00 +0200',
-    },
-  },
-
 };

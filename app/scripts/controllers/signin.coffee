@@ -12,14 +12,9 @@
 # by `SessionSrv`. Browser will automatically clear Session Storage after
 # the tab/window is closed.
 #
-# After token has been processed, user is redirected to
-# a) when voting has started:
-#    - to the list of elections (multiple Halloped elections)
-#    - to the list of candidates (single Edari election)
-# b) when voting has not started, but user can sign in:
-#    - voter eligibility page (Halloped elections)
+# After token has been processed, user is redirected to the list of elections.
 #
-# In Edari elections, the user cannot sign in before the voting has started.
+# A voter cannot sign in before the voting has started.
 #
 angular.module 'hyyVotingFrontendApp'
   .controller 'SignInCtrl', ($location, $window, SessionSrv, errorMonitor) ->
@@ -32,8 +27,6 @@ angular.module 'hyyVotingFrontendApp'
     @redirectAccordingTo = (session) ->
       if session.type == "elections"
         $location.path('/elections')
-      else if session.type == "eligibility"
-        $location.path('/profile')
       else
         @error = true
         @invalidToken = true

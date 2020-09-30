@@ -46,7 +46,7 @@ angular.module 'hyyVotingFrontendApp'
           elections.save data.elections
           type = "elections"
         else
-          type = "eligibility"
+          type = "unsupported"
 
         resolve({type: type})
 

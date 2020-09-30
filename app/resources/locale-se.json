@@ -12,18 +12,13 @@
   "pages": {
     "main": {
       "page_title": "Delegationsval",
-      "you_may_check_eligibility":
-        "Du kan kontrollera din valbarhet genom att beställa en inloggningslänk till den e-postadress som du har meddelat till studentregistret vid Helsingfors universitet före 15.09.2015.",
       "sign_in_using_university_account":
         "Logga in med ditt konto vid Helsingfors universitet.",
-      "eligibility_check": "Kontroll av valbarheten",
       "voting_opening_hours": "Röstningen är öppen mellan {{ open }} - {{ close }}.",
       "voting_opens_at": "Röstning öppnar på",
       "voting_has_ended": "Röstning har upphört.",
       "result_will_be_published_at": "Resultatet publiceras på",
       "voting_continues_at": "Omröstningen fortsätter {{ day }} kl {{ time }}",
-
-      "button_caption_eligibility": "Kontrollera valbarheten",
       "button_caption_vote": "Rösta!"
     },
 
@@ -134,8 +129,6 @@
     "profile": {
       "page_title": "Egna uppgifter",
       "ingress": "Du har loggat in med följande information.",
-      "you_are_eligible":
-        "Du är valbar i valet på din institution och fakultet (Studentkårens instruktion om val av studentrepresentanter i universitetsförvaltningen 5 §).",
       "in_case_of_problem":
         "Kontakta studentkåren ifall något är oklart med dessa uppgifter.",
       "voter": {
@@ -172,8 +165,6 @@
       "coalition-index-text": "Koalitioner består av allianser och allianser består av kandidater.",
       "voting-right-already-used": "Du har röstat på",
       "vote-has-been-cast": "Din röst har registrerats!",
-      "if-you-are-eligible-in-others": "Om du har rösträtt vid flera val,",
-      "choose-next-election": "välj nästa val",
       "close-window-when-finished": "Stäng webbläsarfönstret när du är klar.",
 
       "search": {
@@ -193,14 +184,12 @@
       "sign_up_please": "Du kan rösta genom att logga in.",
       "sign_up_button_caption": "Det ska vi göra!",
 
-      "you_can_vote_in_the_following": "Du kan rösta i följande valen:",
       "choose_election": "Öppna valet, välj en kandidat och tryck \"rösta\".",
       "submit_vote_help": "Din röst registreras när dy trycker på \"rösta\"-knappen efter att ha valt en kandidat.",
       "vote_is_immutable": "Du kan inte ändra din röst efteråt.",
 
       "table_header": {
-        "election_name": "Val namn",
-        "status": "Röstat?"
+        "election_name": "Val namn"
       },
 
       "not_started": {

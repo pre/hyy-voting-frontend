@@ -9,15 +9,6 @@
       <img src="images/logo/hyy-seppele.png" style="margin: 1.5em; height: 150px" alt="HYYn logo"><br>
     </p>
 
-    <p
-      class="lead"
-      translate
-      ng-if="main.isEligibilityActive">
-        .you_may_check_eligibility
-        <!--  eng. the right to vote and to stand as candidate -->
-        <!-- #TODO: päivämäärä -->
-    </p>
-
     <div ng-if="main.hasElectionTerminated">
       <p
         class="lead"
@@ -35,11 +26,6 @@
     <!-- Voting has not started  -->
     <div ng-if="!main.hasElectionStarted">
       <p class="lead">
-        <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
-        <span translate>.eligibility_check</span>
-        <strong>{{ main.eligibilitySignInStartsAt | moment:'DD.MM.YYYY HH:mm' }}</strong>
-        -->
-
         <span translate>.voting_opens_at</span>
         <strong>{{ main.electionSignInStartsAt | moment:'DD.MM.YYYY HH:mm' }}</strong>
       </p>
@@ -75,12 +61,6 @@
 
       <p>
         <a class="btn btn-lg btn-success" ng-href="/haka/auth/new">
-          <!--#TODO:Halloped Vaalikelpoisuuden tarkistaminen
-          <span ng-if="main.isEligibilityActive" translate>
-            .button_caption_eligibility
-          </span>
-          -->
-
           <span ng-if="main.isElectionActive" translate>
             .button_caption_vote
           </span>

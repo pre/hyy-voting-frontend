@@ -162,6 +162,7 @@
         "submitting": "Voting .."
       },
 
+      "coalition-index-title": "Electoral Coalitions",
       "coalition-index-text": "Coalitions consist of alliances and alliances consist of candidates.",
       "voting-right-already-used": "You have voted at",
       "vote-has-been-cast": "Your vote is now recorded!",

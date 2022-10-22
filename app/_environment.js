@@ -33,10 +33,10 @@ var _VAALIT = {
   voting: {
     signIn: {
       dailyOpeningTime: '10:00',
-      dailyClosingTime: '18:00',
-      startsAt: '2020-09-25 09:00:00 +0300',
-      endsAt: '2020-11-01 18:00 +0300',
-      terminatesAt: '2020-11-02 18:00 +0200',
+      dailyClosingTime: '20:00',
+      startsAt: '2022-09-25 09:00:00 +0300',
+      endsAt: '2022-11-01 18:00 +0300',
+      terminatesAt: '2022-11-02 18:00 +0200',
     },
   },
 };

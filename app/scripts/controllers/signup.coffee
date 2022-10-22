@@ -10,6 +10,8 @@ angular.module 'hyyVotingFrontendApp'
     # Display text and button related to the sign in link.
     # Disabled when Haka authentication is the primary way.
     # Requesting the link must also be allowed in API if enabled here.
+    #
+    # 10/2022: Remove the sign in link code completely? @pre
     @allowLinkRequest = false
 
     @isSignInActive = Environment.isSignInActive()

@@ -20,7 +20,7 @@
     </p>
 
     <!-- #NOTE: Contact information -->
-    <p translate translate-values="{ name: 'Teemu Palkki', email: 'vaalit@hyy.fi', phone: '+358 50 449 7950'}">
+    <p translate translate-values="{ name: 'Henna Houttu', email: 'vaalit@hyy.fi', phone: '+358 50 432 4939'}">
       .if_cannot_sign_in
     </p>
 
@@ -29,13 +29,13 @@
 
       <!-- #NOTE: Voting days -->
       <li translate
-          translate-values="{ firstPeriod: '28.10.-30.10.', secondPeriod: '2.-4.11.2020' }">
+          translate-values="{ firstPeriod: '26.10.-28.10.', secondPeriod: '31.10.-2.11.2022' }">
         .voting_days_are
       </li>
 
       <!-- #NOTE: Voting hours -->
       <li translate
-          translate-values="{ range: '9-18' }">
+          translate-values="{ range: '10-20' }">
         .voting_open_hours_are
       </li>
     </p>
@@ -58,6 +58,7 @@
   </div> <!-- HAKA AUTHENTICATION -->
 
   <!-- REQUEST SIGN IN LINK -->
+  <!-- Note: Disabled with Haka authentication - remove sign in link code completely? -->
   <div
     ng-if="session.allowLinkRequest"
     translate-namespace=".request_link"
@@ -74,12 +75,12 @@
     <p>
       <span translate>.spam_instructions</span>
       <span translate>.in_case_of_fire</span>
-      <!-- #TODO: yhteystiedot -->
+      <!-- #TODO: päivitä yhteystiedot käännöstiedostoon -->
     </p>
 
     <p>
       <strong translate>.attention</strong>
-      <!-- #TODO: vaalipäivät -->
+      <!-- #TODO: päivitä vaalipäivät käännöstiedostoon -->
       <li translate>.election_dates_explained</li>
       <li translate>.staff_eligibility_note</li>
     </p>

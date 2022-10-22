@@ -43,6 +43,7 @@ b) Access the built voting frontend via the Rails web server (public/ folder):
   - Follow instructions in voting-api README
   - See instructions below at "Deploy Frontend alongside with API"
   - Nutshell: `grunt build` and make voting-frontend:dist/ available in voting-api:public/
+    - NOTE: ensure `grunt serve` is not running at the same time as `grunt build`
 
 ### Accessing the local web server as an authenticated user with JWT
 
@@ -87,10 +88,11 @@ Running `grunt test` will run the unit tests with karma.
 ## Deploy Frontend alongside with API
 
 Frontend is distributed as a `git submodule`:
-  * Code is generated with `grunt build`.
+  * Updating the submodule is automated by `bin/distribute.sh`.
+  * The script senerates `dist/` with `grunt build`
+    * ensure `grunt serve` is not runnng at the same time as `grunt build`.
   * Then a commit is pushed to Frontend's independent distribution repository.
   * As a last step, Voting API's copy of the submodule is updated.
-  * Updating the submodule is automated by `bin/distribute.sh`.
 
 Submodule distribution allows the maintainer track exactly which compilation
 of the Frontend is being used against the API. If Frontend's code was deployed

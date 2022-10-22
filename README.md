@@ -40,17 +40,16 @@ a) Access the nodejs web server directly:
   Run `grunt serve` and access http://localhost:9000
 
 b) Access the built voting frontend via the Rails web server (public/ folder):
-  - Follow instructions in voting-api README,
-  - start the voting-api Rails application,
-  - Create a JWT authentication token in voting-api with
-    - rake jwt:voter:generate expiry_hours=1000 voter_id=1
-  - Click one of the links in that command's output (localhost:9000 for nodejs)
-    - http://localhost:9000/#/sign-in?token=JWT_TOKEN_HERE
+  - Follow instructions in voting-api README
+  - See instructions below at "Deploy Frontend alongside with API"
+  - Nutshell: `grunt build` and make voting-frontend:dist/ available in voting-api:public/
 
-### Accessing the local web server
+### Accessing the local web server as an authenticated user with JWT
 
-- You will need a valid JWT Access Token from the API:
-  - In voting-api, generate an example JWT_ACCESS_TOKEN: `rake jwt:voter:generate`
+- You will need a valid JWT Access Token from voting-api:
+  - In voting-api, generate an example JWT_ACCESS_TOKEN:
+    - `rake jwt:voter:generate voter_id=1 expiry_hours=1000`
+    - click one of the links generated from that command's output
   - open http://localhost:9000/#/sign-in?token=JWT_ACCESS_TOKEN
   - See API's README for details.
   - Note that your frontend's development server runs on port 9000,

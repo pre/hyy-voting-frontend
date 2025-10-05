@@ -45,7 +45,10 @@ b) Access the built voting frontend via the Rails web server (public/ folder):
   - Nutshell: `grunt build` and make voting-frontend:dist/ available in voting-api:public/
     - NOTE: ensure `grunt serve` is not running at the same time as `grunt build`
 
-### Accessing the local web server as an authenticated user with JWT
+### Accessing the local "grunt serve" web server as an authenticated user with JWT
+
+Signing in with Haka Single-Sign On works only directly from "rails serve" (port 3000).
+To sign in to frontend development web-server "grunt serve", create a JWT Access Token as follows.
 
 - You will need a valid JWT Access Token from voting-api:
   - In voting-api, generate an example JWT_ACCESS_TOKEN:

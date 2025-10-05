@@ -24,12 +24,6 @@ var _VAALIT = {
     environment: 'development',
   },
 
-  google: {
-    analytics: {
-      id: null,
-    },
-  },
-
   voting: {
     signIn: {
       dailyOpeningTime: '10:00',

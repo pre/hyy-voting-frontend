@@ -34,5 +34,3 @@ var _VAALIT = {
     },
   },
 };
-
-console.log("Hey, tinker! Sources are available in https://github.com/hyy-vaalit")

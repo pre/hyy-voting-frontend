@@ -35,6 +35,13 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "grunt test"
+  },
+  "resolutions": {
+    "tough-cookie": "2.5.0"
+  },
+  "dependencies": {
+    "psl": "^1.15.0"
   }
 }

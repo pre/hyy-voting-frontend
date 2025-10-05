@@ -29,8 +29,8 @@ var _VAALIT = {
       dailyOpeningTime: '10:00',
       dailyClosingTime: '20:00',
       startsAt: '2022-09-25 09:00:00 +0300',
-      endsAt: '2022-11-01 18:00 +0300',
-      terminatesAt: '2022-11-02 18:00 +0200',
+      endsAt: '2025-11-01 18:00 +0300',
+      terminatesAt: '2025-11-02 18:00 +0200',
     },
   },
 };

@@ -23,7 +23,7 @@ angular
 
   .constant('DEBUG_MODE',
     #/*DEBUG_MODE*/
-    true
+    false
     #/*DEBUG_MODE*/
   )
 

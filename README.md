@@ -64,6 +64,7 @@ To sign in to frontend development web-server "grunt serve", create a JWT Access
     (localhost:3000). Use only either of them at the same time.
   - If you need to access localhost:3000 (ie. `voting-api/public` served by
     Rails), prevent confusion by *not* running `grunt serve` at the same time. :)
+- If you receive a CORS error, ensure localhost:3000 has the correct backend answering.
 
 - See `app/scripts/app.coffee` for application routes.
 
